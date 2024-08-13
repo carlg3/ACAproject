@@ -79,6 +79,7 @@ double Cluster::meanCalculator(int index){
 
 Point* Cluster::getElementList(int index){
     auto it = this->points.begin();
+
     advance(it,index);
     return *it;
 }
@@ -139,14 +140,21 @@ double Cluster::totalMSE(){
 }
 
 void Cluster::printClusters(){
+    ofstream f; f.open("test_kmeans.txt");
+
     for(int i=0;i<numberCluster;i++) {
-        cout << "CLUSTER NUMBER = " << Cluster::getThCluster(i)->getNumberElements() << endl;
-        cout << "CENTROID = " << Cluster::getThCluster(i)->getCentroid()->toString() << endl;
+        cout << "CLUSTER <"<<i<<"> ELEMENTS NUMBER = " << Cluster::getThCluster(i)->getNumberElements() << endl;
+        cout << "CENTROID @ " << Cluster::getThCluster(i)->getCentroid()->toString() << endl;
+
         for(int j=0;j<Cluster::getThCluster(i)->getNumberElements();j++){
             cout << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
+
+            f << i ; << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
         }
     }
     cout << "---------------------" << endl;
+
+    f.close();
 }
 
 void Cluster::setThCentroid(int index, double value){
