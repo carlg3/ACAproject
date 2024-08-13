@@ -6,11 +6,11 @@
 #include "Tupla.h"
 
 class Point: public Tupla{
-    public:
+public:
     Point(int dim);
     static Point* getThPoint(int index);
     static int getNumberPoints();
-    private:
+private:
     static int numberPoints;
     static std::list<Point*> points;
 };

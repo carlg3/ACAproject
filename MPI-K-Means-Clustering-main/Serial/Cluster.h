@@ -9,11 +9,11 @@
 #include "Point.h"
 
 class Cluster{
-    public:
+public:
+    Cluster(int centroidDimension);
     static void createKclusters(int K,int centroidDimension);
     static Cluster* getThCluster(int index);
     static int getNumberCluster();
-    Cluster(int centroidDimension);
     void setEmptyCluster();
     void addElement(Point *t);
     void centroidCalculator();
@@ -30,7 +30,7 @@ class Cluster{
     static double totalMSE();
     static void printClusters();
     void setThCentroid(int index, double value);
-    private:
+private:
     static int numberCluster;
     static std::list<Cluster*> clusters;
     Centroid *centroid;

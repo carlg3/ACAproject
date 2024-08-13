@@ -14,12 +14,14 @@ Cluster::Cluster(int centroidDimension){
     this->numberElements = 0;
     clusters.push_back(this);
     numberCluster++;
+
     createCentroid(centroidDimension);
     Cluster::sumDistance = 0;
 }
 
 void Cluster::setEmptyCluster(){
     points.clear();
+
     numberElements = 0;
     Cluster::sumDistance = 0;
 }
@@ -33,9 +35,10 @@ void Cluster::createKclusters(int K,int centroidDimension){
 void Cluster::createCentroid(int centroidDimension){
     centroid = new Centroid(centroidDimension);
     int n = rand() % (Point::getNumberPoints()-1); // Scegliere il punto a cui assegnare il centroide tra i punti del dataset
+    
     for(int j=0; j < centroidDimension; j++){
         centroid->setThValue(j,Point::getThPoint(n)->getThValue(j));
-        //centroid->setThValue(j,rand() % 10);
+        //centroid->setThValue(j, rand() % 10);
     }
 }
 
@@ -57,7 +60,7 @@ void Cluster::addElement(Point *t){
 void Cluster::centroidCalculator(){
     if(numberElements){
         for(int i=0;i<centroid->getDim();i++){
-                    centroid->setThValue(i, meanCalculator(i));
+            centroid->setThValue(i, meanCalculator(i));
         }
     }else{
         for(int i=0;i<centroid->getDim();i++) {
@@ -105,10 +108,12 @@ void Cluster::pointAssignment(){
     double distanzaMinima;
     double next;
     double d[Cluster::getNumberCluster()]; // Buffer to store the distance between the point and the centroid
+    
     for(int i=0;i<Point::getNumberPoints();i++){
         distanzaMinimaIndex = 0;
         distanzaMinima = Point::getThPoint(i)->distanza(*Cluster::getThCluster(0)->getCentroid());
         d[0] = distanzaMinima; // Store the distance between the point and the centroid
+        
         for(int j=1;j<Cluster::getNumberCluster();j++){
             next = Point::getThPoint(i)->distanza(*Cluster::getThCluster(j)->getCentroid());
             d[j] = next; // Store the distance between the point and the centroid
@@ -118,6 +123,7 @@ void Cluster::pointAssignment(){
             }
         }
         Cluster::getThCluster(distanzaMinimaIndex)->addElement(Point::getThPoint(i));
+        
         Cluster::sumDistance += d[distanzaMinimaIndex];
     }
 }

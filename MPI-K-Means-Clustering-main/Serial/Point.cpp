@@ -12,7 +12,7 @@ Point::Point(int dim) : Tupla(dim) {
 
 Point* Point::getThPoint(int index){
     auto it = points.begin();
-    advance(it,index);
+    advance(it, index);
     return *it;
 }
 

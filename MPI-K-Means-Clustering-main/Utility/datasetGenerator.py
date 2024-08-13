@@ -2,9 +2,15 @@
 import numpy as np
 
 def write_matrix(M, N):
-    fpath = f".\\src\\dataset_{M}x{N}.txt"
+    fpath = f".\\dataset_{M}x{N}.txt"
 
     matrix = np.random.randint(0, 10, (M, N))
     np.savetxt(fpath, matrix, fmt = "%d", delimiter = ",")
 
-write_matrix(100, 10)
+write_matrix(100, 2)
+
+# Snippet for plotting a 2D dataset 
+# data = [eval(line.rstrip("\n")) for line in open("dataset_100x2.txt", "r")]   
+# x, y = zip(*data)
+# plt.scatter(x, y)
+# plt.show()
