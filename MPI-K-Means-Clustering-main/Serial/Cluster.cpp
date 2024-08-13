@@ -1,5 +1,6 @@
 #include <list>
 #include <iostream>
+#include <fstream>
 
 #include "Tupla.h"
 #include "Cluster.h"
@@ -149,7 +150,7 @@ void Cluster::printClusters(){
         for(int j=0;j<Cluster::getThCluster(i)->getNumberElements();j++){
             cout << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
 
-            f << i ; << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
+            f << i << ";" << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
         }
     }
     cout << "---------------------" << endl;
