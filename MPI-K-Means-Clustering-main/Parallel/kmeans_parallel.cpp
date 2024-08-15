@@ -24,7 +24,7 @@ const int datasumclustertag=4;
 
 void readDataSet(int *pointDimension,int *totalNumberPoint){
     string buffer;
-    ifstream DataSet; DataSet.open("DataSet10000x10.txt");
+    ifstream DataSet; DataSet.open("/mnt/c/Users/galan/Desktop/Uni/UNIPV/ACAproject/MPI-K-Means-Clustering-main/Utility/dataset_100x2.txt");
     if(!DataSet.is_open()){
         cout << "FILE OPENING FAILED" << endl;
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
@@ -142,6 +142,9 @@ int main(int argc, char* argv[]) {
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
         endtime   = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n",endtime-starttime); // Print execution time
+
+        // Debug
+        Cluster::printClusters();
     }
 
     if(my_rank != 0){
