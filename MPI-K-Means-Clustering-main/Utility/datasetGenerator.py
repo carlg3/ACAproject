@@ -9,7 +9,8 @@ def write_matrix(M, N):
 
 write_matrix(100, 2)
 
-# Snippet for plotting a 2D dataset 
+# snippet for plotting a 2D dataset 
+# ---------------------------------
 # data = [eval(line.rstrip("\n")) for line in open("dataset_100x2.txt", "r")]   
 # x, y = zip(*data)
 # plt.scatter(x, y)
