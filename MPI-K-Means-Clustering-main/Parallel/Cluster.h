@@ -19,7 +19,6 @@ public:
     void addElement(Point *t); // Add a point to the cluster
     
     static void pointAssignment(); // Assign a point to the closest cluster
-    
     static void pointAssignment(int startIndex, int endIndex); // Assign a subset of points to the closest cluster
     void sumPoints(); // Calculate the sum of all points in the cluster
     static void sumPointsClusters(); // Calculate the sum of all points in all clusters
@@ -34,7 +33,7 @@ public:
 	int getNumberElements();	
     Centroid* getCentroid();
     Point* getThPoint(int index);
-    
+
     double getSumCluster(int index);
     void setNumberElements(int num);
     void setSumCluster(int index, double value);
@@ -42,10 +41,11 @@ public:
     static void setSumDistance(double value);
 
     // Debug functions
+    void setThCentroid(int index, double value);
+
 	static void printClusters(); // Print all the clusters
     static void printCentroids(); // Print all the centroids
     void printSum();
-    void setThCentroid(int index, double value);
     
     // Serialization functions
     static void serializeCluster(double* buffer, int k, int dim);
@@ -60,8 +60,9 @@ private:
     Centroid *centroid;
     int numberElements;
     std::list<Point*> points;
-    double* sumCluster;
     static double sumDistance;
+    
+    double* sumCluster;
 };
 
 #endif //PARALLEL_CLUSTER_H

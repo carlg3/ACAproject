@@ -19,12 +19,9 @@ public:
     void addElement(Point *t);
     
     static void pointAssignment();
-    
     static void centroidsAssignment();
     void centroidCalculator();
     double meanCalculator(int index);
-
-
     double MSECluster();
     static double totalMSE();
     
@@ -37,8 +34,9 @@ public:
     Point* getThPoint(int index);
 
     // Debug functions
-	static void printClusters();
     void setThCentroid(int index, double value);
+
+	static void printClusters();
 
 private:
     static int numberCluster;
@@ -47,7 +45,6 @@ private:
     int numberElements;
     std::list<Point*> points;
     static double sumDistance;
-
 };
 
 #endif //ACAPROJECT_CLUSTER_H

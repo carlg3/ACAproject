@@ -141,12 +141,9 @@ double Cluster::totalMSE(){
     return Cluster::sumDistance/Point::getNumberPoints();
 }
 
-
-
 void Cluster::setThCentroid(int index, double value){
     centroid->setThValue(index,value);
 }
-
 
 void Cluster::printClusters(){
     ofstream f; f.open("test_kmeans.txt");
