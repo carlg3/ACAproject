@@ -55,11 +55,10 @@ string Tupla::toString(){
     string s = "<";
     for(int i=0;i<dim;i++){
         if(i==0){
-            s = s + "," + to_string(value[i]);
+            s = s + to_string(value[i]);
         }else{
             s = s + "," + to_string(value[i]);
         }
     }
     return s + ">";
 }
-
