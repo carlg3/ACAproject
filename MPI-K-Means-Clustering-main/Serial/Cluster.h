@@ -12,24 +12,34 @@ class Cluster{
 public:
     Cluster(int centroidDimension);
     static void createKclusters(int K,int centroidDimension);
-    static Cluster* getThCluster(int index);
-    static int getNumberCluster();
-    void setEmptyCluster();
+    void createCentroid(int centroidDimension);
+    
+	void setEmptyCluster();
+	static void clustersReset();
     void addElement(Point *t);
+    
+    static void pointAssignment();
+    
+    static void centroidsAssignment();
     void centroidCalculator();
     double meanCalculator(int index);
+
+
+    double MSECluster();
+    static double totalMSE();
+    
+	// Getters and Setters
+	static Cluster* getThCluster(int index);
+    static int getNumberCluster();
     Point* getElementList(int index);
     int getNumberElements();
     Centroid* getCentroid();
     Point* getThPoint(int index);
-    void createCentroid(int centroidDimension);
-    static void clustersReset();
-    static void pointAssignment();
-    static void centroidsAssignment();
-    double MSECluster();
-    static double totalMSE();
-    static void printClusters();
+
+    // Debug functions
+	static void printClusters();
     void setThCentroid(int index, double value);
+
 private:
     static int numberCluster;
     static std::list<Cluster*> clusters;
