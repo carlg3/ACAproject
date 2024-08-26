@@ -7,7 +7,7 @@ def write_matrix(M, N):
     matrix = np.random.randint(0, 10, (M, N))
     np.savetxt(fpath, matrix, fmt = "%d", delimiter = ",")
 
-write_matrix(100, 2)
+write_matrix(1000, 2)
 
 # snippet for plotting a 2D dataset 
 # ---------------------------------
