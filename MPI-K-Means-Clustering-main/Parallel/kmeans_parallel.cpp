@@ -97,10 +97,10 @@ int main(int argc, char* argv[]) {
             Cluster::clustersReset();
             // ASSIGN POINTS TO CLUSTERS WITH NEAREST CENTROID
             endtime   = MPI_Wtime(); // Stop timer
-            printf("APRE ASS %f seconds\n",endtime-starttime); // Print execution time
+            printf("PRE ASSIGNMENT %f seconds\n",endtime-starttime); // Print execution time
             Cluster::pointAssignment((commSize-1)*pointsXprocessor,totalNumberPoint);
             endtime   = MPI_Wtime(); // Stop timer
-            printf("AFTER ASS %f seconds\n",endtime-starttime); // Print execution time
+            printf("AFTER ASSIGNMENT %f seconds\n",endtime-starttime); // Print execution time
             // CALCULATE MASTER SUM_CLUSTER
             for(int i=0;i<Cluster::getNumberCluster();i++){
                 Cluster::sumPointsClusters();

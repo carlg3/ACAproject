@@ -40,14 +40,14 @@ int Tupla::getDim(){
 }
 
 string Tupla::toString(){
-    string s = "<";
+    string s = "(";
     for(int i=0;i<dim;i++){
         if(i==0){
-            s = s + to_string(value[i]);
+            s = s + to_string((int)value[i]);
         }else{
-            s = s + "," + to_string(value[i]);
+            s = s + "," + to_string((int)value[i]);
         }
     }
-    return s + ">";
+    return s + ")";
 }
 

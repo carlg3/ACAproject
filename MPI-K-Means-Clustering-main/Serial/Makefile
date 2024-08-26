@@ -2,7 +2,7 @@
 
 TARGET = kmeans_sequential
 
-SRCS = Centroid.cpp Cluster.cpp kmeans_sequential.cpp Point.cpp Tupla.cpp
+SRCS = Centroid.cpp Cluster.cpp Point.cpp Tupla.cpp kmeans_sequential.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
