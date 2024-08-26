@@ -1,6 +1,7 @@
-#include "Tupla.h"
 #include <string>
 #include <math.h>
+
+#include "Tupla.h"
 
 using namespace std;
 
