@@ -9,6 +9,7 @@
 #include <boost/iostreams/stream.hpp>
 #include <boost/iostreams/device/back_inserter.hpp>
 
+#include "Tupla.h"
 #include "Cluster.h"
 #include "Point.h"
 
