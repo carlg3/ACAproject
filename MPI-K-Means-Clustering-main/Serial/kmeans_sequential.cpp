@@ -16,8 +16,6 @@ void readDataSet(int *pointDimension,int *totalNumberPoint){
     string buffer;
 
     ifstream DataSet;
-    // DataSet.open("/mnt/c/Users/Cristian/IdeaProjects/DatasetGenerator/src/DataSet10000x10.txt");
-    // DataSet.open("C:\\Users\\galan\\Documents\\GitHub\\ACAproject\\MPI-K-Means-Clustering-main\\Utility\\dataset_100x2.txt");
     DataSet.open("/mnt/c/Users/galan/Desktop/Uni/UNIPV/ACAproject/MPI-K-Means-Clustering-main/Utility/dataset_100x2.txt");
 
     if(!DataSet.is_open()){

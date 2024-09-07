@@ -38,12 +38,12 @@ void Point::serializePoint(double* buffer,int startIndex, int endIndex, int dim)
 }
 
 void Point::deserializaPoint(double* buffer){
-    //int numberPoints = buffer[0];// Total number of point received
+    //int numberPoints = buffer[0]; // Total number of point received
     int dim = buffer[1]; // Point dimension
     for(int i=0;i<buffer[0];i++) {
         Point *p = new Point(dim);
         for(int j=0;j<dim;j++){
-            p->setThValue(j,buffer[i*dim+2+j]);
+            p->setThValue(j, buffer[i*dim+2+j]);
         }
     }
 }

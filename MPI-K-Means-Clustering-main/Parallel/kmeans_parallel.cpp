@@ -31,20 +31,25 @@ void readDataSet(int *pointDimension,int *totalNumberPoint){
         cout << "FILE OPENING FAILED" << endl;
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
     }
+
     while (getline(DataSet, buffer)){
         vector <string> tokens;
         stringstream check1(buffer);
         string intermediate;
+
         while(getline(check1, intermediate, ',')){
             tokens.push_back(intermediate);
         }
+
         Point *point = new Point(tokens.size());
         for(int i = 0; i < (int)tokens.size(); i++){
-            point->setThValue(i,stod(tokens[i]));
+            point->setThValue(i, stod(tokens[i]));
         }
+
         *pointDimension = tokens.size();
-        *totalNumberPoint = *totalNumberPoint + 1;
+        *totalNumberPoint++;
     }
+    
     DataSet.close();
 }
 
