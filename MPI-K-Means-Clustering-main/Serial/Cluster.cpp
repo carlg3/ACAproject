@@ -7,11 +7,11 @@
 
 using namespace std;
 
-double Cluster::sumDistance;
-int Cluster::numberCluster;
+double Cluster::sumDistance = 0;
+int Cluster::numberCluster = 0;
 list<Cluster*> Cluster::clusters;
 
-Cluster::Cluster(int centroidDimension){
+Cluster::Cluster(int centroidDimension) {
     this->numberElements = 0;
     clusters.push_back(this);
     numberCluster++;
@@ -130,29 +130,30 @@ Point* Cluster::getThPoint(int index) {
     return *it;
 }
 
-Point* Cluster::getElementList(int index){
-    auto it = this->points.begin();
+Point* Cluster::getElementList(int index) {
+    auto it = points.begin();
 
-    advance(it,index);
+    advance(it, index);
     return *it;
 }
 
-double Cluster::totalMSE(){
-    return Cluster::sumDistance/Point::getNumberPoints();
+double Cluster::totalMSE() {
+    return Cluster::sumDistance / Point::getNumberPoints();
 }
 
-void Cluster::setThCentroid(int index, double value){
-    centroid->setThValue(index,value);
+void Cluster::setThCentroid(int index, double value) {
+    centroid->setThValue(index, value);
 }
 
-void Cluster::printClusters(){
-    ofstream f; f.open("test_kmeans.txt");
+void Cluster::printClusters() {
+    ofstream f;
+    f.open("test_kmeans.txt");
 
-    for(int i=0;i<numberCluster;i++) {
-        cout << "CLUSTER <"<<i<<"> ELEMENTS NUMBER = " << Cluster::getThCluster(i)->getNumberElements() << endl;
+    for (int i = 0; i < numberCluster; i++) {
+        cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << Cluster::getThCluster(i)->getNumberElements() << endl;
         cout << "CENTROID @ " << Cluster::getThCluster(i)->getCentroid()->toString() << endl;
 
-        for(int j=0;j<Cluster::getThCluster(i)->getNumberElements();j++){
+        for (int j = 0; j < Cluster::getThCluster(i)->getNumberElements(); j++) {
             cout << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
 
             f << i << ";" << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;

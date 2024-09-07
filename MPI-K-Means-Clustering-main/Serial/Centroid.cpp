@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Centroid.h"
 
 using namespace std;
