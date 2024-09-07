@@ -1,10 +1,8 @@
 #include <cmath>
 #include "Centroid.h"
 
-using namespace std;
-
-int Centroid::numberCentroids;
-list<Centroid*> Centroid::centroids;
+int Centroid::numberCentroids = 0;
+std::list<Centroid*> Centroid::centroids;
 
 Centroid::Centroid(int dim) : Tupla(dim) {
     centroids.push_back(this);
@@ -13,7 +11,7 @@ Centroid::Centroid(int dim) : Tupla(dim) {
 
 Centroid* Centroid::getThCentroid(int index){
     auto it = centroids.begin();
-    advance(it,index);
+    std::advance(it, index);
     return *it;
 }
 

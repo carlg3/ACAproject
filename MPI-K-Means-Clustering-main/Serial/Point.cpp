@@ -1,9 +1,7 @@
 #include "Point.h"
 
-using namespace std;
-
-int Point::numberPoints;
-list<Point*> Point::points;
+int Point::numberPoints = 0;
+std::list<Point*> Point::points;
 
 Point::Point(int dim) : Tupla(dim) {
     points.push_back(this);
@@ -12,7 +10,7 @@ Point::Point(int dim) : Tupla(dim) {
 
 Point* Point::getThPoint(int index){
     auto it = points.begin();
-    advance(it, index);
+    std::advance(it, index);
     return *it;
 }
 

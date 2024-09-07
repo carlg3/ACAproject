@@ -1,7 +1,9 @@
-#include <stdlib.h>
 #include <iostream>
-#include <bits/stdc++.h>
-#include <list>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <cmath>
+#include <ctime>
 
 #include "Tupla.h"
 #include "Cluster.h"
@@ -9,79 +11,75 @@
 
 using namespace std;
 
-int K = 0; // Number of Clusters
-int MAXITERATION = 5;
+int K = 0; // Numero di Clusters
+int MAX_ITERATION = 5;
 
-void readDataSet(int *pointDimension,int *totalNumberPoint){
+void readDataSet(int& pointDimension, int& totalNumberPoint) {
     string buffer;
+    ifstream DataSet("/mnt/c/Users/galan/Desktop/Uni/UNIPV/ACAproject/MPI-K-Means-Clustering-main/Utility/dataset_100x2.txt");
 
-    ifstream DataSet;
-    DataSet.open("/mnt/c/Users/galan/Desktop/Uni/UNIPV/ACAproject/MPI-K-Means-Clustering-main/Utility/dataset_100x2.txt");
-
-    if(!DataSet.is_open()){
-        cout << "FILE OPENING FAILED" << endl;
+    if (!DataSet.is_open()) {
+        cout << "ERRORE DURANTE L'APERTURA DEL FILE" << endl;
         return;
     }
 
-    while (getline(DataSet, buffer)){
-        vector <string> tokens;
-
+    while (getline(DataSet, buffer)) {
+        vector<string> tokens;
         stringstream check1(buffer);
         string intermediate;
 
-        while(getline(check1, intermediate, ',')){
+        while (getline(check1, intermediate, ',')) {
             tokens.push_back(intermediate);
         }
 
-        Point *point = new Point(tokens.size());
-        for(int i = 0; i < tokens.size(); i++){
-            point->setThValue(i,stod(tokens[i]));
+        Point* point = new Point(tokens.size());
+        for (int i = 0; i < tokens.size(); i++) {
+            point->setThValue(i, stod(tokens[i]));
         }
 
-        *pointDimension = tokens.size();
-        *totalNumberPoint = *totalNumberPoint + 1;
+        pointDimension = tokens.size();
+        totalNumberPoint++;
     }
 
     DataSet.close();
 }
 
-int main(){
+int main() {
     time_t start, end;
     time(&start);
 
-    int pointDimension;         // Dimensione del dato R^pointDimension
-    int totalNumberPoint = 0;   // Numbers of data in our DataSet
+    int pointDimension = 0;         // Dimensione del dato R^pointDimension
+    int totalNumberPoint = 0;       // Numero di dati nel nostro DataSet
 
-    srand(time(0)); // Randomize initialization point
+    srand(time(0)); // Inizializzazione casuale dei punti
 
-    // READING FILE
-    readDataSet(&pointDimension, &totalNumberPoint);
+    // LETTURA DEL FILE
+    readDataSet(pointDimension, totalNumberPoint);
 
-    // INIZIALIZE CLUSTERS AND CENTROIDS
-    K = sqrt(totalNumberPoint/2);
+    // INIZIALIZZAZIONE CLUSTERS E CENTROIDI
+    K = sqrt(totalNumberPoint / 2);
     Cluster::createKclusters(K, pointDimension);
 
-    // INITIAL TMSE 
+    // TMSE INIZIALE
     double previousTMSE = 0;
     double tmse = 0;
 
-    while((MAXITERATION-- && tmse < previousTMSE) || previousTMSE==0) {
+    while ((MAX_ITERATION-- && tmse < previousTMSE) || previousTMSE == 0) {
         Cluster::clustersReset();
 
-        // ASSIGN POINTS TO CLUSTERS
+        // ASSEGNAZIONE DEI PUNTI AI CLUSTERS
         Cluster::pointAssignment();
 
-        // CALCULE CENTROIDS
+        // CALCOLO DEI CENTROIDI
         Cluster::centroidsAssignment();
 
         previousTMSE = tmse;
-
         tmse = Cluster::totalMSE();
     }
 
     time(&end);
     double time_taken = double(end - start);
-    cout << "Time taken by program is : " << time_taken << " sec " << endl;
+    cout << "Tempo impiegato dal programma: " << time_taken << " sec" << endl;
 
     Cluster::printClusters();
 
