@@ -1,0 +1,16 @@
+# ninja log v6
+20	909	7475097820673210	build.ninja	78284590f51f8bf4
+75	1671	7475097823223217	CMakeFiles/Serial_proj_test.dir/Point.cpp.obj	ab8f62c28ce6397f
+66	1683	7475097823123322	CMakeFiles/Serial_proj_test.dir/Centroid.cpp.obj	86ac05e59e5f43a9
+58	2034	7475097823043229	CMakeFiles/Serial_proj_test.dir/Cluster.cpp.obj	6c5610d863ba5875
+84	2077	7475097823313380	CMakeFiles/Serial_proj_test.dir/Tupla.cpp.obj	dc0193dce66a91d4
+97	2725	7475097823433260	CMakeFiles/Serial_proj_test.dir/kmeans_sequential.cpp.obj	944a018299338f0f
+2726	3290	7475097849725803	Serial_proj_test.exe	51cfeb20b86822a3
+113	2838	7475748735832576	CMakeFiles/Serial_proj_test.dir/kmeans_sequential.cpp.obj	944a018299338f0f
+2840	3384	7475748763099835	Serial_proj_test.exe	51cfeb20b86822a3
+9	1850	7475750522584781	CMakeFiles/Serial_proj_test.dir/kmeans_sequential.cpp.obj	944a018299338f0f
+1851	2153	7475750541007380	Serial_proj_test.exe	51cfeb20b86822a3
+11	1778	7475757609862253	CMakeFiles/Serial_proj_test.dir/kmeans_sequential.cpp.obj	944a018299338f0f
+1780	2051	7475757627540545	Serial_proj_test.exe	51cfeb20b86822a3
+11	1922	7475758912730259	CMakeFiles/Serial_proj_test.dir/kmeans_sequential.cpp.obj	944a018299338f0f
+1924	2204	7475758931867289	Serial_proj_test.exe	51cfeb20b86822a3

@@ -1,0 +1,3 @@
+C:/Users/galan/CLionProjects/Serial-proj-test/cmake-build-debug/CMakeFiles/Serial_proj_test.dir
+C:/Users/galan/CLionProjects/Serial-proj-test/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/galan/CLionProjects/Serial-proj-test/cmake-build-debug/CMakeFiles/rebuild_cache.dir

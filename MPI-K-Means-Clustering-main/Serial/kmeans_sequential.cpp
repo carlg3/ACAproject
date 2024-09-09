@@ -1,63 +1,68 @@
+//
+// Created by galan on 08/09/2024.
+//
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <vector>
 #include <cmath>
 #include <ctime>
+#include <random>
 
-#include "Tupla.h"
 #include "Cluster.h"
 #include "Point.h"
 
 using namespace std;
 
-int K = 0; // Numero di Clusters
 int MAX_ITERATION = 5;
 
-void readDataSet(int& pointDimension, int& totalNumberPoint) {
-    string buffer;
-    ifstream DataSet("/mnt/c/Users/galan/Desktop/Uni/UNIPV/ACAproject/MPI-K-Means-Clustering-main/Utility/dataset_100x2.txt");
+void readDataSet(vector<Point*>& points, const string& filePath) {
+    ifstream dataSet(filePath);
 
-    if (!DataSet.is_open()) {
+    if (!dataSet.is_open()){
         cout << "ERRORE DURANTE L'APERTURA DEL FILE" << endl;
         return;
     }
 
-    while (getline(DataSet, buffer)) {
+    string line;
+    while (getline(dataSet, line)) {
         vector<string> tokens;
-        stringstream check1(buffer);
-        string intermediate;
+        stringstream ss(line);
+        string token;
 
-        while (getline(check1, intermediate, ',')) {
-            tokens.push_back(intermediate);
+        while (getline(ss, token, ',')) {
+            tokens.push_back(token);
         }
 
-        Point* point = new Point(tokens.size());
+        Point *point = new Point(tokens.size());
         for (int i = 0; i < tokens.size(); i++) {
             point->setThValue(i, stod(tokens[i]));
         }
 
-        pointDimension = tokens.size();
-        totalNumberPoint++;
+        points.push_back(point);
     }
 
-    DataSet.close();
+    dataSet.close();
 }
 
 int main() {
     time_t start, end;
     time(&start);
 
-    int pointDimension = 0;         // Dimensione del dato R^pointDimension
-    int totalNumberPoint = 0;       // Numero di dati nel nostro DataSet
+    vector<Point*> points_temp_;
 
     srand(time(0)); // Inizializzazione casuale dei punti
 
     // LETTURA DEL FILE
-    readDataSet(pointDimension, totalNumberPoint);
+    // "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt"
+    readDataSet(points_temp_,R"(C:\Users\galan\CLionProjects\Serial-proj-test\dataset\dataset_100x2.txt)");
+
+    int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
+    int totalNumberPoint = points_temp_.size();           // Numero di dati nel nostro DataSet
 
     // INIZIALIZZAZIONE CLUSTERS E CENTROIDI
-    K = sqrt(totalNumberPoint / 2);
+    int K = sqrt(totalNumberPoint / 2);
     Cluster::createKclusters(K, pointDimension);
 
     // TMSE INIZIALE
@@ -79,7 +84,7 @@ int main() {
 
     time(&end);
     double time_taken = double(end - start);
-    cout << "Tempo impiegato dal programma: " << time_taken << " sec" << endl;
+    cout << "Time taken to run the task: " << time_taken << " sec" << endl;
 
     Cluster::printClusters();
 

@@ -1,23 +1,28 @@
-#ifndef ACAPROJECT_TUPLA_H
-#define ACAPROJECT_TUPLA_H
+//
+// Created by galan on 08/09/2024.
+//
+
+#ifndef TUPLA_H
+#define TUPLA_H
 
 #include <string>
+#include <vector>
+using namespace std;
 
 class Tupla{
-    public:
+public:
     Tupla(int dim);
-    double distanza(Tupla t);
-    Tupla sommaVettoriale(Tupla t);
-    Tupla differenzaVettoriale(Tupla t);
-    double getThValue(int i);
+    Tupla sommaVettoriale(const Tupla& t) const;
+    Tupla differenzaVettoriale(const Tupla& t) const;
+    double distanza(const Tupla& t) const;
     void setThValue(int i, double d);
-    void setValue(double d[]);
+    void setValue(const vector<double>& d);
+    double getThValue(int i) const;
     int getDim();
-    std::string toString();
-    protected:
-    double* value;
+    string toString();
+protected:
     int dim;
+    vector<double> value;
 };
 
-#endif //ACAPROJECT_TUPLA_H
-
+#endif //TUPLA_H

@@ -1,50 +1,53 @@
-#ifndef ACAPROJECT_CLUSTER_H
-#define ACAPROJECT_CLUSTER_H
+//
+// Created by galan on 08/09/2024.
+//
+
+#ifndef CLUSTER_H
+#define CLUSTER_H
 
 #include <string>
 #include <list>
 
-#include "Tupla.h"
 #include "Centroid.h"
 #include "Point.h"
+using namespace std;
 
 class Cluster{
 public:
     Cluster(int centroidDimension);
     static void createKclusters(int K,int centroidDimension);
     void createCentroid(int centroidDimension);
-    
-	void setEmptyCluster();
-	static void clustersReset();
+
+    void setEmptyCluster();
+    static void clustersReset();
     void addElement(Point *t);
-    
+
     static void pointAssignment();
     static void centroidsAssignment();
     void centroidCalculator();
     double meanCalculator(int index);
     double MSECluster();
     static double totalMSE();
-    
-	// Getters and Setters
-	static Cluster* getThCluster(int index);
+
+    // Getters and Setters
+    static Cluster* getThCluster(int index);
     static int getNumberCluster();
-    Point* getElementList(int index);
-    int getNumberElements();
+    Point* getPointsList(int index);
+    int getNumberPoints();
     Centroid* getCentroid();
     Point* getThPoint(int index);
 
     // Debug functions
     void setThCentroid(int index, double value);
-
-	static void printClusters();
+    static void printClusters();
 
 private:
-    static int numberCluster;
-    static std::list<Cluster*> clusters;
+    static list<Cluster*> clusters;
     Centroid *centroid;
-    int numberElements;
-    std::list<Point*> points;
+
+    list<Point*> cluster_points_;
+
     static double sumDistance;
 };
 
-#endif //ACAPROJECT_CLUSTER_H
+#endif //CLUSTER_H

@@ -1,12 +1,15 @@
+//
+// Created by galan on 08/09/2024.
+//
+
 #include "Tupla.h"
 #include <iostream>
+#include <vector>
+using namespace std;
 
-Tupla::Tupla(int dim) {
-    value = new double[dim];
-    this->dim = dim;
-}
+Tupla::Tupla(int dim) : dim(dim), value(dim) {}
 
-double Tupla::distanza(const Tupla& t) {
+double Tupla::distanza(const Tupla& t) const {
     Tupla differenza = this->differenzaVettoriale(t);
     double result = 0;
     for (int i = 0; i < dim; i++) {
@@ -15,7 +18,7 @@ double Tupla::distanza(const Tupla& t) {
     return result;
 }
 
-Tupla Tupla::sommaVettoriale(const Tupla& t) {
+Tupla Tupla::sommaVettoriale(const Tupla& t) const {
     Tupla v(dim);
     for (int i = 0; i < dim; i++) {
         v.setThValue(i, this->getThValue(i) + t.getThValue(i));
@@ -23,7 +26,7 @@ Tupla Tupla::sommaVettoriale(const Tupla& t) {
     return v;
 }
 
-Tupla Tupla::differenzaVettoriale(const Tupla& t) {
+Tupla Tupla::differenzaVettoriale(const Tupla& t) const {
     Tupla v(dim);
     for (int i = 0; i < dim; i++) {
         v.setThValue(i, this->getThValue(i) - t.getThValue(i));
@@ -32,28 +35,28 @@ Tupla Tupla::differenzaVettoriale(const Tupla& t) {
 }
 
 double Tupla::getThValue(int i) const {
-    return value[i];
+    return value.at(i);
 }
 
 void Tupla::setThValue(int i, double d) {
-    value[i] = d;
+    value.at(i) = d;
 }
 
-void Tupla::setValue(double d[]) {
+void Tupla::setValue(const vector<double>& d) {
     value = d;
 }
 
-int Tupla::getDim() const {
+int Tupla::getDim() {
     return dim;
 }
 
-std::string Tupla::toString() const {
-    std::string s = "(";
+string Tupla::toString() {
+    string s = "(";
     for (int i = 0; i < dim; i++) {
         if (i == 0) {
-            s += std::to_string(static_cast<int>(value[i]));
+            s += to_string(static_cast<int>(value.at(i)));
         } else {
-            s += "," + std::to_string(static_cast<int>(value[i]));
+            s += "," + to_string(static_cast<int>(value.at(i)));
         }
     }
     return s + ")";

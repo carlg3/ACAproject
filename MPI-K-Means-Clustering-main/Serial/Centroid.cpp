@@ -1,20 +1,22 @@
-#include <cmath>
-#include "Centroid.h"
+//
+// Created by galan on 08/09/2024.
+//
 
-int Centroid::numberCentroids = 0;
-std::list<Centroid*> Centroid::centroids;
+#include "Centroid.h"
+using namespace std;
+
+list<Centroid*> Centroid::centroids;
 
 Centroid::Centroid(int dim) : Tupla(dim) {
     centroids.push_back(this);
-    numberCentroids++;
 }
 
 Centroid* Centroid::getThCentroid(int index){
     auto it = centroids.begin();
-    std::advance(it, index);
+    advance(it, index);
     return *it;
 }
 
 int Centroid::getNumberCentroids(){
-    return numberCentroids;
+    return centroids.size();
 }

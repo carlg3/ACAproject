@@ -1,18 +1,21 @@
-#ifndef ACAPROJECT_CENTROID_H
-#define ACAPROJECT_CENTROID_H
+//
+// Created by galan on 08/09/2024.
+//
+
+#ifndef CENTROID_H
+#define CENTROID_H
 
 #include <list>
-
 #include "Tupla.h"
+using namespace std;
 
 class Centroid: public Tupla{
-    public:
+public:
     Centroid(int dim);
     static Centroid* getThCentroid(int index);
     static int getNumberCentroids();
-    private:
-    static int numberCentroids;
-    static std::list<Centroid*> centroids;
+private:
+    static list<Centroid*> centroids;
 };
 
-#endif //ACAPROJECT_CENTROID_H
+#endif //CENTROID_H

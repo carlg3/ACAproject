@@ -1,19 +1,22 @@
-#include "Point.h"
+//
+// Created by galan on 08/09/2024.
+//
 
-int Point::numberPoints = 0;
-std::list<Point*> Point::points;
+#include "Point.h"
+using namespace std;
+
+list<Point*> Point::points;
 
 Point::Point(int dim) : Tupla(dim) {
     points.push_back(this);
-    numberPoints++;
 }
 
 Point* Point::getThPoint(int index){
     auto it = points.begin();
-    std::advance(it, index);
+    advance(it, index);
     return *it;
 }
 
 int Point::getNumberPoints(){
-    return numberPoints;
+    return points.size();
 }
