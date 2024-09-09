@@ -7,6 +7,7 @@
 #include "Tupla.h"
 #include "Centroid.h"
 #include "Point.h"
+using namespace std;
 
 class Cluster{
 public:
@@ -18,8 +19,8 @@ public:
     static void clustersReset(); // Reset of all the clusters
     void addElement(Point *t); // Add a point to the cluster
     
-    static void pointAssignment(); // Assign a point to the closest cluster
-    static void pointAssignment(int startIndex, int endIndex); // Assign a subset of points to the closest cluster
+    // static void pointAssignment(); // Assign a point to the closest cluster
+    static void pointAssignment(int startIndex = 0, int endIndex = Point::getNumberPoints()); // Assign a subset of points to the closest cluster
     void sumPoints(); // Calculate the sum of all points in the cluster
     static void sumPointsClusters(); // Calculate the sum of all points in all clusters
     void centroidParallelCalculator(); // Calculate the new centroid of the cluster
@@ -56,12 +57,13 @@ public:
     
 private:
     static int numberCluster;
-    static std::list<Cluster*> clusters;
+    static list<Cluster*> clusters;
     Centroid *centroid;
-    int numberElements;
-    std::list<Point*> points;
+
+    int points_number_;
+    list<Point*> points;
+
     static double sumDistance;
-    
     double* sumCluster;
 };
 

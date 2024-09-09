@@ -4,6 +4,7 @@
 #include <list>
 
 #include "Tupla.h"
+using namespace std;
 
 class Point: public Tupla{
 public:
@@ -12,10 +13,10 @@ public:
     static int getNumberPoints();
     static void printPoints();
     static void serializePoint(double* buffer,int startIndex, int endIndex, int dim);
-    static void deserializaPoint(double* buffer);
+    static void deserializePoint(double* buffer);
 private:
     static int numberPoints;
-    static std::list<Point*> points;
+    static list<Point*> points;
 };
 
 #endif //PARALLEL_POINT_H
