@@ -4,28 +4,7 @@ TARGET = kmeans_parallel
 
 SRCS = Centroid.cpp Cluster.cpp kmeans_parallel.cpp Point.cpp Tupla.cpp
 
-#OBJS = $(SRCS:.cpp=.o)
-
-<<<<<<< Updated upstream
 CXX = mpic++ 
-#CXXFLAGS = -Wall -O2
 
-$(TARGET): $(SRCS)
+$(TARGET): 
 	$(CXX) $(SRCS) -o $(TARGET) -lm
-
-#%.o: %.cpp
-#	$(CXX) $(CXXFLAGS) -c $< -o $@
-=======
-CXX = mpic++
-#CXXFLAGS = -Wall -O2
-
-$(TARGET): $(SRCS) $(CXX) $(SRCS) -o $(TARGET) -lm
-
-#%.o: %.cpp
-#       $(CXX) $(CXXFLAGS) -c $< -o $@
->>>>>>> Stashed changes
-
-#clean:
-#rm -f $(OBJS) $(TARGET)
-
-.PHONY: clean

@@ -63,8 +63,8 @@ private:
     int points_number_;
     list<Point*> points;
 
-    static double sumDistance;
-    double* sumCluster;
+    static double sumDistance; // delle distanze di tutti i cluster
+    double *sumCluster;
 };
 
 #endif //PARALLEL_CLUSTER_H
