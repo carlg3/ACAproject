@@ -985,18 +985,23 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/c++/11/fstream \
-  /usr/include/c++/11/bits/codecvt.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/c++/11/sstream \
-  /usr/include/c++/11/bits/sstream.tcc \
-  /usr/include/c++/11/vector \
-  /usr/include/c++/11/bits/stl_uninitialized.h \
-  /usr/include/c++/11/bits/stl_vector.h \
-  /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/stdlib.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/stdc++.h \
+  /usr/include/c++/11/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/11/cfloat \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+  /usr/include/c++/11/ciso646 \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -1022,23 +1027,226 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  /usr/include/c++/11/csetjmp \
+  /usr/include/setjmp.h \
+  /usr/include/c++/11/csignal \
+  /usr/include/signal.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+  /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+  /usr/include/c++/11/cstdarg \
+  /usr/include/c++/11/cstddef \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/c++/11/ctime \
+  /usr/include/c++/11/ccomplex \
+  /usr/include/c++/11/complex \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/cfenv \
+  /usr/include/c++/11/fenv.h \
+  /usr/include/fenv.h \
+  /usr/include/x86_64-linux-gnu/bits/fenv.h \
+  /usr/include/c++/11/cinttypes \
+  /usr/include/inttypes.h \
+  /usr/include/c++/11/cstdalign \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h \
+  /usr/include/c++/11/cstdbool \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+  /usr/include/c++/11/ctgmath \
+  /usr/include/c++/11/cuchar \
+  /usr/include/uchar.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/bits/ranges_algo.h \
+  /usr/include/c++/11/bits/ranges_algobase.h \
+  /usr/include/c++/11/iterator \
+  /usr/include/c++/11/bits/stream_iterator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/ranges_util.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/bitset \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/list \
+  /usr/include/c++/11/bits/stl_list.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/list.tcc \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/bits/atomic_wait.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/c++/11/bits/std_mutex.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/ranges_uninitialized.h \
+  /usr/include/c++/11/bits/uses_allocator_args.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/numeric \
+  /usr/include/c++/11/bits/stl_numeric.h \
+  /usr/include/c++/11/pstl/glue_numeric_defs.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h \
+  /usr/include/c++/11/set \
+  /usr/include/c++/11/bits/stl_set.h \
+  /usr/include/c++/11/bits/stl_multiset.h \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/valarray \
+  /usr/include/c++/11/bits/valarray_array.h \
+  /usr/include/c++/11/bits/valarray_array.tcc \
+  /usr/include/c++/11/bits/valarray_before.h \
+  /usr/include/c++/11/bits/slice_array.h \
+  /usr/include/c++/11/bits/valarray_after.h \
+  /usr/include/c++/11/bits/gslice.h \
+  /usr/include/c++/11/bits/gslice_array.h \
+  /usr/include/c++/11/bits/mask_array.h \
+  /usr/include/c++/11/bits/indirect_array.h \
+  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/bits/parse_numbers.h \
+  /usr/include/c++/11/codecvt \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/bits/unique_lock.h \
+  /usr/include/c++/11/stop_token \
+  /usr/include/c++/11/bits/std_thread.h \
+  /usr/include/c++/11/semaphore \
+  /usr/include/c++/11/bits/semaphore_base.h \
+  /usr/include/c++/11/bits/atomic_timed_wait.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/include/x86_64-linux-gnu/sys/time.h \
+  /usr/include/semaphore.h \
+  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+  /usr/include/c++/11/forward_list \
+  /usr/include/c++/11/bits/forward_list.h \
+  /usr/include/c++/11/bits/forward_list.tcc \
+  /usr/include/c++/11/future \
+  /usr/include/c++/11/mutex \
+  /usr/include/c++/11/bits/atomic_futex.h \
+  /usr/include/c++/11/random \
+  /usr/include/c++/11/bits/random.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+  /usr/include/c++/11/bits/random.tcc \
+  /usr/include/c++/11/regex \
+  /usr/include/c++/11/bits/regex_constants.h \
+  /usr/include/c++/11/bits/regex_error.h \
+  /usr/include/c++/11/bits/regex_automaton.h \
+  /usr/include/c++/11/bits/regex_automaton.tcc \
+  /usr/include/c++/11/bits/regex_scanner.h \
+  /usr/include/c++/11/bits/regex_scanner.tcc \
+  /usr/include/c++/11/bits/regex_compiler.h \
+  /usr/include/c++/11/bits/regex_compiler.tcc \
+  /usr/include/c++/11/bits/regex.h \
+  /usr/include/c++/11/bits/regex.tcc \
+  /usr/include/c++/11/bits/regex_executor.h \
+  /usr/include/c++/11/bits/regex_executor.tcc \
+  /usr/include/c++/11/scoped_allocator \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/typeindex \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h \
+  /usr/include/c++/11/shared_mutex \
+  /usr/include/c++/11/any \
+  /usr/include/c++/11/charconv \
+  /usr/include/c++/11/filesystem \
+  /usr/include/c++/11/bits/fs_fwd.h \
+  /usr/include/c++/11/bits/fs_path.h \
+  /usr/include/c++/11/bits/fs_dir.h \
+  /usr/include/c++/11/bits/fs_ops.h \
+  /usr/include/c++/11/optional \
+  /usr/include/c++/11/memory_resource \
+  /usr/include/c++/11/variant \
+  /usr/include/c++/11/barrier \
+  /usr/include/c++/11/coroutine \
+  /usr/include/c++/11/latch \
+  /usr/include/c++/11/ranges \
+  /usr/include/c++/11/span \
+  /usr/include/c++/11/source_location \
+  /usr/include/c++/11/syncstream \
+  /usr/include/c++/11/version \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
-  /usr/include/c++/11/map \
-  /usr/include/c++/11/bits/stl_tree.h \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/bits/node_handle.h \
-  /usr/include/c++/11/bits/stl_map.h \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/c++/11/bits/erase_if.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/constants.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/functions.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/datatype.h \
@@ -1057,8 +1265,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/info.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/datatype_inln.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/functions_inln.h \
-  /usr/include/string.h \
-  /usr/include/strings.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request_inln.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm_inln.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intracomm_inln.h \
@@ -1075,32 +1281,12 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/archive/binary_iarchive_impl.hpp \
   /usr/include/boost/archive/basic_binary_iprimitive.hpp \
   /usr/include/boost/assert.hpp \
-  /usr/include/assert.h \
-  /usr/include/c++/11/locale \
-  /usr/include/c++/11/bits/locale_facets_nonio.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/11/bits/locale_conv.h \
-  /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/c++/11/cstring \
-  /usr/include/c++/11/cstddef \
   /usr/include/boost/config.hpp \
   /usr/include/boost/config/user.hpp \
   /usr/include/boost/config/detail/select_compiler_config.hpp \
   /usr/include/boost/config/compiler/gcc.hpp \
   /usr/include/boost/config/detail/select_stdlib_config.hpp \
-  /usr/include/c++/11/version \
   /usr/include/boost/config/stdlib/libstdcpp3.hpp \
-  /usr/include/unistd.h \
-  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
-  /usr/include/x86_64-linux-gnu/bits/environments.h \
-  /usr/include/x86_64-linux-gnu/bits/confname.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h \
   /usr/include/boost/config/detail/select_platform_config.hpp \
   /usr/include/boost/config/platform/linux.hpp \
   /usr/include/boost/config/detail/posix_features.hpp \
@@ -1110,16 +1296,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/serialization/throw_exception.hpp \
   /usr/include/boost/integer.hpp \
   /usr/include/boost/integer_fwd.hpp \
-  /usr/include/c++/11/climits \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
-  /usr/include/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
   /usr/include/boost/limits.hpp \
   /usr/include/boost/integer_traits.hpp \
   /usr/include/boost/static_assert.hpp \
@@ -1276,8 +1452,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/serialization/serialization.hpp \
   /usr/include/boost/serialization/strong_typedef.hpp \
   /usr/include/boost/operators.hpp \
-  /usr/include/c++/11/iterator \
-  /usr/include/c++/11/bits/stream_iterator.h \
   /usr/include/boost/type_traits/has_nothrow_assign.hpp \
   /usr/include/boost/type_traits/is_const.hpp \
   /usr/include/boost/type_traits/is_volatile.hpp \
@@ -1369,44 +1543,8 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
   /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
   /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
-  /usr/include/c++/11/memory \
-  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/11/bits/align.h \
-  /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/shared_ptr.h \
-  /usr/include/c++/11/bits/shared_ptr_base.h \
-  /usr/include/c++/11/bits/allocated_ptr.h \
-  /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/ext/concurrence.h \
-  /usr/include/c++/11/bits/shared_ptr_atomic.h \
-  /usr/include/c++/11/bits/atomic_base.h \
-  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/11/bits/atomic_wait.h \
-  /usr/include/syscall.h \
-  /usr/include/x86_64-linux-gnu/sys/syscall.h \
-  /usr/include/x86_64-linux-gnu/asm/unistd.h \
-  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
-  /usr/include/x86_64-linux-gnu/bits/syscall.h \
-  /usr/include/c++/11/bits/std_mutex.h \
-  /usr/include/c++/11/backward/auto_ptr.h \
-  /usr/include/c++/11/bits/ranges_uninitialized.h \
-  /usr/include/c++/11/bits/ranges_algobase.h \
-  /usr/include/c++/11/bits/uses_allocator_args.h \
-  /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
   /usr/include/boost/archive/detail/helper_collection.hpp \
-  /usr/include/c++/11/algorithm \
-  /usr/include/c++/11/bits/ranges_algo.h \
-  /usr/include/c++/11/bits/ranges_util.h \
-  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
-  /usr/include/c++/11/functional \
-  /usr/include/c++/11/bits/std_function.h \
-  /usr/include/c++/11/unordered_map \
-  /usr/include/c++/11/bits/hashtable.h \
-  /usr/include/c++/11/bits/hashtable_policy.h \
-  /usr/include/c++/11/bits/enable_special_members.h \
-  /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/boost/smart_ptr/shared_ptr.hpp \
   /usr/include/boost/smart_ptr/detail/shared_count.hpp \
   /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
@@ -1463,7 +1601,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/archive/detail/basic_pointer_iserializer.hpp \
   /usr/include/boost/archive/detail/basic_serializer.hpp \
   /usr/include/boost/serialization/extended_type_info.hpp \
-  /usr/include/c++/11/cstdarg \
   /usr/include/boost/serialization/config.hpp \
   /usr/include/boost/archive/detail/interface_iarchive.hpp \
   /usr/include/boost/archive/detail/iserializer.hpp \
@@ -1520,9 +1657,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/archive/detail/basic_oserializer.hpp \
   /usr/include/boost/archive/detail/basic_pointer_oserializer.hpp \
   /usr/include/boost/serialization/set.hpp \
-  /usr/include/c++/11/set \
-  /usr/include/c++/11/bits/stl_set.h \
-  /usr/include/c++/11/bits/stl_multiset.h \
   /usr/include/boost/serialization/detail/stack_constructor.hpp \
   /usr/include/boost/aligned_storage.hpp \
   /usr/include/boost/serialization/collections_save_imp.hpp \
@@ -1689,7 +1823,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/iostreams/constants.hpp \
   /usr/include/boost/iostreams/output_sequence.hpp \
   /usr/include/boost/iostreams/detail/streambuf/indirect_streambuf.hpp \
-  /usr/include/c++/11/cassert \
   /usr/include/boost/iostreams/detail/adapter/concept_adapter.hpp \
   /usr/include/boost/iostreams/concepts.hpp \
   /usr/include/boost/iostreams/detail/default_arg.hpp \
@@ -1716,11 +1849,8 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
   /usr/include/boost/iostreams/stream.hpp \
   /usr/include/boost/iostreams/detail/iostream.hpp \
   /usr/include/boost/iostreams/device/back_inserter.hpp \
-  ../Tupla.h \
   ../Cluster.h \
-  /usr/include/c++/11/list \
-  /usr/include/c++/11/bits/stl_list.h \
-  /usr/include/c++/11/bits/list.tcc \
+  ../Tupla.h \
   ../Centroid.h \
   ../Point.h
 
@@ -1744,8 +1874,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/iostreams/detail/default_arg.hpp:
 
 /usr/include/boost/iostreams/detail/adapter/concept_adapter.hpp:
-
-/usr/include/c++/11/cassert:
 
 /usr/include/boost/iostreams/output_sequence.hpp:
 
@@ -1774,8 +1902,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/type_traits/has_plus.hpp:
 
 /usr/include/boost/range/detail/safe_bool.hpp:
-
-/usr/include/boost/iterator/iterator_adaptor.hpp:
 
 /usr/include/boost/range/reverse_iterator.hpp:
 
@@ -1821,8 +1947,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/preprocessor/seq/for_each_i.hpp:
 
-/usr/include/boost/concept/detail/concept_def.hpp:
-
 /usr/include/boost/concept/detail/has_constraints.hpp:
 
 /usr/include/boost/concept/detail/general.hpp:
@@ -1847,8 +1971,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/range/begin.hpp:
 
-/usr/include/boost/detail/indirect_traits.hpp:
-
 /usr/include/boost/iterator/iterator_categories.hpp:
 
 /usr/include/boost/iterator/detail/config_undef.hpp:
@@ -1864,8 +1986,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/range/functions.hpp:
 
 /usr/include/boost/range/iterator_range.hpp:
-
-/usr/include/boost/core/ref.hpp:
 
 /usr/include/boost/type_traits/add_const.hpp:
 
@@ -1897,12 +2017,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/preprocessor/repetition/enum_shifted_params.hpp:
 
-/usr/include/boost/iostreams/detail/buffer.hpp:
-
-/usr/include/boost/iostreams/detail/bool_trait_def.hpp:
-
-/usr/include/boost/preprocessor/iteration/iterate.hpp:
-
 /usr/include/boost/iostreams/detail/error.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h:
@@ -1917,8 +2031,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
 
-/usr/include/boost/iostreams/detail/config/limits.hpp:
-
 /usr/include/boost/iostreams/detail/forward.hpp:
 
 /usr/include/boost/iostreams/stream_buffer.hpp:
@@ -1926,14 +2038,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/serialization/collection_traits.hpp:
 
 /usr/include/boost/serialization/collections_save_imp.hpp:
-
-/usr/include/boost/preprocessor/repetition/for.hpp:
-
-/usr/include/boost/aligned_storage.hpp:
-
-/usr/include/c++/11/bits/stl_set.h:
-
-/usr/include/boost/archive/detail/basic_pointer_oserializer.hpp:
 
 /usr/include/boost/archive/detail/interface_oarchive.hpp:
 
@@ -1959,12 +2063,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/mpl/less_equal.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
-
-/usr/include/boost/utility/detail/result_of_iterate.hpp:
-
-/usr/include/boost/mpl/comparison.hpp:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/less.hpp:
 
 /usr/include/boost/mpl/less.hpp:
@@ -1972,8 +2070,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/serialization/version.hpp:
 
 /usr/include/boost/type_traits/has_new_operator.hpp:
-
-/usr/include/boost/type_traits/is_abstract.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
 
@@ -1986,8 +2082,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/iostreams/detail/call_traits.hpp:
 
 /usr/include/boost/preprocessor/comparison/not_equal.hpp:
-
-/usr/include/boost/preprocessor/logical/not.hpp:
 
 /usr/include/boost/preprocessor/comparison/less_equal.hpp:
 
@@ -2009,19 +2103,11 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/archive/detail/interface_iarchive.hpp:
 
-/usr/include/boost/iostreams/flush.hpp:
-
-/usr/include/boost/serialization/config.hpp:
-
 /usr/include/boost/archive/detail/basic_serializer.hpp:
-
-/usr/include/boost/type_traits/is_bounded_array.hpp:
 
 /usr/include/boost/iostreams/put.hpp:
 
 /usr/include/boost/type_traits/extent.hpp:
-
-/usr/include/boost/core/first_scalar.hpp:
 
 /usr/include/boost/core/alloc_construct.hpp:
 
@@ -2087,73 +2173,9 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
 
-/usr/include/boost/iostreams/detail/execute.hpp:
-
-/usr/include/c++/11/unordered_map:
-
-/usr/include/boost/preprocessor/seq/fold_left.hpp:
-
-/usr/include/c++/11/functional:
-
-/usr/include/c++/11/pstl/glue_algorithm_defs.h:
-
-/usr/include/c++/11/bits/ranges_util.h:
-
-/usr/include/c++/11/algorithm:
-
-/usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
-
-/usr/include/boost/serialization/item_version_type.hpp:
-
-/usr/include/c++/11/pstl/execution_defs.h:
-
-/usr/include/c++/11/pstl/glue_memory_defs.h:
-
-/usr/include/c++/11/bits/uses_allocator_args.h:
-
-/usr/include/c++/11/bits/ranges_uninitialized.h:
-
-/usr/include/boost/range/distance.hpp:
-
-/usr/include/c++/11/bits/std_mutex.h:
-
-/usr/include/boost/detail/call_traits.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
-
-/usr/include/x86_64-linux-gnu/sys/syscall.h:
-
-/usr/include/c++/11/bits/atomic_wait.h:
-
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/11/bits/refwrap.h:
-
-/usr/include/c++/11/bits/shared_ptr_base.h:
-
-/usr/include/c++/11/bits/shared_ptr.h:
-
-/usr/include/c++/11/bits/align.h:
-
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/11/memory:
-
 /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/syscall.h:
-
-/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
-
-/usr/include/c++/11/bits/hashtable.h:
-
-/usr/include/boost/core/checked_delete.hpp:
-
-/usr/include/boost/smart_ptr/scoped_ptr.hpp:
-
-/usr/include/boost/scoped_ptr.hpp:
 
 /usr/include/boost/archive/detail/basic_iarchive.hpp:
 
@@ -2169,17 +2191,11 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/config/abi_suffix.hpp:
 
-/usr/include/boost/archive/detail/abi_suffix.hpp:
-
 /usr/include/boost/type_traits/is_unbounded_array.hpp:
 
 /usr/include/boost/archive/archive_exception.hpp:
 
 /usr/include/boost/config/auto_link.hpp:
-
-/usr/include/boost/core/enable_if.hpp:
-
-/usr/include/boost/archive/detail/decl.hpp:
 
 /usr/include/boost/archive/detail/auto_link_archive.hpp:
 
@@ -2203,8 +2219,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
-/usr/include/boost/mpl/protect.hpp:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp:
 
 /usr/include/boost/mpl/aux_/common_name_wknd.hpp:
@@ -2225,25 +2239,93 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
 
-/usr/include/boost/archive/basic_binary_iprimitive.hpp:
-
-/usr/include/c++/11/array:
-
-/usr/include/c++/11/tr1/beta_function.tcc:
+/usr/include/boost/mpl/aux_/config/gpu.hpp:
 
 /usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
-/usr/include/c++/11/bits/stl_relops.h:
+/usr/include/boost/mpl/not.hpp:
 
-/usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h:
+/usr/include/boost/mpl/aux_/na_assert.hpp:
 
-/usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h:
+/usr/include/boost/mpl/arg_fwd.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+/usr/include/boost/mpl/placeholders.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
+
+/usr/include/boost/mpl/apply_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/default_params.hpp:
+
+/usr/include/boost/type_traits/has_minus_assign.hpp:
+
+/usr/include/boost/serialization/collection_size_type.hpp:
+
+/usr/include/boost/serialization/split_member.hpp:
+
+/usr/include/boost/serialization/detail/stack_constructor.hpp:
+
+/usr/include/boost/serialization/force_include.hpp:
+
+/usr/include/boost/type_traits/is_polymorphic.hpp:
+
+/usr/include/boost/serialization/base_object.hpp:
+
+/usr/include/boost/serialization/wrapper.hpp:
+
+/usr/include/boost/serialization/access.hpp:
+
+/usr/include/boost/type_traits/is_constructible.hpp:
+
+/usr/include/boost/type_traits/is_copy_constructible.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_copy.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_constructor.hpp:
+
+/usr/include/boost/type_traits/detail/is_function_cxx_11.hpp:
+
+/usr/include/boost/type_traits/is_function.hpp:
+
+/usr/include/boost/type_traits/is_lvalue_reference.hpp:
+
+/usr/include/boost/serialization/extended_type_info_typeid.hpp:
+
+/usr/include/boost/type_traits/is_reference.hpp:
+
+/usr/include/boost/type_traits/is_assignable.hpp:
+
+/usr/include/boost/type_traits/is_const.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_assign.hpp:
+
+/usr/include/boost/serialization/strong_typedef.hpp:
+
+/usr/include/boost/iostreams/detail/optional.hpp:
+
+/usr/include/boost/serialization/split_free.hpp:
+
+/usr/include/boost/serialization/traits.hpp:
+
+/usr/include/boost/serialization/type_info_implementation.hpp:
+
+/usr/include/boost/serialization/tracking_enum.hpp:
 
 /usr/include/boost/type_traits/is_pointer.hpp:
 
-/usr/include/c++/11/tr1/riemann_zeta.tcc:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
+
+/usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
+
+/usr/include/boost/mpl/aux_/config/forwarding.hpp:
+
+/usr/include/boost/iostreams/detail/is_dereferenceable.hpp:
+
+/usr/include/boost/checked_delete.hpp:
+
+/usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
 
 /usr/include/boost/archive/binary_oarchive_impl.hpp:
 
@@ -2253,11 +2335,217 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/mpl/aux_/has_tag.hpp:
 
-/usr/include/c++/11/tr1/legendre_function.tcc:
+/usr/include/boost/mpl/void.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+/usr/include/boost/archive/detail/oserializer.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+/usr/include/boost/mpl/tag.hpp:
+
+/usr/include/boost/iostreams/detail/resolve.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
+
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
+
+/usr/include/boost/smart_ptr/detail/sp_forward.hpp:
+
+/usr/include/boost/mpl/aux_/msvc_never_true.hpp:
+
+/usr/include/boost/smart_ptr/detail/operator_bool.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum_params.hpp:
+
+/usr/include/boost/preprocessor/array/size.hpp:
+
+/usr/include/boost/mpl/aux_/config/arrays.hpp:
+
+/usr/include/boost/mpl/has_xxx.hpp:
+
+/usr/include/boost/mpl/apply_wrap.hpp:
+
+/usr/include/boost/utility.hpp:
+
+/usr/include/boost/mpl/numeric_cast.hpp:
+
+/usr/include/boost/mpl/aux_/numeric_op.hpp:
+
+/usr/include/boost/mpl/aux_/comparison_op.hpp:
+
+/usr/include/boost/mpl/aux_/template_arity.hpp:
+
+/usr/include/boost/mpl/identity.hpp:
+
+/usr/include/boost/serialization/tracking.hpp:
+
+/usr/include/boost/serialization/level_enum.hpp:
+
+/usr/include/boost/mpl/integral_c.hpp:
+
+/usr/include/boost/detail/select_type.hpp:
+
+/usr/include/boost/mpl/aux_/lambda_support.hpp:
+
+/usr/include/boost/mpl/and.hpp:
+
+/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+
+/usr/include/boost/preprocessor/variadic/elem.hpp:
+
+/usr/include/boost/iostreams/detail/is_iterator_range.hpp:
+
+/usr/include/boost/move/core.hpp:
+
+/usr/include/boost/smart_ptr/detail/spinlock.hpp:
+
+/usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
+
+/usr/include/boost/preprocessor/facilities/overload.hpp:
+
+/usr/include/boost/preprocessor/seq/enum.hpp:
+
+/usr/include/boost/preprocessor/facilities/expand.hpp:
+
+/usr/include/boost/preprocessor/tuple/elem.hpp:
+
+/usr/include/boost/preprocessor/list/reverse.hpp:
+
+/usr/include/boost/range/iterator.hpp:
+
+/usr/include/boost/mpl/assert.hpp:
+
+/usr/include/boost/serialization/serialization.hpp:
+
+/usr/include/boost/preprocessor/list/fold_right.hpp:
+
+/usr/include/boost/preprocessor/logical/compl.hpp:
+
+/usr/include/boost/preprocessor/detail/check.hpp:
+
+/usr/include/boost/mpl/aux_/type_wrapper.hpp:
+
+/usr/include/boost/preprocessor/list/adt.hpp:
+
+/usr/include/boost/archive/detail/basic_iserializer.hpp:
+
+/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
+
+/usr/include/boost/preprocessor/control/while.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/dec.hpp:
+
+/usr/include/boost/range/rend.hpp:
+
+/usr/include/boost/mpl/quote.hpp:
+
+/usr/include/boost/preprocessor/identity.hpp:
+
+/usr/include/boost/type_traits/is_member_function_pointer.hpp:
+
+/usr/include/boost/preprocessor/logical/bitand.hpp:
+
+/usr/include/boost/preprocessor/logical/and.hpp:
+
+/usr/include/boost/mpl/limits/arity.hpp:
+
+/usr/include/boost/range/detail/extract_optional_type.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+
+/usr/include/boost/preprocessor/tuple/eat.hpp:
+
+/usr/include/boost/preprocessor/debug/error.hpp:
+
+/usr/include/boost/iostreams/detail/config/fpos.hpp:
+
+/usr/include/boost/preprocessor/repetition/repeat.hpp:
+
+/usr/include/boost/preprocessor/repeat.hpp:
+
+/usr/include/boost/mpl/integral_c_fwd.hpp:
+
+/usr/include/boost/preprocessor/logical/bool.hpp:
+
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
+
+/usr/include/boost/mpl/aux_/arg_typedef.hpp:
+
+/usr/include/boost/preprocessor/comma_if.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
+
+/usr/include/boost/preprocessor/seq/size.hpp:
+
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
+
+/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
+
+/usr/include/boost/type_traits/is_scalar.hpp:
+
+/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
+
+/usr/include/boost/mpl/aux_/nttp_decl.hpp:
+
+/usr/include/boost/mpl/int_fwd.hpp:
+
+/usr/include/boost/mpl/int.hpp:
+
+/usr/include/boost/smart_ptr/detail/sp_has_gcc_intrinsics.hpp:
+
+/usr/include/boost/mpl/aux_/config/ttp.hpp:
+
+/usr/include/boost/mpl/aux_/config/ctps.hpp:
+
+/usr/include/boost/mpl/aux_/na_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/config/static_constant.hpp:
+
+/usr/include/boost/preprocessor/punctuation/comma.hpp:
+
+/usr/include/boost/mpl/integral_c_tag.hpp:
+
+/usr/include/boost/iostreams/concepts.hpp:
+
+/usr/include/boost/mpl/aux_/na.hpp:
+
+/usr/include/boost/mpl/aux_/config/eti.hpp:
+
+/usr/include/boost/smart_ptr/detail/sp_thread_pause.hpp:
+
+/usr/include/boost/mpl/aux_/config/integral.hpp:
+
+/usr/include/boost/serialization/assume_abstract.hpp:
+
+/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/usr/include/boost/mpl/if.hpp:
+
+/usr/include/boost/range/empty.hpp:
+
+/usr/include/boost/mpl/eval_if.hpp:
+
+/usr/include/boost/type_traits/remove_cv.hpp:
+
+/usr/include/boost/type_traits/is_base_and_derived.hpp:
+
+/usr/include/boost/config/abi_prefix.hpp:
+
+/usr/include/boost/type_traits/is_class.hpp:
+
+/usr/include/c++/11/tr1/riemann_zeta.tcc:
+
+/usr/include/boost/detail/indirect_traits.hpp:
+
+/usr/include/c++/11/memory_resource:
+
+/usr/include/c++/11/tr1/beta_function.tcc:
+
+/usr/include/c++/11/array:
 
 /usr/include/c++/11/limits:
 
@@ -2266,12 +2554,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/c++/11/bits/specfun.h:
 
 /usr/include/boost/archive/binary_iarchive.hpp:
-
-/usr/include/boost/detail/is_incrementable.hpp:
-
-/usr/include/c++/11/bits/stl_map.h:
-
-/usr/include/boost/mpl/aux_/na_fwd.hpp:
 
 /usr/include/c++/11/bits/stl_list.h:
 
@@ -2283,39 +2565,87 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/postypes.h:
 
-/usr/include/boost/preprocessor/tuple/elem.hpp:
+/usr/include/c++/11/stop_token:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-/usr/include/c++/11/cstring:
+/usr/include/boost/iostreams/detail/char_traits.hpp:
 
-/usr/include/boost/mpl/aux_/config/ctps.hpp:
+/usr/include/boost/type_traits/is_complete.hpp:
 
-/usr/include/boost/mpl/void.hpp:
+/usr/include/boost/preprocessor/detail/auto_rec.hpp:
 
-/usr/include/c++/11/sstream:
+/usr/include/c++/11/string_view:
 
-/usr/include/boost/mpl/aux_/config/gcc.hpp:
+/usr/include/boost/type_traits/is_pod.hpp:
 
-/usr/include/boost/smart_ptr/detail/sp_has_gcc_intrinsics.hpp:
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/usr/include/boost/mpl/aux_/config/ttp.hpp:
+/usr/include/boost/range/detail/sfinae.hpp:
+
+/usr/include/c++/11/string:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+
+/usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
+
+/usr/include/c++/11/debug/debug.h:
+
+/usr/include/boost/type_traits/remove_extent.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+
+/usr/include/c++/11/climits:
+
+/usr/include/c++/11/new:
+
+/usr/include/boost/mpl/aux_/value_wknd.hpp:
+
+/usr/include/c++/11/bits/sstream.tcc:
+
+/usr/include/boost/preprocessor/variadic/size.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+
+/usr/include/c++/11/cfloat:
+
+/usr/include/c++/11/tr1/legendre_function.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/boost/type_traits/add_rvalue_reference.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/stdc++.h:
+
+/usr/include/boost/iostreams/detail/config/overload_resolution.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/c++/11/regex:
+
+/usr/include/c++/11/stdlib.h:
 
 ../Tupla.cpp:
 
-/usr/include/c++/11/set:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+/usr/include/c++/11/bits/stl_deque.h:
 
 ../Point.cpp:
+
+/usr/include/boost/preprocessor/seq/fold_left.hpp:
+
+/usr/include/c++/11/functional:
 
 ../Point.h:
 
 /usr/include/boost/concept/usage.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
 /usr/include/boost/core/use_default.hpp:
 
@@ -2327,12 +2657,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/fstream.tcc:
 
-/usr/include/boost/range/rend.hpp:
-
-/usr/include/boost/mpl/quote.hpp:
-
-/usr/include/boost/preprocessor/identity.hpp:
-
 /usr/include/boost/type_traits/add_pointer.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
@@ -2341,25 +2665,39 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
+/usr/include/boost/smart_ptr/allocate_shared_array.hpp:
+
+/usr/include/boost/mpl/aux_/config/has_apply.hpp:
+
+/usr/include/limits.h:
+
+/usr/include/c++/11/bits/stl_relops.h:
+
+/usr/include/c++/11/bits/regex_compiler.tcc:
+
 /usr/include/c++/11/bits/istream.tcc:
+
+/usr/include/c++/11/bits/regex_scanner.h:
 
 /usr/include/c++/11/istream:
 
-/usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
+/usr/include/boost/preprocessor/facilities/empty.hpp:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/c++/11/bits/codecvt.h:
 
-/usr/include/boost/preprocessor/variadic/elem.hpp:
+/usr/include/boost/preprocessor/control/iif.hpp:
+
+/usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
 /usr/include/c++/11/cwctype:
 
+/usr/include/semaphore.h:
+
 /usr/include/c++/11/tr1/poly_hermite.tcc:
-
-/usr/include/boost/serialization/assume_abstract.hpp:
-
-/usr/include/boost/mpl/aux_/static_cast.hpp:
 
 /usr/include/boost/serialization/factory.hpp:
 
@@ -2367,25 +2705,33 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/exception.h:
 
+/usr/include/boost/type_traits/declval.hpp:
+
+/usr/include/c++/11/tr1/bessel_function.tcc:
+
 /usr/include/string.h:
 
 /usr/include/boost/range/end.hpp:
 
 /usr/include/c++/11/stdexcept:
 
-/usr/include/c++/11/utility:
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/boost/serialization/static_warning.hpp:
 
 /usr/include/c++/11/ios:
 
-/usr/include/boost/mpl/aux_/has_apply.hpp:
+/usr/include/c++/11/utility:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/boost/config/workaround.hpp:
+/usr/include/boost/archive/detail/register_archive.hpp:
 
-/usr/include/boost/mpl/aux_/config/gpu.hpp:
+/usr/include/boost/mpl/arg.hpp:
+
+/usr/include/c++/11/bits/node_handle.h:
+
+/usr/include/boost/config/workaround.hpp:
 
 /usr/include/boost/config/detail/suffix.hpp:
 
@@ -2397,13 +2743,13 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/locale_classes.h:
 
-/usr/include/c++/11/bits/ranges_algobase.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
 /usr/include/boost/ref.hpp:
 
 /usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/boost/core/first_scalar.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
 
 /usr/include/boost/iterator/reverse_iterator.hpp:
 
@@ -2419,7 +2765,7 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/include/c++/11/bits/stl_vector.h:
+/usr/include/c++/11/bits/fs_fwd.h:
 
 /usr/include/boost/iostreams/detail/adapter/output_iterator_adapter.hpp:
 
@@ -2430,10 +2776,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/c++/11/bits/basic_string.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
-
-/usr/include/boost/range/empty.hpp:
-
-/usr/include/boost/mpl/eval_if.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
@@ -2447,6 +2789,10 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
+/usr/include/boost/mpl/greater.hpp:
+
+/usr/include/wctype.h:
+
 /usr/include/sched.h:
 
 /usr/include/boost/archive/basic_binary_oprimitive.hpp:
@@ -2454,6 +2800,12 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/boost/config/user.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/boost/utility/detail/result_of_iterate.hpp:
+
+/usr/include/boost/mpl/comparison.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
 
 /usr/include/boost/iostreams/detail/dispatch.hpp:
 
@@ -2463,21 +2815,29 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/stdio.h:
 
-/usr/include/boost/mpl/int_fwd.hpp:
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intercomm_inln.h:
 
 /usr/include/c++/11/cstdio:
 
 /usr/include/c++/11/bits/max_size_type.h:
 
+/usr/include/c++/11/bits/align.h:
+
 /usr/include/c++/11/bits/string_view.tcc:
 
-/usr/include/boost/iostreams/detail/config/unreachable_return.hpp:
+/usr/include/boost/preprocessor/control/detail/while.hpp:
 
-/usr/include/c++/11/bits/allocated_ptr.h:
+/usr/include/boost/archive/binary_iarchive_impl.hpp:
 
-/usr/include/assert.h:
+/usr/include/boost/type_traits/is_volatile.hpp:
 
-/usr/include/boost/mpl/placeholders.hpp:
+/usr/include/boost/integer_fwd.hpp:
 
 /usr/include/c++/11/bits/hash_bytes.h:
 
@@ -2488,8 +2848,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 ../Cluster.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
 
 /usr/include/boost/mpl/bool.hpp:
 
@@ -2503,23 +2861,9 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
-/usr/include/boost/mpl/limits/arity.hpp:
-
-/usr/include/c++/11/bits/invoke.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/boost/preprocessor/facilities/empty.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/boost/type_traits/is_constructible.hpp:
-
-/usr/include/boost/mpl/aux_/na_assert.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/boost/mpl/not.hpp:
 
 /usr/include/boost/iostreams/detail/config/disable_warnings.hpp:
 
@@ -2537,41 +2881,29 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/datatype.h:
 
-/usr/include/boost/serialization/split_member.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
 /usr/include/boost/type_traits/is_fundamental.hpp:
 
-/usr/include/boost/range/detail/sfinae.hpp:
-
-/usr/include/c++/11/string:
-
-/usr/include/boost/type_traits/is_pod.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
+/usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
+
+/usr/include/c++/11/bits/list.tcc:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/boost/iostreams/detail/is_iterator_range.hpp:
-
-/usr/include/boost/move/core.hpp:
-
-/usr/include/boost/smart_ptr/detail/spinlock.hpp:
-
-/usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
 
 /usr/include/boost/serialization/set.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/include/boost/integer_fwd.hpp:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/include/boost/type_traits/is_volatile.hpp:
+/usr/include/c++/11/bits/range_access.h:
 
 /usr/include/boost/preprocessor/comparison/greater.hpp:
 
@@ -2583,9 +2915,15 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 
+/usr/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp:
+
+/usr/include/c++/11/future:
+
 /usr/include/c++/11/initializer_list:
 
 /usr/include/c++/11/iosfwd:
+
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
 
@@ -2593,11 +2931,17 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
-/usr/include/c++/11/map:
+/usr/include/boost/iterator/iterator_adaptor.hpp:
+
+/usr/include/c++/11/bits/regex.tcc:
 
 /usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
+
+/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
@@ -2605,9 +2949,7 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
-/usr/include/x86_64-linux-gnu/asm/unistd.h:
-
-/usr/include/c++/11/bits/locale_facets.tcc:
+/usr/include/c++/11/bits/this_thread_sleep.h:
 
 /usr/include/boost/core/noinit_adaptor.hpp:
 
@@ -2621,15 +2963,19 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/stl_function.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
+/usr/include/c++/11/cxxabi.h:
 
-/usr/include/c++/11/bits/list.tcc:
+/usr/include/boost/mpl/aux_/arity_spec.hpp:
 
-/usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
+/usr/include/c++/11/concepts:
 
-/usr/include/c++/11/bits/atomic_base.h:
+/usr/include/boost/mpl/aux_/config/has_xxx.hpp:
 
-../Tupla.h:
+/usr/include/c++/11/bits/stl_pair.h:
+
+/usr/include/boost/operators.hpp:
+
+/usr/include/c++/11/bits/allocator.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -2651,6 +2997,16 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/concept_check.h:
 
+/usr/include/boost/mpl/always.hpp:
+
+/usr/include/linux/limits.h:
+
+/usr/include/boost/iostreams/optimal_buffer_size.hpp:
+
+/usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/c++/11/bits/shared_ptr_base.h:
+
 /usr/include/stdint.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
@@ -2659,13 +3015,9 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/erase_if.h:
 
-/usr/include/boost/serialization/access.hpp:
-
 /usr/include/ctype.h:
 
 /usr/include/c++/11/locale:
-
-../Cluster.cpp:
 
 /usr/include/boost/preprocessor/slot/detail/def.hpp:
 
@@ -2673,27 +3025,15 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/usr/include/c++/11/new:
-
-/usr/include/boost/mpl/aux_/value_wknd.hpp:
-
-/usr/include/c++/11/bits/sstream.tcc:
-
-/usr/include/c++/11/climits:
-
 /usr/include/boost/iterator/detail/config_def.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/boost/type_traits/add_rvalue_reference.hpp:
+/usr/include/boost/serialization/void_cast_fwd.hpp:
 
-/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
+/usr/include/c++/11/bits/ostream.tcc:
 
 /usr/include/c++/11/clocale:
-
-/usr/include/boost/iostreams/input_sequence.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/errhandler.h:
 
 /usr/include/errno.h:
 
@@ -2709,59 +3049,63 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/pstl/pstl_config.h:
 
-/usr/include/boost/mpl/aux_/template_arity.hpp:
+/usr/include/c++/11/span:
 
-/usr/include/boost/mpl/identity.hpp:
+/usr/include/boost/iterator/iterator_concepts.hpp:
 
-/usr/include/boost/smart_ptr/detail/operator_bool.hpp:
+/usr/include/boost/mpl/aux_/arity.hpp:
 
-/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/c++/11/typeindex:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h:
 
 /usr/include/boost/archive/detail/helper_collection.hpp:
 
 /usr/include/c++/11/tr1/special_function_util.h:
 
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
+
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/boost/iostreams/detail/ios.hpp:
+/usr/include/boost/mpl/aux_/config/pp_counter.hpp:
 
-/usr/include/c++/11/tuple:
-
-/usr/include/boost/smart_ptr/make_shared.hpp:
-
-/usr/include/c++/11/bits/stl_tree.h:
-
-/usr/include/boost/type_traits/is_signed.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h:
-
-/usr/include/c++/11/bits/stream_iterator.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intercomm_inln.h:
-
-/usr/include/c++/11/bits/stl_multimap.h:
-
-/usr/include/boost/serialization/strong_typedef.hpp:
+/usr/include/c++/11/cstdint:
 
 /usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
 
 /usr/include/features.h:
 
+/usr/include/boost/iostreams/detail/config/gcc.hpp:
+
+/usr/include/boost/preprocessor/inc.hpp:
+
+/usr/include/c++/11/bits/iterator_concepts.h:
+
+/usr/include/boost/type_traits/is_convertible.hpp:
+
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigstack.h:
+
+/usr/include/c++/11/ext/numeric_traits.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/c++/11/ctime:
+/usr/include/boost/preprocessor/arithmetic/inc.hpp:
+
+/usr/include/c++/11/bits/stl_iterator.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/11/bits/regex_executor.tcc:
 
 /usr/include/c++/11/streambuf:
 
@@ -2769,27 +3113,29 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/status.h:
 
-/usr/include/boost/mpl/int.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
-/usr/include/boost/preprocessor/arithmetic/dec.hpp:
+/usr/include/boost/type_traits/is_abstract.hpp:
 
-/usr/include/math.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/c++/11/bits/charconv.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
-
-/usr/include/c++/11/bits/exception_ptr.h:
+/usr/include/c++/11/cstdbool:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/c++/11/ext/string_conversions.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
+/usr/include/c++/11/cstring:
 
-/usr/include/boost/mpl/has_xxx.hpp:
+/usr/include/c++/11/bits/atomic_futex.h:
+
+/usr/include/c++/11/bits/regex_automaton.tcc:
+
+/usr/include/boost/preprocessor/array/elem.hpp:
+
+/usr/include/c++/11/list:
+
+/usr/include/c++/11/bits/uses_allocator_args.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
@@ -2803,7 +3149,11 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/ranges_cmp.h:
 
+/usr/include/c++/11/ccomplex:
+
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/c++/11/bits/forward_list.tcc:
 
 ../kmeans_parallel.cpp:
 
@@ -2811,25 +3161,35 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/exception_defines.h:
 
+/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
 /usr/include/c++/11/ext/type_traits.h:
+
+/usr/include/boost/preprocessor/control/if.hpp:
+
+/usr/include/c++/11/bits/streambuf.tcc:
+
+/usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
 /usr/include/endian.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
+/usr/include/boost/preprocessor/logical/not.hpp:
+
+/usr/include/c++/11/bits/std_thread.h:
+
 /usr/include/c++/11/tr1/exp_integral.tcc:
 
-/usr/include/boost/preprocessor/list/reverse.hpp:
+/usr/include/c++/11/bits/shared_ptr.h:
 
 /usr/include/c++/11/bits/ranges_base.h:
 
 /usr/include/pthread.h:
-
-/usr/include/boost/preprocessor/punctuation/comma.hpp:
-
-/usr/include/boost/mpl/integral_c_tag.hpp:
-
-/usr/include/boost/serialization/base_object.hpp:
 
 /usr/include/boost/mpl/aux_/yes_no.hpp:
 
@@ -2839,19 +3199,21 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
-/usr/include/boost/mpl/arg_fwd.hpp:
+/usr/include/c++/11/bits/fs_path.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/c++/11/ext/atomicity.h:
+/usr/include/boost/preprocessor/detail/is_binary.hpp:
 
-/usr/include/boost/serialization/level_enum.hpp:
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/c++/11/ext/atomicity.h:
 
 /usr/include/c++/11/compare:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/info_inln.h:
 
@@ -2859,13 +3221,7 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/boost/type_traits/has_minus_assign.hpp:
-
-/usr/include/boost/serialization/collection_size_type.hpp:
-
 /usr/include/c++/11/cwchar:
-
-/usr/include/boost/mpl/aux_/config/arrays.hpp:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -2875,17 +3231,17 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
+/usr/include/c++/11/bits/forward_list.h:
+
+/usr/include/c++/11/coroutine:
+
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/boost/iterator/iterator_concepts.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/boost/mpl/aux_/arity.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/c++/11/unordered_set:
 
 /usr/include/boost/concept/assert.hpp:
 
@@ -2895,9 +3251,9 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/c++/11/system_error:
-
 /usr/include/features-time64.h:
+
+/usr/include/c++/11/system_error:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
@@ -2907,23 +3263,19 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/smart_ptr/detail/local_counted_base.hpp:
 
+/usr/include/c++/11/complex:
+
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
+/usr/include/c++/11/cassert:
+
 /usr/include/c++/11/bits/stl_algo.h:
-
-/usr/include/boost/preprocessor/debug/error.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/c++/11/bits/range_access.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/boost/range/algorithm/equal.hpp:
 
 /usr/include/c++/11/cctype:
 
-/usr/include/boost/serialization/tracking.hpp:
+/usr/include/c++/11/iomanip:
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
@@ -2941,6 +3293,16 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/locale.h:
 
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/c++/11/pstl/glue_numeric_defs.h:
+
+/usr/include/boost/preprocessor/facilities/identity.hpp:
+
+/usr/include/c++/11/tr1/modified_bessel_func.tcc:
+
 /usr/include/boost/mpl/bool_fwd.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -2955,7 +3317,21 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/backward/binders.h:
 
+/usr/include/c++/11/cfenv:
+
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
+
+/usr/include/boost/range/distance.hpp:
+
+/usr/include/c++/11/bits/std_mutex.h:
+
+/usr/include/boost/config/pragma_message.hpp:
+
+/usr/include/boost/preprocessor/list/fold_left.hpp:
+
+/usr/include/boost/mpl/void_fwd.hpp:
+
+/usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/11/cstdlib:
 
@@ -2965,12 +3341,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/win_inln.h:
 
-/usr/include/boost/preprocessor/cat.hpp:
-
-/usr/include/c++/11/bits/stl_pair.h:
-
-/usr/include/boost/mpl/aux_/config/has_xxx.hpp:
-
 /usr/include/boost/smart_ptr/make_shared_object.hpp:
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
@@ -2979,17 +3349,27 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/wchar.h:
 
-/usr/include/boost/mpl/aux_/preprocessor/default_params.hpp:
+/usr/include/boost/iostreams/detail/config/unreachable_return.hpp:
 
-/usr/include/boost/iostreams/detail/config/overload_resolution.hpp:
+/usr/include/c++/11/codecvt:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
+/usr/include/assert.h:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
+
+/usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
+
+/usr/include/boost/serialization/item_version_type.hpp:
+
+/usr/include/c++/11/pstl/execution_defs.h:
 
 /usr/include/boost/concept_check.hpp:
 
@@ -2999,25 +3379,479 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/ext/new_allocator.h:
 
+/usr/include/c++/11/bits/ranges_uninitialized.h:
+
+/usr/include/x86_64-linux-gnu/bits/semaphore.h:
+
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/alloca.h:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/c++/11/bits/std_function.h:
+
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/boost/iostreams/optimal_buffer_size.hpp:
+/usr/include/c++/11/bits/ranges_util.h:
 
-/usr/include/c++/11/bits/basic_string.h:
+/usr/include/math.h:
 
-/usr/include/boost/mpl/always.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/include/linux/limits.h:
+/usr/include/c++/11/bits/charconv.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
+
+/usr/include/c++/11/bits/exception_ptr.h:
+
+/usr/include/setjmp.h:
+
+/usr/include/boost/type_traits/is_default_constructible.hpp:
+
+/usr/include/c++/11/bits/ranges_algo.h:
+
+/usr/include/c++/11/csignal:
+
+/usr/include/c++/11/pstl/glue_memory_defs.h:
+
+/usr/include/boost/core/enable_if.hpp:
+
+/usr/include/boost/archive/detail/decl.hpp:
+
+/usr/include/c++/11/forward_list:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/signal.h:
+
+/usr/include/strings.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/include/boost/preprocessor/cat.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/fenv.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
+/usr/include/boost/mpl/aux_/na_spec.hpp:
+
+/usr/include/boost/serialization/throw_exception.hpp:
+
+/usr/include/boost/type_traits/is_bounded_array.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
+
+/usr/include/boost/scoped_ptr.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
+../Cluster.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
+
+/usr/include/boost/type_traits/remove_reference.hpp:
+
+/usr/include/boost/preprocessor/array/data.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/functions_inln.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
+
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:
+
+/usr/include/boost/type_traits/is_enum.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/c++/11/bits/ranges_algobase.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/boost/utility/result_of.hpp:
+
+/usr/include/c++/11/bits/functexcept.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/boost/archive/detail/basic_oserializer.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/boost/mpl/protect.hpp:
+
+/usr/include/c++/11/chrono:
+
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/c++/11/ctime:
+
+/usr/include/c++/11/sstream:
+
+/usr/include/boost/detail/call_traits.hpp:
+
+/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
+
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
+
+/usr/include/c++/11/bits/stl_queue.h:
+
+/usr/include/fenv.h:
+
+/usr/include/c++/11/cinttypes:
+
+/usr/include/c++/11/bits/indirect_array.h:
+
+/usr/include/boost/mpl/lambda_fwd.hpp:
+
+/usr/include/inttypes.h:
+
+/usr/include/c++/11/cstdalign:
+
+/usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/x86_64-linux-gnu/asm/unistd.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h:
+
+/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
+
+/usr/include/c++/11/ctgmath:
+
+/usr/include/c++/11/bits/fs_dir.h:
+
+/usr/include/c++/11/cuchar:
+
+/usr/include/c++/11/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+
+/usr/include/c++/11/algorithm:
+
+/usr/include/c++/11/bits/regex_scanner.tcc:
+
+/usr/include/c++/11/bits/stream_iterator.h:
+
+/usr/include/boost/type_traits/is_signed.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h:
+
+/usr/include/c++/11/bits/invoke.h:
+
+/usr/include/boost/iostreams/detail/ios.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+
+/usr/include/c++/11/tuple:
+
+/usr/include/c++/11/bits/unique_lock.h:
+
+/usr/include/boost/archive/basic_binary_iprimitive.hpp:
+
+/usr/include/c++/11/bits/refwrap.h:
+
+/usr/include/boost/iostreams/detail/execute.hpp:
+
+/usr/include/c++/11/unordered_map:
+
+/usr/include/boost/mpl/aux_/config/msvc.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intercomm.h:
+
+/usr/include/boost/core/checked_delete.hpp:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/boost/type_traits/is_destructible.hpp:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bitset:
+
+/usr/include/boost/iostreams/input_sequence.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/errhandler.h:
+
+/usr/include/c++/11/deque:
+
+/usr/include/boost/iterator/interoperable.hpp:
+
+/usr/include/boost/type_traits/enable_if.hpp:
+
+/usr/include/boost/config/compiler/gcc.hpp:
+
+/usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/boost/iostreams/device/array.hpp:
+
+/usr/include/c++/11/bits/locale_facets_nonio.h:
+
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
+/usr/include/c++/11/bits/char_traits.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/libintl.h:
+
+/usr/include/boost/serialization/is_bitwise_serializable.hpp:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+/usr/include/boost/preprocessor/arithmetic/mod.hpp:
+
+/usr/include/c++/11/bits/locale_conv.h:
+
+/usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
+
+/usr/include/boost/config/platform/linux.hpp:
+
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/include/c++/11/any:
+
+/usr/include/c++/11/map:
+
+/usr/include/boost/smart_ptr/make_shared.hpp:
+
+/usr/include/c++/11/bits/stl_tree.h:
+
+/usr/include/boost/serialization/array_optimization.hpp:
+
+/usr/include/syscall.h:
+
+/usr/include/boost/detail/is_incrementable.hpp:
+
+/usr/include/uchar.h:
+
+/usr/include/c++/11/bits/stl_map.h:
+
+/usr/include/c++/11/bits/stl_multimap.h:
+
+/usr/include/c++/11/memory:
+
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
+
+/usr/include/boost/mpl/aux_/config/lambda.hpp:
+
+/usr/include/boost/type_traits/is_same.hpp:
+
+/usr/include/c++/11/ext/concurrence.h:
+
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/boost/iostreams/flush.hpp:
+
+/usr/include/boost/serialization/config.hpp:
+
+/usr/include/c++/11/queue:
+
+/usr/include/c++/11/bits/regex.h:
+
+../Tupla.h:
+
+/usr/include/c++/11/bits/random.tcc:
+
+/usr/include/c++/11/bits/atomic_base.h:
+
+/usr/include/c++/11/syncstream:
+
+/usr/include/c++/11/bits/valarray_array.tcc:
+
+/usr/include/c++/11/bits/atomic_wait.h:
+
+/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
+
+/usr/include/x86_64-linux-gnu/sys/syscall.h:
+
+/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
+
+/usr/include/c++/11/numeric:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/c++/11/bits/stl_numeric.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/c++/11/set:
+
+/usr/include/c++/11/bits/stl_set.h:
+
+/usr/include/c++/11/bits/gslice_array.h:
+
+/usr/include/boost/type_traits/is_rvalue_reference.hpp:
+
+/usr/include/c++/11/bits/stl_multiset.h:
+
+/usr/include/c++/11/stack:
+
+/usr/include/boost/preprocessor/iteration/local.hpp:
+
+/usr/include/boost/type_traits/is_array.hpp:
+
+/usr/include/c++/11/bits/stl_stack.h:
+
+/usr/include/c++/11/valarray:
+
+/usr/include/c++/11/bits/valarray_array.h:
+
+/usr/include/boost/iostreams/detail/config/limits.hpp:
+
+/usr/include/c++/11/bits/slice_array.h:
+
+/usr/include/c++/11/bits/valarray_after.h:
+
+/usr/include/boost/preprocessor/repetition/for.hpp:
+
+/usr/include/boost/aligned_storage.hpp:
+
+/usr/include/c++/11/bits/gslice.h:
+
+/usr/include/c++/11/bits/mask_array.h:
+
+/usr/include/c++/11/ratio:
+
+/usr/include/boost/core/ref.hpp:
+
+/usr/include/c++/11/thread:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/op_inln.h:
+
+/usr/include/c++/11/bits/parse_numbers.h:
+
+/usr/include/c++/11/semaphore:
+
+/usr/include/boost/archive/detail/basic_pointer_oserializer.hpp:
+
+/usr/include/c++/11/bits/semaphore_base.h:
+
+/usr/include/c++/11/ciso646:
+
+/usr/include/c++/11/bits/atomic_timed_wait.h:
+
+/usr/include/boost/smart_ptr/scoped_ptr.hpp:
+
+/usr/include/c++/11/mutex:
+
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
+
+/usr/include/c++/11/iterator:
+
+/usr/include/boost/config/detail/posix_features.hpp:
+
+/usr/include/boost/preprocessor/tuple/rem.hpp:
+
+/usr/include/c++/11/random:
+
+/usr/include/boost/mpl/aux_/has_apply.hpp:
+
+/usr/include/c++/11/bits/random.h:
+
+/usr/include/c++/11/bits/regex_constants.h:
+
+/usr/include/boost/archive/detail/abi_suffix.hpp:
+
+/usr/include/c++/11/atomic:
+
+/usr/include/c++/11/bits/regex_error.h:
+
+/usr/include/c++/11/bits/regex_automaton.h:
+
+/usr/include/c++/11/bits/regex_compiler.h:
+
+/usr/include/c++/11/bits/regex_executor.h:
+
+/usr/include/c++/11/scoped_allocator:
+
+/usr/include/c++/11/bits/stl_vector.h:
+
+/usr/include/c++/11/csetjmp:
+
+/usr/include/c++/11/bits/unordered_set.h:
+
+/usr/include/c++/11/shared_mutex:
+
+/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
+
+/usr/include/boost/mpl/aux_/config/intel.hpp:
+
+/usr/include/c++/11/charconv:
+
+/usr/include/c++/11/filesystem:
+
+/usr/include/c++/11/bits/fs_ops.h:
+
+/usr/include/boost/mpl/next.hpp:
+
+/usr/include/boost/preprocessor/stringize.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+
+/usr/include/c++/11/condition_variable:
+
+/usr/include/c++/11/optional:
+
+/usr/include/c++/11/variant:
+
+/usr/include/boost/preprocessor/empty.hpp:
+
+/usr/include/c++/11/barrier:
+
+/usr/include/boost/version.hpp:
+
+/usr/include/boost/range/config.hpp:
+
+/usr/include/boost/mpl/aux_/config/nttp.hpp:
+
+/usr/include/c++/11/latch:
+
+/usr/include/boost/iostreams/detail/buffer.hpp:
+
+/usr/include/boost/iostreams/detail/bool_trait_def.hpp:
+
+/usr/include/boost/preprocessor/iteration/iterate.hpp:
+
+/usr/include/c++/11/ranges:
+
+/usr/include/boost/concept/detail/concept_def.hpp:
+
+/usr/include/c++/11/source_location:
+
+/usr/include/c++/11/version:
 
 /usr/include/boost/archive/detail/basic_pointer_iserializer.hpp:
+
+/usr/include/c++/11/bits/valarray_before.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
@@ -3027,9 +3861,9 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/functions.h:
+/usr/include/c++/11/fenv.h:
 
-/usr/include/boost/type_traits/remove_cv.hpp:
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/functions.h:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/exception.h:
 
@@ -3045,10 +3879,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intracomm.h:
 
-/usr/include/boost/mpl/integral_c_fwd.hpp:
-
-/usr/include/boost/preprocessor/logical/bool.hpp:
-
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/topology.h:
 
 /usr/include/c++/11/cmath:
@@ -3063,8 +3893,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/datatype_inln.h:
 
-/usr/include/strings.h:
-
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm_inln.h:
 
 /usr/include/c++/11/bit:
@@ -3075,19 +3903,11 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/topology_inln.h:
 
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/op_inln.h:
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/file_inln.h:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/file_inln.h:
-
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/errhandler_inln.h:
-
-/usr/include/c++/11/bits/allocator.h:
-
-/usr/include/boost/operators.hpp:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/status_inln.h:
 
@@ -3095,117 +3915,29 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/config/detail/select_platform_config.hpp:
 
-/usr/include/c++/11/backward/auto_ptr.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/boost/assert.hpp:
 
-/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+/usr/include/boost/mpl/apply.hpp:
 
-/usr/include/boost/iostreams/device/array.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/11/bits/locale_facets_nonio.h:
+/usr/include/c++/11/cstdarg:
 
-/usr/include/c++/11/bits/basic_ios.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
-
-/usr/include/c++/11/bits/char_traits.h:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/libintl.h:
-
-/usr/include/boost/serialization/is_bitwise_serializable.hpp:
-
-/usr/include/boost/mpl/aux_/comparison_op.hpp:
-
-/usr/include/c++/11/bits/locale_facets_nonio.tcc:
-
-/usr/include/c++/11/cxxabi.h:
-
-/usr/include/c++/11/concepts:
-
-/usr/include/boost/mpl/aux_/arity_spec.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/mod.hpp:
-
-/usr/include/c++/11/bits/locale_conv.h:
-
-/usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
-
-/usr/include/boost/config/platform/linux.hpp:
-
-/usr/include/boost/config/abi_prefix.hpp:
-
-/usr/include/boost/type_traits/is_class.hpp:
-
-/usr/include/c++/11/bits/unique_ptr.h:
-
-/usr/include/boost/iterator/interoperable.hpp:
-
-/usr/include/boost/type_traits/enable_if.hpp:
-
-/usr/include/boost/config/compiler/gcc.hpp:
-
-/usr/include/boost/mpl/aux_/config/eti.hpp:
-
-/usr/include/c++/11/version:
+/usr/include/boost/config/detail/select_compiler_config.hpp:
 
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
 /usr/include/boost/type_traits/is_void.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/boost/utility/result_of.hpp:
-
-/usr/include/c++/11/bits/functexcept.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/boost/range/config.hpp:
-
-/usr/include/boost/mpl/aux_/config/nttp.hpp:
-
-/usr/include/boost/archive/detail/basic_oserializer.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/usr/include/linux/close_range.h:
-
 /usr/include/boost/config/helper_macros.hpp:
 
 /usr/include/boost/cstdint.hpp:
 
-/usr/include/boost/serialization/extended_type_info_typeid.hpp:
-
-/usr/include/boost/type_traits/is_reference.hpp:
-
-/usr/include/boost/type_traits/remove_extent.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/boost/iostreams/detail/char_traits.hpp:
-
-/usr/include/c++/11/string_view:
-
-/usr/include/boost/type_traits/is_complete.hpp:
-
-/usr/include/boost/preprocessor/detail/auto_rec.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+/usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/boost/integer_traits.hpp:
 
@@ -3216,10 +3948,6 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 /usr/include/c++/11/bits/stl_construct.h:
 
 /usr/include/boost/mpl/aux_/adl_barrier.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intercomm.h:
-
-/usr/include/boost/mpl/aux_/config/msvc.hpp:
 
 /usr/include/c++/11/bits/uses_allocator.h:
 
@@ -3243,352 +3971,14 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp 
 
 /usr/include/boost/serialization/array_wrapper.hpp:
 
-/usr/include/boost/preprocessor/tuple/rem.hpp:
-
 /usr/include/boost/serialization/nvp.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
 
 /usr/include/boost/core/nvp.hpp:
 
-/usr/include/boost/mpl/next.hpp:
-
-/usr/include/boost/preprocessor/stringize.hpp:
-
 /usr/include/boost/preprocessor/config/config.hpp:
 
 /usr/include/boost/serialization/level.hpp:
 
-/usr/include/boost/type_traits/is_enum.hpp:
-
 /usr/include/boost/type_traits/intrinsics.hpp:
-
-/usr/include/boost/version.hpp:
-
-/usr/include/boost/preprocessor/iteration/local.hpp:
-
-/usr/include/boost/type_traits/is_array.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
-
-/usr/include/boost/type_traits/is_base_and_derived.hpp:
-
-/usr/include/boost/serialization/wrapper.hpp:
-
-/usr/include/boost/mpl/if.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_thread_pause.hpp:
-
-/usr/include/boost/mpl/aux_/config/integral.hpp:
-
-/usr/include/boost/serialization/throw_exception.hpp:
-
-/usr/include/boost/mpl/aux_/na_spec.hpp:
-
-/usr/include/boost/mpl/lambda_fwd.hpp:
-
-/usr/include/boost/mpl/aux_/config/static_constant.hpp:
-
-/usr/include/boost/iostreams/concepts.hpp:
-
-/usr/include/boost/mpl/aux_/na.hpp:
-
-/usr/include/c++/11/ext/concurrence.h:
-
-/usr/include/boost/type_traits/is_same.hpp:
-
-/usr/include/boost/mpl/aux_/config/lambda.hpp:
-
-/usr/include/boost/mpl/aux_/nttp_decl.hpp:
-
-/usr/include/boost/type_traits/is_scalar.hpp:
-
-/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
-
-/usr/include/boost/type_traits/is_convertible.hpp:
-
-/usr/include/c++/11/ext/numeric_traits.h:
-
-/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
-
-/usr/include/boost/preprocessor/seq/size.hpp:
-
-/usr/include/boost/mpl/aux_/config/dtp.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
-
-/usr/include/boost/type_traits/is_function.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
-
-/usr/include/boost/mpl/aux_/arg_typedef.hpp:
-
-/usr/include/boost/preprocessor/comma_if.hpp:
-
-/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
-
-/usr/include/c++/11/bits/streambuf.tcc:
-
-/usr/include/c++/11/bits/stl_iterator_base_funcs.h:
-
-/usr/include/boost/preprocessor/control/if.hpp:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/boost/preprocessor/control/iif.hpp:
-
-/usr/include/boost/preprocessor/repeat.hpp:
-
-/usr/include/boost/preprocessor/array/data.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/functions_inln.h:
-
-/usr/include/boost/type_traits/remove_reference.hpp:
-
-/usr/include/boost/iostreams/detail/config/fpos.hpp:
-
-/usr/include/boost/preprocessor/repetition/repeat.hpp:
-
-/usr/include/boost/preprocessor/tuple/eat.hpp:
-
-/usr/include/boost/iostreams/detail/config/gcc.hpp:
-
-/usr/include/c++/11/bits/iterator_concepts.h:
-
-/usr/include/boost/preprocessor/inc.hpp:
-
-/usr/include/c++/11/bits/stl_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/boost/preprocessor/arithmetic/inc.hpp:
-
-/usr/include/boost/mpl/aux_/config/intel.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
-
-/usr/include/boost/range/detail/extract_optional_type.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
-
-/usr/include/boost/preprocessor/logical/and.hpp:
-
-/usr/include/boost/type_traits/is_member_function_pointer.hpp:
-
-/usr/include/boost/preprocessor/logical/bitand.hpp:
-
-/usr/include/boost/preprocessor/control/while.hpp:
-
-/usr/include/c++/11/tr1/modified_bessel_func.tcc:
-
-/usr/include/boost/preprocessor/facilities/identity.hpp:
-
-/usr/include/boost/preprocessor/empty.hpp:
-
-/usr/include/c++/11/iterator:
-
-/usr/include/boost/config/detail/posix_features.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/add.hpp:
-
-/usr/include/boost/config/pragma_message.hpp:
-
-/usr/include/c++/11/bits/stl_iterator_base_types.h:
-
-/usr/include/boost/mpl/void_fwd.hpp:
-
-/usr/include/boost/preprocessor/list/fold_left.hpp:
-
-/usr/include/boost/archive/detail/basic_iserializer.hpp:
-
-/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
-
-/usr/include/c++/11/bits/std_function.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/boost/preprocessor/control/expr_iif.hpp:
-
-/usr/include/boost/mpl/aux_/type_wrapper.hpp:
-
-/usr/include/boost/preprocessor/list/adt.hpp:
-
-/usr/include/boost/type_traits/is_const.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/boost/preprocessor/detail/is_binary.hpp:
-
-/usr/include/boost/preprocessor/detail/check.hpp:
-
-/usr/include/boost/preprocessor/logical/compl.hpp:
-
-/usr/include/boost/archive/binary_iarchive_impl.hpp:
-
-/usr/include/boost/preprocessor/control/detail/while.hpp:
-
-/usr/include/boost/type_traits/is_assignable.hpp:
-
-/usr/include/boost/preprocessor/seq/enum.hpp:
-
-/usr/include/boost/preprocessor/facilities/expand.hpp:
-
-/usr/include/boost/preprocessor/facilities/overload.hpp:
-
-/usr/include/boost/archive/detail/oserializer.hpp:
-
-/usr/include/boost/mpl/tag.hpp:
-
-/usr/include/boost/iostreams/detail/is_dereferenceable.hpp:
-
-/usr/include/boost/checked_delete.hpp:
-
-/usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
-
-/usr/include/wctype.h:
-
-/usr/include/boost/mpl/greater.hpp:
-
-/usr/include/boost/preprocessor/variadic/size.hpp:
-
-/usr/include/boost/mpl/and.hpp:
-
-/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
-
-/usr/include/boost/detail/select_type.hpp:
-
-/usr/include/boost/mpl/aux_/lambda_support.hpp:
-
-/usr/include/boost/mpl/integral_c.hpp:
-
-/usr/include/boost/mpl/aux_/numeric_op.hpp:
-
-/usr/include/boost/utility.hpp:
-
-/usr/include/boost/mpl/numeric_cast.hpp:
-
-/usr/include/boost/mpl/apply_wrap.hpp:
-
-/usr/include/c++/11/list:
-
-/usr/include/boost/preprocessor/array/elem.hpp:
-
-/usr/include/boost/preprocessor/array/size.hpp:
-
-/usr/include/boost/preprocessor/repetition/enum_params.hpp:
-
-/usr/include/boost/smart_ptr/allocate_shared_array.hpp:
-
-/usr/include/limits.h:
-
-/usr/include/boost/mpl/aux_/config/has_apply.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_forward.hpp:
-
-/usr/include/boost/mpl/aux_/msvc_never_true.hpp:
-
-/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
-
-/usr/include/syscall.h:
-
-/usr/include/boost/serialization/array_optimization.hpp:
-
-/usr/include/boost/mpl/aux_/config/compiler.hpp:
-
-/usr/include/boost/iostreams/detail/resolve.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
-
-/usr/include/boost/mpl/aux_/config/forwarding.hpp:
-
-/usr/include/c++/11/debug/debug.h:
-
-/usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
-
-/usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp:
-
-/usr/include/c++/11/tr1/bessel_function.tcc:
-
-/usr/include/boost/type_traits/declval.hpp:
-
-/usr/include/boost/serialization/tracking_enum.hpp:
-
-/usr/include/boost/serialization/type_info_implementation.hpp:
-
-/usr/include/boost/serialization/traits.hpp:
-
-/usr/include/boost/iostreams/detail/optional.hpp:
-
-/usr/include/boost/serialization/split_free.hpp:
-
-/usr/include/boost/range/iterator.hpp:
-
-/usr/include/boost/mpl/assert.hpp:
-
-/usr/include/boost/preprocessor/list/fold_right.hpp:
-
-/usr/include/boost/serialization/serialization.hpp:
-
-/usr/include/boost/type_traits/has_nothrow_assign.hpp:
-
-/usr/include/boost/type_traits/is_lvalue_reference.hpp:
-
-/usr/include/c++/11/bits/stl_multiset.h:
-
-/usr/include/boost/type_traits/is_rvalue_reference.hpp:
-
-/usr/include/boost/type_traits/detail/is_function_cxx_11.hpp:
-
-/usr/include/boost/type_traits/has_nothrow_copy.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
-
-/usr/include/boost/type_traits/detail/yes_no_type.hpp:
-
-/usr/include/boost/type_traits/has_nothrow_constructor.hpp:
-
-/usr/include/c++/11/bits/ranges_algo.h:
-
-/usr/include/boost/type_traits/is_default_constructible.hpp:
-
-/usr/include/boost/type_traits/is_copy_constructible.hpp:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/boost/type_traits/is_destructible.hpp:
-
-/usr/include/boost/type_traits/is_polymorphic.hpp:
-
-/usr/include/boost/serialization/detail/stack_constructor.hpp:
-
-/usr/include/boost/serialization/force_include.hpp:
-
-/usr/include/c++/11/bits/ostream.tcc:
-
-/usr/include/boost/serialization/void_cast_fwd.hpp:
-
-/usr/include/c++/11/cstdarg:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/boost/config/detail/select_compiler_config.hpp:
-
-/usr/include/boost/mpl/apply.hpp:
-
-/usr/include/boost/mpl/apply_fwd.hpp:
-
-/usr/include/boost/archive/detail/register_archive.hpp:
-
-/usr/include/c++/11/bits/node_handle.h:
-
-/usr/include/boost/mpl/arg.hpp:
-
-/usr/include/c++/11/cstdint:
-
-/usr/include/boost/mpl/aux_/config/pp_counter.hpp:

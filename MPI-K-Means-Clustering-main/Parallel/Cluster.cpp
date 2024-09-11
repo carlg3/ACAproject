@@ -258,11 +258,11 @@ void Cluster::serializeSumClusters(double* buffer){
 void Cluster::printClusters(){
     ofstream f; f.open("test_kmeans.txt");
 
-    for(int i=0;i<numberCluster;i++) {
+    for(int i = 0; i < numberCluster; i++) {
         cout << "CLUSTER <"<<i<<"> ELEMENTS NUMBER = " << Cluster::getThCluster(i)->getNumberElements() << endl;
         cout << "CENTROID @ " << Cluster::getThCluster(i)->getCentroid()->toString() << endl;
 
-        for(int j=0;j<Cluster::getThCluster(i)->getNumberElements();j++){
+        for(int j = 0; j < Cluster::getThCluster(i)->getNumberElements(); j++){
             cout << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
 
             f << i << ";" << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
