@@ -19,38 +19,6 @@ using namespace std;
 int MAXITERATION = 100, K = 0; // Number of Clusters
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
-/*
-void readDataSet(int *pointDimension,int *totalNumberPoint){
-    string buffer;
-    ifstream DataSet; DataSet.open("DataSet10000x10.txt");
-    if(!DataSet.is_open()){
-        cout << "FILE OPENING FAILED" << endl;
-        MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
-    }
-    while (getline(DataSet, buffer)){
-        vector <string> tokens;
-        stringstream check1(buffer);
-        string intermediate;
-        while(getline(check1, intermediate, ',')){
-            tokens.push_back(intermediate);
-        }
-
-        // Crea il punto e lo salva in memoria nella lista points
-        // 'tokens.size()' è la dimensione del punto che si è ricavato dalla riga del file
-        Point *point = new Point(tokens.size()); 
-        for(int i = 0; i < (int)tokens.size(); i++){
-            // Lo setta con quello che ha trovato
-            // quindi es. dim == 2, avrò un punto formato da (x, y)
-            point->setThValue(i, stod(tokens[i])); 
-        }
-
-        *pointDimension = tokens.size();
-        *totalNumberPoint = *totalNumberPoint + 1;
-    }
-    DataSet.close();
-}
-*/
-
 void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
 
