@@ -135,7 +135,8 @@ void Cluster::sumPoints(){
 }
 
 void Cluster::sumPointsClusters(){
-    for(int i = 0; i < Cluster::getNumberCluster(); i++){
+    int cluster_number_ = Cluster::getNumberCluster();
+    for(int i = 0; i < cluster_number_; i++){
         Cluster::getThCluster(i)->sumPoints();
     }
 }

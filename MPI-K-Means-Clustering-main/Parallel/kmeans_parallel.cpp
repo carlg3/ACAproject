@@ -17,7 +17,7 @@
 using namespace std;
 
 int MAXITERATION = 100, K = 0; // Number of Clusters
-const int lentag = 0, stat = 1, datapointtag = 2, dataclustertag = 3, datasumclustertag = 4;
+const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 /*
 void readDataSet(int *pointDimension,int *totalNumberPoint){
@@ -133,7 +133,7 @@ int main(int argc, char* argv[]) {
 
         // Send length, then data
         for(int i = 1; i < commSize; i++){
-            MPI_Send(&bufferSize, 1, MPI_INT, i, lentag, MPI_COMM_WORLD);
+            MPI_Send(&bufferSize, 1, MPI_INT, i, LENTAG, MPI_COMM_WORLD);
 
             // Qui serializza tutto in 'buffer', per inviare
             // buffer[0]: numero di punti da inviare
@@ -149,7 +149,7 @@ int main(int argc, char* argv[]) {
             Point::serializePoint(buffer, startIndex, endIndex, pointDimension);
 
             // Dopo la 'serializePoint' buffer contiene i punti da inviare
-            MPI_Send(buffer, bufferSize, MPI_DOUBLE, i, datapointtag, MPI_COMM_WORLD);
+            MPI_Send(buffer, bufferSize, MPI_DOUBLE, i, DATAPOINTTAG, MPI_COMM_WORLD);
         }
 
         // SEND CLUSTERS
@@ -184,22 +184,23 @@ int main(int argc, char* argv[]) {
             endtime = MPI_Wtime(); // Stop timer
             printf("APRE ASS %f seconds\n",endtime-starttime); // Print execution time
 
-            Cluster::pointAssignment((commSize - 1) * pointsXprocessor, totalNumberPoint);
+            int startIndex = (commSize - 1) * pointsXprocessor;
+            int endIndex = totalNumberPoint;
+            Cluster::pointAssignment(startIndex, endIndex);
 
             endtime = MPI_Wtime(); // Stop timer
             printf("AFTER ASS %f seconds\n",endtime-starttime); // Print execution time
 
             // CALCULATE MASTER SUM_CLUSTER
+
             // Qui calcola la somma delle coordinate di tutti i punti dei cluster
             // quindi in ogni oggetto Cluster avrò un sumDistance di dimensione centroid_dim_
             // e ogni elemento sarà la somma
 
-            int cluster_number_ = Cluster::getNumberCluster();
-
-            for(int i = 0; i < cluster_number_; i++){
-                Cluster::sumPointsClusters();
-            }
-
+            //  int cluster_number_ = Cluster::getNumberCluster();
+            //  for(int i = 0; i < cluster_number_; i++){ Cluster::sumPointsClusters();}
+            Cluster::sumPointsClusters();
+            
             // RECV SUM_CLUSTER AND NUMBER_OF_POINTS, AND CALCULATE TOTAL_SUM_CLUSTER AND TOTAL_NUMBER_OF_POINTS
             // 'bufferSize' è così perché
             // es.
@@ -284,10 +285,10 @@ int main(int argc, char* argv[]) {
 
         // RECV POINTS
         // Recv length, then data
-        MPI_Recv(&bufferSize, 1, MPI_INT, 0, lentag, MPI_COMM_WORLD, &status);
+        MPI_Recv(&bufferSize, 1, MPI_INT, 0, LENTAG, MPI_COMM_WORLD, &status);
 
         buffer = new double[bufferSize];
-        MPI_Recv(buffer, bufferSize, MPI_DOUBLE, 0, datapointtag, MPI_COMM_WORLD, &status);
+        MPI_Recv(buffer, bufferSize, MPI_DOUBLE, 0, DATAPOINTTAG, MPI_COMM_WORLD, &status);
 
         // DESERIALIZATION
         Point::deserializePoint(buffer);
