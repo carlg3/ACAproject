@@ -99,6 +99,13 @@ int main(int argc, char* argv[]) {
         double *buffer, *buffer2;
         buffer = new double[bufferSize];
 
+        // DEBUG con CLion
+        /*
+        int x = 0;
+        while (!x)
+            sleep(5);
+        */
+
         // Send length, then data
         for(int i = 1; i < commSize; i++){
             MPI_Send(&bufferSize, 1, MPI_INT, i, LENTAG, MPI_COMM_WORLD);
@@ -255,11 +262,20 @@ int main(int argc, char* argv[]) {
         // Recv length, then data
         MPI_Recv(&bufferSize, 1, MPI_INT, 0, LENTAG, MPI_COMM_WORLD, &status);
 
+        // DEBUG con CLion
+        /*
+        int x = 0;
+        while (!x)
+            sleep(5);
+        */
+
         buffer = new double[bufferSize];
         MPI_Recv(buffer, bufferSize, MPI_DOUBLE, 0, DATAPOINTTAG, MPI_COMM_WORLD, &status);
 
         // DESERIALIZATION
         Point::deserializePoint(buffer);
+
+        // Point::printPoints();
 
         // RECV CLUSTERS
         // Recv length, then data
@@ -272,7 +288,7 @@ int main(int argc, char* argv[]) {
         Cluster::deserializeCluster(buffer);
         // -------------------------------------------------------------------
 
-        list<Point*> points;
+        // list<Point*> points;
         int finish;
 
         while(true) {
