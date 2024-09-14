@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 #include <mpi.h>
+
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/set.hpp>
@@ -25,7 +26,7 @@ const int datasumclustertag=4;
 void readDataSet(int *pointDimension,int *totalNumberPoint){
     string buffer;
     ifstream DataSet;
-	DataSet.open("/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet100x10.txt");
+	DataSet.open("/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/dataset/DataSet100x2.txt");
     if(!DataSet.is_open()){
         cout << "FILE OPENING FAILED" << endl;
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
@@ -81,6 +82,13 @@ int main(int argc, char* argv[]) {
             Point::serializePoint(buffer,(i-1)*pointsXprocessor,(i-1)*pointsXprocessor+pointsXprocessor,pointDimension);
             MPI_Send(buffer,bufferSize,MPI_DOUBLE,i,datapointtag,MPI_COMM_WORLD);
         }
+
+        // DEBUG con CLion
+        int x = 0;
+        while (!x)
+            sleep(5);
+        Point::printPoints();
+
         // SEND CLUSTERS
         bufferSize = 2+K*pointDimension;
         buffer = new double[bufferSize];
