@@ -164,6 +164,13 @@ int main(int argc, char* argv[]) {
         MPI_Recv(buffer,bufferSize,MPI_DOUBLE,0,datapointtag,MPI_COMM_WORLD,&status);
         // DESERIALIZATION
         Point::deserializaPoint(buffer);
+
+        // DEBUG con CLion
+        int x = 0;
+        while (!x)
+            sleep(5);
+        Point::printPoints();
+
         // RECV CLUSTERS
         // Recv length, then data
         MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
@@ -171,7 +178,7 @@ int main(int argc, char* argv[]) {
         MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         // DESERIALIZATION
         Cluster::deserializeCluster(buffer);
-        list<Point*> points;
+        // list<Point*> points;
         int finish;
         while(true) {
             Cluster::clustersReset();
