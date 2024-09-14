@@ -77,6 +77,13 @@ int main(int argc, char* argv[]) {
         // readDataSet(points_temp_,R"(C:\Users\galan\CLionProjects\Serial-proj-test\dataset\dataset_100x2.txt)");
         readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
 
+        // DEBUG
+        int x = 0;
+        while(!x)
+            sleep(5);
+
+        Point::printPoints();
+
         pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
         totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
@@ -149,7 +156,7 @@ int main(int argc, char* argv[]) {
         // INITIAL TMSE
         double previousTMSE, tmse = 0;
 
-        list<Point*> points;
+        // list<Point*> points;
         int finish = 0;
         
         while(true) {
@@ -275,7 +282,12 @@ int main(int argc, char* argv[]) {
         // DESERIALIZATION
         Point::deserializePoint(buffer);
 
-        // Point::printPoints();
+        // DEBUG
+        int x = 0;
+        while(!x)
+            sleep(5);
+
+        Point::printPoints();
 
         // RECV CLUSTERS
         // Recv length, then data
