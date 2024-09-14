@@ -1,7 +1,7 @@
 CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o: \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.cpp \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

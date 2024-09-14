@@ -1,5 +1,5 @@
 CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o: \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Cluster.cpp \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/list \
  /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -164,11 +164,11 @@ CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Cluster.h \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Centroid.h \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Point.h
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Centroid.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Point.h

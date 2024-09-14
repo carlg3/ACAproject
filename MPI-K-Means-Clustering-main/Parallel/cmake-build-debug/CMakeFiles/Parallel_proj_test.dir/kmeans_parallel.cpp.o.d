@@ -1,5 +1,5 @@
 CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/kmeans_parallel.cpp \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -934,7 +934,7 @@ CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: \
  /usr/include/boost/iostreams/stream.hpp \
  /usr/include/boost/iostreams/detail/iostream.hpp \
  /usr/include/boost/iostreams/device/back_inserter.hpp \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Cluster.h \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.h \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Centroid.h \
- /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Point.h
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Centroid.h \
+ /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Point.h

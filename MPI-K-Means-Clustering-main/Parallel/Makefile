@@ -8,3 +8,7 @@ CXX = mpic++
 
 $(TARGET): 
 	$(CXX) $(SRCS) -o $(TARGET) -lm
+
+clean:
+	@echo "Pulizia del file.."
+	rm $(TARGET)

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug"
+			"value" : "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -595,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/c/Users/galan/CLionProjects/Parallel_proj_test"
+			"value" : "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1619,7 +1619,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug"
+			"value" : "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug"
 		},
 		{
 			"name" : "Parallel_proj_test_IS_TOP_LEVEL",
@@ -1643,7 +1643,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/c/Users/galan/CLionProjects/Parallel_proj_test"
+			"value" : "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel"
 		}
 	],
 	"kind" : "cache",

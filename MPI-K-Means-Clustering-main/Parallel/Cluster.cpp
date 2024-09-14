@@ -257,7 +257,8 @@ void Cluster::serializeSumClusters(double* buffer){
 
 // ---- DEBUG ----
 void Cluster::printClusters(){
-    ofstream f; f.open("test_kmeans.txt");
+    ofstream f;
+    f.open("test_kmeans.txt");
 
     for(int i = 0; i < numberCluster; i++) {
         cout << "CLUSTER <"<<i<<"> ELEMENTS NUMBER = " << Cluster::getThCluster(i)->getNumberElements() << endl;

@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug",
-		"source" : "/mnt/c/Users/galan/CLionProjects/Parallel_proj_test"
+		"build" : "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug",
+		"source" : "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel"
 	},
 	"version" : 
 	{

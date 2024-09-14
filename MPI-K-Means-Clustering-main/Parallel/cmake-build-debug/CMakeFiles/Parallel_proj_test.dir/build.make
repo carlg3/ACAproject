@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/galan/CLionProjects/Parallel_proj_test
+CMAKE_SOURCE_DIR = /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Parallel_proj_test.dir/depend.make
@@ -72,72 +72,72 @@ include CMakeFiles/Parallel_proj_test.dir/flags.make
 CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
 CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o: ../Centroid.cpp
 CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o -c /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Centroid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Centroid.cpp
 
 CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Centroid.cpp > CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Centroid.cpp > CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.i
 
 CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Centroid.cpp -o CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Centroid.cpp -o CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.s
 
 CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
 CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o: ../Cluster.cpp
 CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o -c /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Cluster.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.cpp
 
 CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Cluster.cpp > CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.cpp > CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.i
 
 CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Cluster.cpp -o CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.cpp -o CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.s
 
 CMakeFiles/Parallel_proj_test.dir/Point.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
 CMakeFiles/Parallel_proj_test.dir/Point.cpp.o: ../Point.cpp
 CMakeFiles/Parallel_proj_test.dir/Point.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Point.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Point.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Point.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Point.cpp.o -c /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Point.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Point.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Point.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Point.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Point.cpp
 
 CMakeFiles/Parallel_proj_test.dir/Point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/Point.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Point.cpp > CMakeFiles/Parallel_proj_test.dir/Point.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Point.cpp > CMakeFiles/Parallel_proj_test.dir/Point.cpp.i
 
 CMakeFiles/Parallel_proj_test.dir/Point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/Point.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Point.cpp -o CMakeFiles/Parallel_proj_test.dir/Point.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Point.cpp -o CMakeFiles/Parallel_proj_test.dir/Point.cpp.s
 
 CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
 CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o: ../Tupla.cpp
 CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o -c /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.cpp
 
 CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.cpp > CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.cpp > CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.i
 
 CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/Tupla.cpp -o CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.cpp -o CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s
 
 CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
 CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp
 CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o -c /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/kmeans_parallel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp
 
 CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/kmeans_parallel.cpp > CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp > CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i
 
 CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/kmeans_parallel.cpp -o CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp -o CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s
 
 # Object files for target Parallel_proj_test
 Parallel_proj_test_OBJECTS = \
@@ -159,7 +159,7 @@ Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/build.make
 Parallel_proj_test: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so
 Parallel_proj_test: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
 Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Parallel_proj_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Parallel_proj_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Parallel_proj_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -171,6 +171,6 @@ CMakeFiles/Parallel_proj_test.dir/clean:
 .PHONY : CMakeFiles/Parallel_proj_test.dir/clean
 
 CMakeFiles/Parallel_proj_test.dir/depend:
-	cd /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/galan/CLionProjects/Parallel_proj_test /mnt/c/Users/galan/CLionProjects/Parallel_proj_test /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug /mnt/c/Users/galan/CLionProjects/Parallel_proj_test/cmake-build-debug/CMakeFiles/Parallel_proj_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles/Parallel_proj_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Parallel_proj_test.dir/depend
 
