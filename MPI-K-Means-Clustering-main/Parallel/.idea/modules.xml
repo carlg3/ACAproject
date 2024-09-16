@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< Updated upstream
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/Parallel.iml" filepath="$PROJECT_DIR$/.idea/Parallel.iml" />
+>>>>>>> Stashed changes
       <module fileurl="file://$PROJECT_DIR$/.idea/Parallel_proj_test.iml" filepath="$PROJECT_DIR$/.idea/Parallel_proj_test.iml" />
     </modules>
   </component>
