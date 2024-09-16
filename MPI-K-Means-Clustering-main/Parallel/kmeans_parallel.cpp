@@ -241,10 +241,12 @@ int main(int argc, char* argv[]) {
         endtime   = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n", endtime-starttime); // Print execution time
 
+        /*
         // DEBUG con CLion
         int x = 0;
         while(!x)
             sleep(5);
+        */
 
         Cluster::printClusters();
     }
