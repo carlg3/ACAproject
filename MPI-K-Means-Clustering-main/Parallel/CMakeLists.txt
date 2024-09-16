@@ -1,24 +1,21 @@
 cmake_minimum_required(VERSION 3.22.1)
 
-project(Parallel_proj_test)
-
 set(CMAKE_CXX_STANDARD 20)
 
 # Add MPI Package to Project
 find_package(MPI REQUIRED)
 
-include_directories(.)
-
 add_executable(Parallel_proj_test
-    Centroid.cpp
-    Centroid.h
-    Cluster.cpp
-    Cluster.h
-    main.cpp
-    Point.cpp
-    Point.h
-    Tupla.cpp
-    Tupla.h)
+        Centroid.cpp
+        Centroid.h
+        Cluster.cpp
+        Cluster.h
+        Point.cpp
+        Point.h
+        Tupla.cpp
+        Tupla.h
+        main.cpp
+)
 
 # Link MPI libraries
-target_link_libraries(Parallel_proj_test PRIVATE MPI::MPI_CXX)
+target_link_libraries(Parallel PRIVATE MPI::MPI_CXX)
