@@ -78,12 +78,13 @@ int main(int argc, char* argv[]) {
         readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
 
         // DEBUG
+        /*
         int x = 0;
         while(!x)
             sleep(5);
 
         Point::printPoints();
-
+        */
         pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
         totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
@@ -259,6 +260,13 @@ int main(int argc, char* argv[]) {
 
         endtime   = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n", endtime-starttime); // Print execution time
+
+        // DEBUG con CLion
+        int x = 0;
+        while(!x)
+            sleep(5);
+
+        Cluster::printClusters();
     }
 
     if(my_rank != 0){
@@ -282,12 +290,14 @@ int main(int argc, char* argv[]) {
         // DESERIALIZATION
         Point::deserializePoint(buffer);
 
-        // DEBUG
+        // DEBUG con CLion
+        /*
         int x = 0;
         while(!x)
             sleep(5);
 
         Point::printPoints();
+        */
 
         // RECV CLUSTERS
         // Recv length, then data
@@ -300,7 +310,6 @@ int main(int argc, char* argv[]) {
         Cluster::deserializeCluster(buffer);
         // -------------------------------------------------------------------
 
-        // list<Point*> points;
         int finish;
 
         while(true) {
@@ -347,7 +356,6 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    Cluster::printClusters();
     MPI_Finalize();
 
     return 0;

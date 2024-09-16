@@ -26,7 +26,7 @@ void Point::printPoints(){
         cout << point->toString() << endl;
     }
 }
-
+/*
 void Point::serializePoint(double* buffer, int startIndex, int endIndex, int dim) {
     buffer[0] = (endIndex - startIndex);    // Total number of points to send
     buffer[1] = dim;                        // Point dimension
@@ -48,6 +48,29 @@ void Point::deserializePoint(double* buffer) {
 
         for (int j = 0; j < buffer[1]; j++) {
             p->setThValue(j, buffer[index++]);
+        }
+    }
+}*/
+
+void Point::serializePoint(double* buffer,int startIndex, int endIndex, int dim){
+    buffer[0] = (endIndex-startIndex); // Total number of point to send
+    buffer[1] = dim; // Point dimension
+
+    for(int i = 0; i < buffer[0]; i++){
+        for(int j = 0; j < dim; j++){
+            buffer[i * dim + 2 + j] = Point::getThPoint(i + startIndex)->getThValue(j);
+        }
+    }
+}
+
+void Point::deserializePoint(double* buffer){
+    int dim = buffer[1]; // Point dimension
+
+    for(int i = 0; i < buffer[0]; i++) {
+        Point *p = new Point(dim);
+
+        for(int j = 0; j < dim; j++){
+            p->setThValue(j, buffer[i * dim + 2 + j]);
         }
     }
 }
