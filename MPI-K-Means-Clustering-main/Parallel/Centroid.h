@@ -4,6 +4,7 @@
 #include <list>
 
 #include "Tupla.h"
+using namespace std;
 
 class Centroid: public Tupla{
 public:
@@ -11,8 +12,7 @@ public:
     static Centroid* getThCentroid(int index); // UNUSED FUNCTION
     static int getNumberCentroids(); // UNUSED FUNCTION
 private:
-    static int numberCentroids;
-    static std::list<Centroid*> centroids;
+    static vector<Centroid*> centroids;
 };
 
 #endif //PARALLEL_CENTROID_H

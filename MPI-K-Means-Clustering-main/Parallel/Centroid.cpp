@@ -2,12 +2,10 @@
 
 using namespace std;
 
-int Centroid::numberCentroids;
-list<Centroid*> Centroid::centroids;
+vector<Centroid*> Centroid::centroids;
 
 Centroid::Centroid(int dim) : Tupla(dim) {
     centroids.push_back(this);
-    numberCentroids++;
 }
 
 // UNUSED FUNCTION
@@ -19,5 +17,5 @@ Centroid* Centroid::getThCentroid(int index){
 
 // UNUSED FUNCTION
 int Centroid::getNumberCentroids(){
-    return numberCentroids;
+    return centroids.size();
 }

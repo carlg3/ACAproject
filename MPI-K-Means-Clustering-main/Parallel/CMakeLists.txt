@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.22.1)
-
 project(Parallel_proj_test)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -16,8 +15,7 @@ add_executable(Parallel_proj_test
         Point.h
         Tupla.cpp
         Tupla.h
-        main.cpp
-)
+        kmeans_parallel.cpp)
 
 # Link MPI libraries
 target_link_libraries(Parallel_proj_test PRIVATE MPI::MPI_CXX)
