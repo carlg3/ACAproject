@@ -16,7 +16,7 @@
 
 using namespace std;
 
-int MAXITERATION = 100, K = 0; // Number of Clusters
+int MAXITERATION = 100;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 void readDataSet(vector<Point*>& points, const string& filePath) {
@@ -61,8 +61,8 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
 
     if (my_rank == 0) {
-        double starttime, endtime; // Time variables
-        starttime = MPI_Wtime(); // Start timer
+        double starttime, endtime;  // Time variables
+        starttime = MPI_Wtime();    // Start timer
 
         // Dimensione del dato R^pointDimension & Numbers of points in our DataSet
         int pointDimension, totalNumberPoint;
@@ -70,26 +70,14 @@ int main(int argc, char* argv[]) {
         // INIT
         //-------------------------------------------------------------------
         // READING FILE
-        // readDataSet(&pointDimension,&totalNumberPoint);
-
         vector<Point*> points_temp_;
-
-        // readDataSet(points_temp_,R"(C:\Users\galan\CLionProjects\Serial-proj-test\dataset\dataset_100x2.txt)");
         readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
 
-        // DEBUG
-        /*
-        int x = 0;
-        while(!x)
-            sleep(5);
-
-        Point::printPoints();
-        */
         pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
         totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
         // INIT CLUSTERS AND CENTROIDS
-        K = sqrt(totalNumberPoint/2);
+        int K = sqrt(totalNumberPoint/2);
         Cluster::createKclusters(K, pointDimension);
 
         //-------------------------------------------------------------------
@@ -106,13 +94,6 @@ int main(int argc, char* argv[]) {
 
         double *buffer, *buffer2;
         buffer = new double[bufferSize];
-
-        // DEBUG con CLion
-        /*
-        int x = 0;
-        while (!x)
-            sleep(5);
-        */
 
         // Send length, then data
         for(int i = 1; i < commSize; i++){
@@ -181,8 +162,8 @@ int main(int argc, char* argv[]) {
             // e ogni elemento sarà la somma
 
             int cluster_number_ = Cluster::getNumberCluster();
-            for(int i = 0; i < cluster_number_; i++){ Cluster::sumPointsClusters();}
-            // Cluster::sumPointsClusters();
+            // for(int i = 0; i < cluster_number_; i++){ Cluster::sumPointsClusters();}
+            Cluster::sumPointsClusters();
             
             // RECV SUM_CLUSTER AND NUMBER_OF_POINTS, AND CALCULATE TOTAL_SUM_CLUSTER AND TOTAL_NUMBER_OF_POINTS
             // 'bufferSize' è così perché
@@ -208,11 +189,10 @@ int main(int argc, char* argv[]) {
 
             // ++ DESERIALIZATION delle somme dei punti dei cluster
 
-            // Cluster::getThCluster(i)->getCentroid()->getDim()
             for(int i = 0; i < cluster_number_; i++) {
                 int index = i * (centroid_dim_ + 1);
 
-                for (int j=0; j < centroid_dim_; j++) {
+                for (int j = 0; j < centroid_dim_; j++) {
                     Cluster::getThCluster(i)->setSumCluster(j, buffer[index + j]);
                 }
 

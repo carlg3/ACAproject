@@ -52,25 +52,26 @@ void Point::deserializePoint(double* buffer) {
     }
 }*/
 
-void Point::serializePoint(double* buffer,int startIndex, int endIndex, int dim){
-    buffer[0] = (endIndex-startIndex); // Total number of point to send
+void Point::serializePoint(double* buffer, int startIndex, int endIndex, int dim){
+    buffer[0] = (endIndex - startIndex); // Total number of point to send
     buffer[1] = dim; // Point dimension
 
     for(int i = 0; i < buffer[0]; i++){
         for(int j = 0; j < dim; j++){
-            buffer[i * dim + 2 + j] = Point::getThPoint(i + startIndex)->getThValue(j);
+            buffer[i * dim + j + 2] = Point::getThPoint(i + startIndex)->getThValue(j);
         }
     }
 }
 
 void Point::deserializePoint(double* buffer){
+    int points_number_ = buffer[0];
     int dim = buffer[1]; // Point dimension
 
-    for(int i = 0; i < buffer[0]; i++) {
+    for(int i = 0; i < points_number_; i++) {
         Point *p = new Point(dim);
 
         for(int j = 0; j < dim; j++){
-            p->setThValue(j, buffer[i * dim + 2 + j]);
+            p->setThValue(j, buffer[i * dim + j + 2]);
         }
     }
 }
