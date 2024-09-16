@@ -12,7 +12,7 @@ public:
     static Centroid* getThCentroid(int index); // UNUSED FUNCTION
     static int getNumberCentroids(); // UNUSED FUNCTION
 private:
-    static list<Centroid*> centroids;
+    static vector<Centroid*> centroids;
 };
 
 #endif //PARALLEL_CENTROID_H

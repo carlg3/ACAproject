@@ -57,15 +57,11 @@ int main(int argc, char* argv[]) {
     // Get my rank
     int my_rank, commSize;
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
-    
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
 
     if (my_rank == 0) {
         double starttime, endtime;  // Time variables
         starttime = MPI_Wtime();    // Start timer
-
-        // Dimensione del dato R^pointDimension & Numbers of points in our DataSet
-        int pointDimension, totalNumberPoint;
 
         // INIT
         //-------------------------------------------------------------------
@@ -73,8 +69,8 @@ int main(int argc, char* argv[]) {
         vector<Point*> points_temp_;
         readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
 
-        pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
-        totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
+        int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
+        int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
         // INIT CLUSTERS AND CENTROIDS
         int K = sqrt(totalNumberPoint/2);
@@ -131,29 +127,34 @@ int main(int argc, char* argv[]) {
         // Quindi serializza tutto in 'buffer' da inviare a tutti i thread,
         // così tutti i thread sapranno quali sono i cluster e i rispettivi centroidi
 
-        Cluster::serializeCluster(buffer, K, pointDimension);
+        Cluster::serializeCluster(buffer);
         MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         // -------------------------------------------------------------------
         
         // INITIAL TMSE
         double previousTMSE, tmse = 0;
 
-        // list<Point*> points;
         int finish = 0;
+
+        // DEBUG con CLion
+        int debug = 0;
+        while(debug == 0) {
+            sleep(5);
+        }
         
         while(true) {
             Cluster::clustersReset();
 
             // ASSIGN POINTS TO CLUSTERS WITH NEAREST CENTROID
             endtime = MPI_Wtime(); // Stop timer
-            printf("APRE ASS %f seconds\n",endtime-starttime); // Print execution time
+            printf("[INFO] Pre-Assignment: %f seconds\n",endtime - starttime); // Print execution time
 
             int startIndex = (commSize - 1) * pointsXprocessor;
             int endIndex = totalNumberPoint;
             Cluster::pointAssignment(startIndex, endIndex);
 
             endtime = MPI_Wtime(); // Stop timer
-            printf("AFTER ASS %f seconds\n",endtime-starttime); // Print execution time
+            printf("[INFO] Post-Assignment: %f seconds\n",endtime - starttime); // Print execution time
 
             // CALCULATE MASTER SUM_CLUSTER
 
@@ -161,8 +162,13 @@ int main(int argc, char* argv[]) {
             // quindi in ogni oggetto Cluster avrò un sumDistance di dimensione centroid_dim_
             // e ogni elemento sarà la somma
 
-            int cluster_number_ = Cluster::getNumberCluster();
-            // for(int i = 0; i < cluster_number_; i++){ Cluster::sumPointsClusters();}
+            /*
+            // DEBUG con CLion
+            int debug = 0;
+            while(debug == 0) {
+                sleep(5);
+            }
+            */
             Cluster::sumPointsClusters();
             
             // RECV SUM_CLUSTER AND NUMBER_OF_POINTS, AND CALCULATE TOTAL_SUM_CLUSTER AND TOTAL_NUMBER_OF_POINTS
@@ -172,8 +178,10 @@ int main(int argc, char* argv[]) {
             // gli altri 10*centroid_dim_ (== 10*2 == 20) per salvare la somma a due a due delle coordinate
             // quindi una coppia per ogni cluster
 
-            int centroid_dim_ = Cluster::getThCluster(0)->getCentroid()->getDim();
-            bufferSize =  cluster_number_ + cluster_number_ * centroid_dim_;
+            int cluster_number_ = Cluster::getNumberCluster();
+            int centroid_dim_ = pointDimension; // Dato che non possono esserci punti con dimensione diversa
+
+            bufferSize = cluster_number_ + cluster_number_ * centroid_dim_;
 
             buffer = new double[bufferSize];    // buffer recv
             buffer2 = new double[bufferSize];   // buffer send, containing master data
@@ -188,19 +196,10 @@ int main(int argc, char* argv[]) {
             MPI_Reduce(buffer2, buffer, bufferSize, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
             // ++ DESERIALIZATION delle somme dei punti dei cluster
-
-            for(int i = 0; i < cluster_number_; i++) {
-                int index = i * (centroid_dim_ + 1);
-
-                for (int j = 0; j < centroid_dim_; j++) {
-                    Cluster::getThCluster(i)->setSumCluster(j, buffer[index + j]);
-                }
-
-                Cluster::getThCluster(i)->setNumberElements(buffer[index + centroid_dim_]);
-            }
+            Cluster::deserializeSumClusters(buffer);
 
             // CALCULATE NEW CENTROIDS
-            
+
             // Setta il valore del nuovo centroide con la media dei punti nel cluster
             // lo fa per tutti i cluster, così da avere i nuovi centroidi rispetto a quelli assegnati random all'inizio
             Cluster::centroidsParallelAssignment();
@@ -238,15 +237,8 @@ int main(int argc, char* argv[]) {
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-        endtime   = MPI_Wtime(); // Stop timer
+        endtime = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n", endtime-starttime); // Print execution time
-
-        /*
-        // DEBUG con CLion
-        int x = 0;
-        while(!x)
-            sleep(5);
-        */
 
         Cluster::printClusters();
     }
@@ -259,27 +251,11 @@ int main(int argc, char* argv[]) {
         // Recv length, then data
         MPI_Recv(&bufferSize, 1, MPI_INT, 0, LENTAG, MPI_COMM_WORLD, &status);
 
-        // DEBUG con CLion
-        /*
-        int x = 0;
-        while (!x)
-            sleep(5);
-        */
-
         buffer = new double[bufferSize];
         MPI_Recv(buffer, bufferSize, MPI_DOUBLE, 0, DATAPOINTTAG, MPI_COMM_WORLD, &status);
 
         // DESERIALIZATION
         Point::deserializePoint(buffer);
-
-        // DEBUG con CLion
-        /*
-        int x = 0;
-        while(!x)
-            sleep(5);
-
-        Point::printPoints();
-        */
 
         // RECV CLUSTERS
         // Recv length, then data
@@ -334,7 +310,7 @@ int main(int argc, char* argv[]) {
             buffer = new double[bufferSize];
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-            Cluster::deSerializeCentroids(buffer);
+            Cluster::deserializeCentroids(buffer);
         }
     }
 

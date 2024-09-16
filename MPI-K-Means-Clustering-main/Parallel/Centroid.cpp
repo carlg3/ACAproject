@@ -2,7 +2,7 @@
 
 using namespace std;
 
-list<Centroid*> Centroid::centroids;
+vector<Centroid*> Centroid::centroids;
 
 Centroid::Centroid(int dim) : Tupla(dim) {
     centroids.push_back(this);

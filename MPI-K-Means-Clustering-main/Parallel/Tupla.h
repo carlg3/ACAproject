@@ -8,12 +8,12 @@ using namespace std;
 class Tupla{
 public:
     Tupla(int dim);
-    Tupla differenzaVettoriale(const Tupla& t) const;
-    double distanza(const Tupla& t) const;
+    int getDim();
+    double getThValue(int i) const;
     void setThValue(int i, double d);
     void setValue(const vector<double>& d);
-    double getThValue(int i) const;
-    int getDim();
+    Tupla differenzaVettoriale(const Tupla& t) const;
+    double distanza(const Tupla& t) const;
     string toString();
 protected:
     int dim;
