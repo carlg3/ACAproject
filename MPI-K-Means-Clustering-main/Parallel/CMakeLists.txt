@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 
+project(Parallel_proj_test)
+
 set(CMAKE_CXX_STANDARD 20)
 
 # Add MPI Package to Project
@@ -18,4 +20,4 @@ add_executable(Parallel_proj_test
 )
 
 # Link MPI libraries
-target_link_libraries(Parallel PRIVATE MPI::MPI_CXX)
+target_link_libraries(Parallel_proj_test PRIVATE MPI::MPI_CXX)
