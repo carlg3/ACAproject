@@ -9,7 +9,7 @@ find_package(MPI REQUIRED)
 
 include_directories(.)
 
-add_executable(Parallel
+add_executable(Parallel_proj_test
     Centroid.cpp
     Centroid.h
     Cluster.cpp
@@ -21,4 +21,4 @@ add_executable(Parallel
     Tupla.h)
 
 # Link MPI libraries
-target_link_libraries(Parallel PRIVATE MPI::MPI_CXX)
+target_link_libraries(Parallel_proj_test PRIVATE MPI::MPI_CXX)
