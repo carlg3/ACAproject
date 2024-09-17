@@ -25,6 +25,10 @@ Cluster::Cluster(int centroidDimension){
 }
 
 // ---- GETTERS & SETTERS ----
+vector<Point*> Cluster::getPoints() {
+    return points_;
+};
+
 Centroid* Cluster::getCentroid(){
     return centroid;
 }
@@ -75,12 +79,6 @@ void Cluster::setSumCluster(int index, double value){
 void Cluster::setSumDistance(double value){
     Cluster::sumDistance = value;
 }
-
-/*
-void Cluster::setThCentroid(int index, double value){
-    centroid->setThValue(index,value);
-}
-*/
 
 void Cluster::setEmptyCluster(){
     points_.clear();
@@ -148,32 +146,20 @@ double Cluster::totalMSE(){
 
 // ----- ASSIGNMENT -----
 void Cluster::pointAssignment(int startIndex, int endIndex) {
-    int distanzaMinimaIndex, cluster_number_ = Cluster::getNumberCluster();
-    double distanzaMinima, next, d[cluster_number_]; // Buffer per memorizzare le distanze tra un punto e i centroidi
-
     for (int i = startIndex; i < endIndex; i++) {
-        // Inizializziamo con il primo cluster
-        distanzaMinimaIndex = 0;
-        distanzaMinima = Point::getThPoint(i)->distanza(*Cluster::getThCluster(0)->getCentroid());
-        d[0] = distanzaMinima; // Memorizziamo la distanza tra il punto e il primo centroid
+        double minDistance = Point::getThPoint(i)->distanza(*clusters.front()->getCentroid());
+        Cluster* closestCluster = clusters.front();
 
-        // Ciclo sui cluster restanti
-        for (int j = 1; j < cluster_number_; j++) {
-            next = Point::getThPoint(i)->distanza(*Cluster::getThCluster(j)->getCentroid());
-            d[j] = next; // Memorizziamo la distanza tra il punto e il centroid corrente
-
-            // Se troviamo una distanza più piccola, aggiorniamo
-            if (next < distanzaMinima) {
-                distanzaMinima = next;
-                distanzaMinimaIndex = j;
+        for (auto cluster : clusters) {
+            double distance = Point::getThPoint(i)->distanza(*cluster->getCentroid());
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestCluster = cluster;
             }
         }
 
-        // Aggiungiamo il punto al cluster più vicino
-        Cluster::getThCluster(distanzaMinimaIndex)->addElement(Point::getThPoint(i));
-
-        // Aggiorniamo la somma delle distanze (utile per analisi successive)
-        Cluster::sumDistance += d[distanzaMinimaIndex];
+        closestCluster->addElement(Point::getThPoint(i));
+        Cluster::sumDistance += minDistance;
     }
 }
 
@@ -201,29 +187,22 @@ void Cluster::centroidsParallelAssignment(){
 // ----- SERIALIZE FUNCTIONS -----
 // Invia numero di cluster e la dimensione dei punti, poi i centroidi iniziali per ogni cluster
 void Cluster::serializeCluster(double* buffer){
-    int K = clusters.size();
+    int K = Cluster::getNumberCluster();
     int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
 
     buffer[0] = K; // Number of klusters
     buffer[1] = dim; // Centroid dimension
 
-    for(int i = 0; i < K; i++) {
-        for(int j = 0; j < dim; j++){
-            buffer[2 + i * dim + j] = Cluster::getThCluster(i)->getCentroid()->getThValue(j);
-        }
-    }
+    Cluster::serializeCentroids(buffer + 2);
 }
 
-void Cluster::deserializeCluster(double* buffer){
+void Cluster::deserializeCluster(double* buffer) {
     int K = buffer[0];
     int dim = buffer[1]; // Cluster dimension
+
     Cluster::createKclusters(K,dim);
 
-    for(int i = 0; i < K; i++) {
-        for(int j = 0; j < dim; j++){
-            Cluster::getThCluster(i)->getCentroid()->setThValue(j, buffer[2 + i * dim + j]);
-        }
-    }
+    Cluster::deserializeCentroids(buffer + 2);
 }
 
 // Invia solo i centroidi per ogni cluster
@@ -265,7 +244,6 @@ void Cluster::serializeSumClusters(double *buffer){
     }
 }
 
-// [INFO] Non c'è la funzione deSerializeSumClusters
 void Cluster::deserializeSumClusters(double *buffer) {
     int cluster_number_ = Cluster::getNumberCluster();
     int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
@@ -283,28 +261,31 @@ void Cluster::deserializeSumClusters(double *buffer) {
 }
 
 // ---- DEBUG ----
-void Cluster::printClusters(){
-    ofstream debug_txt; debug_txt.open("test_kmeans.txt");
+void Cluster::printClusters(int my_rank){
+    // ofstream debug_txt; debug_txt.open("test_kmeans.txt");
 
     int cluster_number_ = clusters.size();
 
+    printf("------------- RANK <%d>\n", my_rank);
     printf("KMeansAlg w/ %d clusters\n", cluster_number_);
+    /*
     for(int i = 0; i < cluster_number_; i++) {
         printf("CLUSTER <%d>\tNumber of elements = %d\n", i, Cluster::getThCluster(i)->getNumberElements());
     }
+    */
 
     for(int i = 0; i < cluster_number_; i++) {
-        printf("CENTROID of %d @ %s\n", i, Cluster::getThCluster(i)->getCentroid()->toString().c_str());
+        printf("Cluster(%d) Centroid @ %s\n", i, Cluster::getThCluster(i)->getCentroid()->toString().c_str());
 
-        for(int j = 0; j < Cluster::getThCluster(i)->getNumberElements(); j++){
+        for(int j = 0; j < Cluster::getThCluster(i)->getPoints().size(); j++){
             printf("%s\n", Cluster::getThCluster(i)->getElementList(j)->toString().c_str());
 
-            debug_txt << i << ";" << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
+            // debug_txt << i << ";" << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
         }
     }
     printf("---------------------\n");
 
-    debug_txt.close();
+    // debug_txt.close();
 }
 
 void Cluster::printCentroids(){

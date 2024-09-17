@@ -20,6 +20,7 @@ public:
 	int getNumberElements();	
     Centroid* getCentroid();
     Point* getThPoint(int index);
+    vector<Point*> getPoints();
 
     double getSumCluster(int index);
     void setNumberElements(int num);
@@ -45,9 +46,7 @@ public:
     static double totalMSE();
 
     // Debug functions
-    // void setThCentroid(int index, double value);
-
-	static void printClusters(); // Print all the clusters
+	static void printClusters(int my_rank); // Print all the clusters
     static void printCentroids(); // Print all the centroids
     void printSum();
     

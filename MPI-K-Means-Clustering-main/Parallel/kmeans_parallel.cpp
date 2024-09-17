@@ -103,7 +103,6 @@ int main(int argc, char* argv[]) {
 
             // Quindi il primo thread prende un batch grande tot_,
             // il secondo thread prende l'altro batch spostandosi di tot_ punti nella lista, ecc..
-
             int startIndex = (i - 1) * pointsXprocessor;
             int endIndex = startIndex + pointsXprocessor;
             Point::serializePoint(buffer, startIndex, endIndex, pointDimension);
@@ -136,7 +135,6 @@ int main(int argc, char* argv[]) {
         
         // INITIAL TMSE
         double previousTMSE, tmse = 0;
-
         int finish = 0;
 
         while(true) {
@@ -200,9 +198,7 @@ int main(int argc, char* argv[]) {
             previousTMSE = tmse;
 
             delete[] buffer;
-            // delete[] buffer2;
             buffer = nullptr;
-            // buffer2 = nullptr;
 
             buffer = new double[1];     // buffer recv
             buffer2 = new double[1];    // buffer send
@@ -221,9 +217,6 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
             // SEND NEW CENTROIDS
-            // delete[] buffer;
-            // buffer = nullptr;
-
             bufferSize = cluster_number_ * centroid_dim_;
             buffer = new double[bufferSize];
 
@@ -239,14 +232,7 @@ int main(int argc, char* argv[]) {
         endtime = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n", endtime-starttime); // Print execution time
 
-        // DEBUG con CLion
-        int debug = 1;
-        while(debug == 0) {
-            sleep(5);
-        }
-
-        // Cluster::printCentroids();
-        // Cluster::printClusters();
+        Cluster::printCentroids();
     }
 
     if(my_rank != 0){
