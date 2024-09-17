@@ -15,7 +15,7 @@ add_executable(Parallel_proj_test
         Point.h
         Tupla.cpp
         Tupla.h
-        kmeans_parallel.cpp)
+        main.cpp)
 
 # Link MPI libraries
 target_link_libraries(Parallel_proj_test PRIVATE MPI::MPI_CXX)
