@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Serial_proj_test.dir/Cluster.cpp.o CMakeFiles/Serial_proj_test.dir/Centroid.cpp.o CMakeFiles/Serial_proj_test.dir/Point.cpp.o CMakeFiles/Serial_proj_test.dir/Tupla.cpp.o CMakeFiles/Serial_proj_test.dir/kmeans_sequential.cpp.o -o Serial_proj_test 

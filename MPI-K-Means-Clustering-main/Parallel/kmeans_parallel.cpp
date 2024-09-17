@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
 
-    if (my_rank == 0) {
+    if(my_rank == 0){
         double starttime, endtime;  // Time variables
         starttime = MPI_Wtime();    // Start timer
 
@@ -119,6 +119,9 @@ int main(int argc, char* argv[]) {
         // K * pointDimension:
         //  . la lista dei centroidi di dimensione pointDimension
 
+        delete[] buffer;
+        buffer = nullptr;
+
         bufferSize = 2 + K * pointDimension;
         buffer = new double[bufferSize];
 
@@ -136,39 +139,26 @@ int main(int argc, char* argv[]) {
 
         int finish = 0;
 
-        // DEBUG con CLion
-        int debug = 0;
-        while(debug == 0) {
-            sleep(5);
-        }
-        
         while(true) {
             Cluster::clustersReset();
 
             // ASSIGN POINTS TO CLUSTERS WITH NEAREST CENTROID
             endtime = MPI_Wtime(); // Stop timer
-            printf("[INFO] Pre-Assignment: %f seconds\n",endtime - starttime); // Print execution time
+            printf("[INFO] Pre-Assignment: %f seconds\n", endtime - starttime); // Print execution time
 
+            // Il master lo fa per l'ultimo batch di punti
             int startIndex = (commSize - 1) * pointsXprocessor;
             int endIndex = totalNumberPoint;
             Cluster::pointAssignment(startIndex, endIndex);
 
             endtime = MPI_Wtime(); // Stop timer
-            printf("[INFO] Post-Assignment: %f seconds\n",endtime - starttime); // Print execution time
+            printf("[INFO] Post-Assignment: %f seconds\n", endtime - starttime); // Print execution time
 
             // CALCULATE MASTER SUM_CLUSTER
 
             // Qui calcola la somma delle coordinate di tutti i punti dei cluster
             // quindi in ogni oggetto Cluster avrò un sumDistance di dimensione centroid_dim_
             // e ogni elemento sarà la somma
-
-            /*
-            // DEBUG con CLion
-            int debug = 0;
-            while(debug == 0) {
-                sleep(5);
-            }
-            */
             Cluster::sumPointsClusters();
             
             // RECV SUM_CLUSTER AND NUMBER_OF_POINTS, AND CALCULATE TOTAL_SUM_CLUSTER AND TOTAL_NUMBER_OF_POINTS
@@ -190,6 +180,7 @@ int main(int argc, char* argv[]) {
             // Quindi prima le somme delle coordinate dei punti di un cluster
             // es. con centroid_dim_ di 2 avrò i primi 2 elementi con la somma delle x e y del primo cluster
             // e poi il numero totale di punti del cluster e così via...
+
             Cluster::serializeSumClusters(buffer2);
             
             // 1--- REDUCE
@@ -208,6 +199,11 @@ int main(int argc, char* argv[]) {
             // Recv SumDistance
             previousTMSE = tmse;
 
+            delete[] buffer;
+            // delete[] buffer2;
+            buffer = nullptr;
+            // buffer2 = nullptr;
+
             buffer = new double[1];     // buffer recv
             buffer2 = new double[1];    // buffer send
 
@@ -225,6 +221,9 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
             // SEND NEW CENTROIDS
+            // delete[] buffer;
+            // buffer = nullptr;
+
             bufferSize = cluster_number_ * centroid_dim_;
             buffer = new double[bufferSize];
 
@@ -240,14 +239,21 @@ int main(int argc, char* argv[]) {
         endtime = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n", endtime-starttime); // Print execution time
 
-        Cluster::printClusters();
+        // DEBUG con CLion
+        int debug = 1;
+        while(debug == 0) {
+            sleep(5);
+        }
+
+        // Cluster::printCentroids();
+        // Cluster::printClusters();
     }
 
     if(my_rank != 0){
         int bufferSize;
         double *buffer, *buffer2;
 
-        // RECV POINTS
+        // RECV POINTS -- pointsXprocessor
         // Recv length, then data
         MPI_Recv(&bufferSize, 1, MPI_INT, 0, LENTAG, MPI_COMM_WORLD, &status);
 
@@ -260,6 +266,10 @@ int main(int argc, char* argv[]) {
         // RECV CLUSTERS
         // Recv length, then data
         MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+        delete[] buffer;
+        buffer = nullptr;
+
         buffer = new double[bufferSize];
 
         MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
@@ -270,10 +280,15 @@ int main(int argc, char* argv[]) {
 
         int finish;
 
+        delete[] buffer;
+        buffer = nullptr;
+
         while(true) {
             Cluster::clustersReset();
+
             // ASSIGN POINTS TO CLUSTERS WITH NEAREST CENTROID
             Cluster::pointAssignment();
+
             // CALCULATE SLAVE SUM_CLUSTER
             Cluster::sumPointsClusters();
 
@@ -293,8 +308,14 @@ int main(int argc, char* argv[]) {
             // CALCULATE MSE
             // Already did during assignment
             // Send SumDistance
+            delete[] buffer;
+            delete[] buffer2;
+            buffer = nullptr;
+            buffer2 = nullptr;
+
             buffer = new double[1];
             buffer2 = new double[1]; // buffer recv, useless for slave
+
             buffer[0] = Cluster::getSumDistance();
 
             // 2--- REDUCE
@@ -306,6 +327,9 @@ int main(int argc, char* argv[]) {
 
             // RECV NEW CENTROIDS
             MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+            delete[] buffer;
+            buffer = nullptr;
 
             buffer = new double[bufferSize];
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
