@@ -23,24 +23,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f626ed87-c878-4c3c-b667-3b29cfe774c5" name="Changes" comment="">
+    <list default="true" id="f626ed87-c878-4c3c-b667-3b29cfe774c5" name="Changes" comment="main ver con righe di debug CLion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Centroid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Centroid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Centroid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Centroid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.h" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Point.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Point.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Point.h" beforeDir="false" afterPath="$PROJECT_DIR$/Point.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tupla.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tupla.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tupla.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tupla.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.65880/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.72452/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.80310/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.88742/hwloc.sm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,24 +55,6 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -120,6 +90,8 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -155,8 +127,17 @@
       <option name="presentableId" value="Default" />
       <updated>1726513696247</updated>
       <workItem from="1726513697761" duration="158000" />
-      <workItem from="1726557309624" duration="221000" />
+      <workItem from="1726557309624" duration="599000" />
     </task>
+    <task id="LOCAL-00001" summary="main ver con righe di debug CLion">
+      <option name="closed" value="true" />
+      <created>1726557868956</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726557868956</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,15 +149,16 @@
     <isAutomaticReloadCMake value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="main ver con righe di debug CLion" />
+    <option name="LAST_COMMIT_MESSAGE" value="main ver con righe di debug CLion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>198</line>
-          <option name="timeStamp" value="7" />
+          <line>148</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
