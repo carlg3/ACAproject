@@ -34,7 +34,7 @@ void Tupla::setValue(const vector<double>& d) {
     value = d;
 }
 
-int Tupla::getDim() {
+int Tupla::get_dim() {
     return dim;
 }
 

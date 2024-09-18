@@ -8,7 +8,7 @@ using namespace std;
 class Tupla{
 public:
     Tupla(int dim);
-    int getDim();
+    int get_dim();
     double getThValue(int i) const;
     void setThValue(int i, double d);
     void setValue(const vector<double>& d);
