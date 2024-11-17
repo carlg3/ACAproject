@@ -13,6 +13,8 @@
 #include "Cluster.h"
 #include "Point.h"
 
+#include <chrono>
+using namespace chrono;
 using namespace std;
 
 int MAX_ITERATION = 5;
@@ -36,7 +38,7 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
         }
 
         Point *point = new Point(tokens.size());
-        for (int i = 0; i < tokens.size(); i++) {
+        for (int i = 0; i < (int)tokens.size(); i++) {
             point->setThValue(i, stod(tokens[i]));
         }
 
@@ -47,17 +49,20 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
 }
 
 int main() {
-    time_t start, end;
-    time(&start);
+    //time_t start, end;
+    //time(&start);
+
+    auto start = high_resolution_clock::now(); // Inizia il timer
 
     vector<Point*> points_temp_;
 
-    srand(time(0)); // Inizializzazione casuale dei punti
+    //srand(time(0)); // Inizializzazione casuale dei punti
 
     // LETTURA DEL FILE
     // "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt"
-    readDataSet(points_temp_,R"(C:\Users\galan\CLionProjects\Serial-proj-test\dataset\dataset_100x2.txt)");
-
+    // readDataSet(points_temp_,R"(C:\Users\galan\CLionProjects\Serial-proj-test\dataset\dataset_100x2.txt)");
+    readDataSet(points_temp_,"/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/dataset/dataset_100x2.txt");
+   
     int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
     int totalNumberPoint = points_temp_.size();           // Numero di dati nel nostro DataSet
 
@@ -82,11 +87,15 @@ int main() {
         tmse = Cluster::totalMSE();
     }
 
-    time(&end);
-    double time_taken = double(end - start);
-    cout << "Time taken to run the task: " << time_taken << " sec" << endl;
+    //time(&end);
+    // double time_taken = double(end - start);
+    // Usando chrono...
+    auto end = high_resolution_clock::now(); // Termina il timer
+    auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
-    Cluster::printClusters();
+    cout << "Time taken to run the task: " << duration << " sec" << endl;
+
+    // Cluster::printClusters();
 
     return 0;
 }

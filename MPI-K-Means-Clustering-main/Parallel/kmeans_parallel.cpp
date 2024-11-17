@@ -117,7 +117,7 @@ int main(int argc, char* argv[]) {
             Cluster::clustersReset();
 
             endtime = MPI_Wtime(); // Stop timer
-            printf("[INFO] Pre-Assignment: %f seconds\n", endtime - starttime); // Print execution time
+            // printf("[INFO] Pre-Assignment: %f seconds\n", endtime - starttime); // Print execution time
 
             // Master works on the last batch of points <pointsXprocessor>
             int startIndex = (commSize - 1) * pointsXprocessor;
@@ -125,7 +125,7 @@ int main(int argc, char* argv[]) {
             Cluster::pointAssignment(startIndex, endIndex);
 
             endtime = MPI_Wtime(); // Stop timer
-            printf("[INFO] Post-Assignment: %f seconds\n", endtime - starttime); // Print execution time
+            // printf("[INFO] Post-Assignment: %f seconds\n", endtime - starttime); // Print execution time
 
             // Gets the sum of the points of each clusters (of the master's points)
             Cluster::sumPointsClusters();
@@ -184,7 +184,7 @@ int main(int argc, char* argv[]) {
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         endtime = MPI_Wtime();
-        printf("That took %f seconds\n", endtime-starttime); // Print execution time
+        // printf("That took %f seconds\n", endtime-starttime); // Print execution time
 
         // DEBUG
         // Cluster::printCentroids();
