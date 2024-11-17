@@ -1,6 +1,6 @@
 # Makefile for compiling 'kmeans_sequential' program
 
-TARGET = kmeans_parallel.o
+TARGET = kmeans_parallel
 
 SRCS = Centroid.cpp Cluster.cpp kmeans_parallel.cpp Point.cpp Tupla.cpp
 

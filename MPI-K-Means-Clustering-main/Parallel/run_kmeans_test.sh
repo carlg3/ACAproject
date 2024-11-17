@@ -11,7 +11,7 @@ MAX_NP=$1
 
 # File hostfile e percorso del file eseguibile
 HOSTFILE="../hostfile"
-EXECUTABLE="kmeans_parallel.o"
+EXECUTABLE="kmeans_parallel"
 
 # Esegui il comando per np da 1 a MAX_NP
 for np in $(seq 1 $MAX_NP)
