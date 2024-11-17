@@ -21,7 +21,7 @@ const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLU
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
-    f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/dataset/execution_time.txt", ios::app);
+    f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/execution_time.txt", ios::app);
     f << cs << "," << tnp << "," << pd << "," << K << "," << time << endl;
     f.close();
 }
@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
 
         vector<Point*> points_temp_;
         // readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
-        readDataSet(points_temp_,"/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/dataset/dataset_1000x2.txt");
+        readDataSet(points_temp_,"/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt");
 
         int pointDimension = points_temp_[0]->get_dim(); // Dimensione del dato R^pointDimension
         int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
