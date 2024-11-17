@@ -19,6 +19,13 @@ using namespace std;
 int MAXITERATION = 100;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
+void writeExTime(int cs, int tnp, int pd, int K, double time){
+    ofstream f;
+    f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/dataset/execution_time.txt", ios::app);
+    f << cs << "," << tnp << "," << pd << "," << K << "," << time << endl;
+    f.close();
+}
+
 void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
 
@@ -54,7 +61,6 @@ int main(int argc, char* argv[]) {
 
     srand(time(0)); // Randomize initialization point
 
-    // Get my rank
     int my_rank, commSize;
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
@@ -182,6 +188,11 @@ int main(int argc, char* argv[]) {
 
         // DEBUG
         // Cluster::printCentroids();
+        
+        // DEBUG per salvare il tempo che ci si mette ad ogni esecuzione
+        // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
+        // cout << commSize << " " << totalNumberPoint << " " << pointDimension << " " << K << " " << endtime-starttime << endl;
+        writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
     }
 
     if(my_rank != 0){
