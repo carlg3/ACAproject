@@ -31,7 +31,7 @@ void writeExTime(int cs, int tnp, int pd, int K, double time){
 }
 void readDataSet(int *pointDimension,int *totalNumberPoint){
     string buffer;
-    ifstream DataSet; DataSet.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet100x2.txt");
+    ifstream DataSet; DataSet.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt");
     if(!DataSet.is_open()){
         cout << "FILE OPENING FAILED" << endl;
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
