@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
 
         vector<Point*> points_temp_;
         // readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
-        readDataSet(points_temp_,"/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/other/DataSet50000x10.txt");
+        readDataSet(points_temp_,"/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt");
 
         int pointDimension = points_temp_[0]->get_dim(); // Dimensione del dato R^pointDimension
         int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
