@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 #include <mpi.h>
+/*
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/set.hpp>
 #include <boost/iostreams/stream_buffer.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/iostreams/device/back_inserter.hpp>
-
+*/
 #include "Cluster.h"
 #include "Point.h"
 
@@ -22,9 +23,15 @@ const int datapointtag=2;
 const int dataclustertag=3;
 const int datasumclustertag=4;
 
+void writeExTime(int cs, int tnp, int pd, int K, double time){
+    ofstream f;
+    f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/execution_time.txt", ios::app);
+    f << cs << "," << tnp << "," << pd << "," << K << "," << time << endl;
+    f.close();
+}
 void readDataSet(int *pointDimension,int *totalNumberPoint){
     string buffer;
-    ifstream DataSet; DataSet.open("/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/DataSet/DataSet100x2.txt");
+    ifstream DataSet; DataSet.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet100x2.txt");
     if(!DataSet.is_open()){
         cout << "FILE OPENING FAILED" << endl;
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
@@ -95,10 +102,10 @@ int main(int argc, char* argv[]) {
             Cluster::clustersReset();
             // ASSIGN POINTS TO CLUSTERS WITH NEAREST CENTROID
             endtime   = MPI_Wtime(); // Stop timer
-            printf("APRE ASS %f seconds\n",endtime-starttime); // Print execution time
+            //printf("APRE ASS %f seconds\n",endtime-starttime); // Print execution time
             Cluster::pointAssignment((commSize-1)*pointsXprocessor,totalNumberPoint);
             endtime   = MPI_Wtime(); // Stop timer
-            printf("AFTER ASS %f seconds\n",endtime-starttime); // Print execution time
+            //printf("AFTER ASS %f seconds\n",endtime-starttime); // Print execution time
             // CALCULATE MASTER SUM_CLUSTER
             for(int i=0;i<Cluster::getNumberCluster();i++){
                 Cluster::sumPointsClusters();
@@ -141,15 +148,16 @@ int main(int argc, char* argv[]) {
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
         endtime   = MPI_Wtime(); // Stop timer
-        printf("That took %f seconds\n",endtime-starttime); // Print execution time
+        //printf("That took %f seconds\n",endtime-starttime); // Print execution time
 
         // DEBUG
-        int x = 0;
-        while(x == 0) {
-            sleep(3);
-        }
+        // int x = 0;
+        // while(x == 0) {
+        //     sleep(3);
+        // }
 
-        Cluster::printClusters();
+        // Cluster::printClusters();
+	writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
     }
 
     if(my_rank != 0){
