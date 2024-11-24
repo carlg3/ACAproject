@@ -16,7 +16,7 @@
 using namespace std;
 
 int K = 0; // Number of Clusters
-int MAXITERATION = 100;
+int MAXITERATION = 5;
 const int lentag=0;
 const int stat=1;
 const int datapointtag=2;
