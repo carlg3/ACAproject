@@ -183,17 +183,17 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         }
 
-        // DEBUG -- CLion
-        // int debug = 0;
-        // while(debug == 0) {
-        //     sleep(1);
-        // }
-
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         endtime = MPI_Wtime();
         printf("That took %f seconds\n", endtime-starttime); // Print execution time
+
+        // DEBUG -- CLion
+        int debug = 0;
+        while(debug == 0) {
+            sleep(1);
+        }
 
         // DEBUG
         // Cluster::printCentroids();

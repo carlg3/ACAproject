@@ -19,6 +19,9 @@ using namespace std;
 
 int MAX_ITERATION = 5;
 
+const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet5000x10.txt";
+const char* path_linux = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
+
 void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
 
@@ -59,19 +62,17 @@ int main() {
     //srand(time(0)); // Inizializzazione casuale dei punti
 
     // LETTURA DEL FILE
-    // readDataSet(points_temp_,R"(C:\Users\galan\CLionProjects\Serial-proj-test\dataset\dataset_100x2.txt)");
-    readDataSet(points_temp_, "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt");
+    readDataSet(points_temp_, path_win);
    
     int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
-    int totalNumberPoint = points_temp_.size();           // Numero di dati nel nostro DataSet
+    int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
     // INIZIALIZZAZIONE CLUSTERS E CENTROIDI
     int K = sqrt(totalNumberPoint / 2);
     Cluster::createKclusters(K, pointDimension);
 
     // TMSE INIZIALE
-    double previousTMSE = 0;
-    double tmse = 0;
+    double previousTMSE = 0, tmse = 0;
 
     while ((MAX_ITERATION-- && tmse < previousTMSE) || previousTMSE == 0) {
         Cluster::clustersReset();
@@ -88,11 +89,12 @@ int main() {
 
     //time(&end);
     // double time_taken = double(end - start);
+
     // Usando chrono...
     auto end = high_resolution_clock::now(); // Termina il timer
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
-    cout << "Time taken to run the task: " << duration << " sec" << endl;
+    cout << "That took " << duration*1e-6 << " s" << endl;
 
     // Cluster::printClusters();
 
