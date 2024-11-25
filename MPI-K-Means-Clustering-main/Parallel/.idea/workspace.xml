@@ -29,6 +29,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.72452/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.80310/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.88742/hwloc.sm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Parallel_proj_test" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Parallel_proj_test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kmeans_parallel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kmeans_parallel.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +59,6 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -108,11 +107,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake Application.Parallel_proj_test" />
       <item itemvalue="CMake Application.Parallel_wsl" />
@@ -128,6 +122,7 @@
       <updated>1726513696247</updated>
       <workItem from="1726513697761" duration="158000" />
       <workItem from="1726557309624" duration="599000" />
+      <workItem from="1732536479412" duration="765000" />
     </task>
     <task id="LOCAL-00001" summary="main ver con righe di debug CLion">
       <option name="closed" value="true" />
@@ -159,6 +154,11 @@
           <url>file://$PROJECT_DIR$/main.cpp</url>
           <line>148</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/kmeans_parallel.cpp</url>
+          <line>155</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

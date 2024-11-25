@@ -18,7 +18,8 @@ using namespace std;
 int K = 0, MAXITERATION = 5;
 const int lentag = 0, stat = 1, datapointtag = 2, dataclustertag = 3, datasumclustertag = 4;
 
-const char* path_win = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
+const char* path_win_2 = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
+const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet5000x10.txt";
 const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
