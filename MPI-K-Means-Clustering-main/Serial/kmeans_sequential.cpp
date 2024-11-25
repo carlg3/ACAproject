@@ -87,14 +87,14 @@ int main() {
         tmse = Cluster::totalMSE();
     }
 
-    //time(&end);
+    // time(&end);
     // double time_taken = double(end - start);
 
     // Usando chrono...
     auto end = high_resolution_clock::now(); // Termina il timer
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
-    cout << "That took " << duration*1e-6 << " s" << endl;
+    cout << "Time taken to run the task: " << duration*1e-6 << " sec" << endl;
 
     // Cluster::printClusters();
 
