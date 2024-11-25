@@ -12,7 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Cluster.cpp" "CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o" "gcc" "CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o.d"
   "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Point.cpp" "CMakeFiles/Parallel_proj_test.dir/Point.cpp.o" "gcc" "CMakeFiles/Parallel_proj_test.dir/Point.cpp.o.d"
   "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.cpp" "CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o" "gcc" "CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o.d"
-  "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/main.cpp" "CMakeFiles/Parallel_proj_test.dir/main.cpp.o" "gcc" "CMakeFiles/Parallel_proj_test.dir/main.cpp.o.d"
+  "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp" "CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o" "gcc" "CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -15,13 +15,11 @@
 
 using namespace std;
 
-int K = 0; // Number of Clusters
-int MAXITERATION = 5;
-const int lentag=0;
-const int stat=1;
-const int datapointtag=2;
-const int dataclustertag=3;
-const int datasumclustertag=4;
+int K = 0, MAXITERATION = 5;
+const int lentag = 0, stat = 1, datapointtag = 2, dataclustertag = 3, datasumclustertag = 4;
+
+const char* path_win = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
+const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
@@ -31,7 +29,7 @@ void writeExTime(int cs, int tnp, int pd, int K, double time){
 }
 void readDataSet(int *pointDimension,int *totalNumberPoint){
     string buffer;
-    ifstream DataSet; DataSet.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt");
+    ifstream DataSet; DataSet.open(path_win);
     if(!DataSet.is_open()){
         cout << "FILE OPENING FAILED" << endl;
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
@@ -145,19 +143,20 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         }
+
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
         endtime   = MPI_Wtime(); // Stop timer
-        //printf("That took %f seconds\n",endtime-starttime); // Print execution time
+        printf("That took %f seconds\n",endtime-starttime); // Print execution time
 
         // DEBUG
-        // int x = 0;
-        // while(x == 0) {
-        //     sleep(3);
+        // int debug = 0;
+        // while(debug == 0) {
+        //     sleep(1);
         // }
 
         // Cluster::printClusters();
-	writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
+	    // writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
     }
 
     if(my_rank != 0){

@@ -125,19 +125,19 @@ CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/Tupla.cpp -o CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s
 
-CMakeFiles/Parallel_proj_test.dir/main.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
-CMakeFiles/Parallel_proj_test.dir/main.cpp.o: ../main.cpp
-CMakeFiles/Parallel_proj_test.dir/main.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Parallel_proj_test.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/main.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/main.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/main.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/main.cpp
+CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: CMakeFiles/Parallel_proj_test.dir/flags.make
+CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: ../kmeans_parallel.cpp
+CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o: CMakeFiles/Parallel_proj_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o -MF CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o.d -o CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o -c /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp
 
-CMakeFiles/Parallel_proj_test.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/main.cpp > CMakeFiles/Parallel_proj_test.dir/main.cpp.i
+CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp > CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i
 
-CMakeFiles/Parallel_proj_test.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/main.cpp -o CMakeFiles/Parallel_proj_test.dir/main.cpp.s
+CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/kmeans_parallel.cpp -o CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s
 
 # Object files for target Parallel_proj_test
 Parallel_proj_test_OBJECTS = \
@@ -145,7 +145,7 @@ Parallel_proj_test_OBJECTS = \
 "CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o" \
 "CMakeFiles/Parallel_proj_test.dir/Point.cpp.o" \
 "CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o" \
-"CMakeFiles/Parallel_proj_test.dir/main.cpp.o"
+"CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o"
 
 # External object files for target Parallel_proj_test
 Parallel_proj_test_EXTERNAL_OBJECTS =
@@ -154,7 +154,7 @@ Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/Centroid.cpp.o
 Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/Cluster.cpp.o
 Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/Point.cpp.o
 Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.o
-Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/main.cpp.o
+Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o
 Parallel_proj_test: CMakeFiles/Parallel_proj_test.dir/build.make
 Parallel_proj_test: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so
 Parallel_proj_test: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so

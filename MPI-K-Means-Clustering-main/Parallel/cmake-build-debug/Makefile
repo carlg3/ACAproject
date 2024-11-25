@@ -225,29 +225,29 @@ Tupla.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/Tupla.cpp.s
 .PHONY : Tupla.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+kmeans_parallel.o: kmeans_parallel.cpp.o
+.PHONY : kmeans_parallel.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/main.cpp.o
-.PHONY : main.cpp.o
+kmeans_parallel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.o
+.PHONY : kmeans_parallel.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+kmeans_parallel.i: kmeans_parallel.cpp.i
+.PHONY : kmeans_parallel.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/main.cpp.i
-.PHONY : main.cpp.i
+kmeans_parallel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.i
+.PHONY : kmeans_parallel.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+kmeans_parallel.s: kmeans_parallel.cpp.s
+.PHONY : kmeans_parallel.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/main.cpp.s
-.PHONY : main.cpp.s
+kmeans_parallel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Parallel_proj_test.dir/build.make CMakeFiles/Parallel_proj_test.dir/kmeans_parallel.cpp.s
+.PHONY : kmeans_parallel.cpp.s
 
 # Help Target
 help:
@@ -270,9 +270,9 @@ help:
 	@echo "... Tupla.o"
 	@echo "... Tupla.i"
 	@echo "... Tupla.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... kmeans_parallel.o"
+	@echo "... kmeans_parallel.i"
+	@echo "... kmeans_parallel.s"
 .PHONY : help
 
 
