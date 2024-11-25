@@ -19,6 +19,9 @@ using namespace std;
 int MAXITERATION = 5;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
+const char* path_win = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
+const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
+
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
     f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/execution_time.txt", ios::app);
@@ -70,8 +73,7 @@ int main(int argc, char* argv[]) {
         starttime = MPI_Wtime();
 
         vector<Point*> points_temp_;
-        // readDataSet(points_temp_,"/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt");
-        readDataSet(points_temp_,"/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt");
+        readDataSet(points_temp_, path_win);
 
         int pointDimension = points_temp_[0]->get_dim(); // Dimensione del dato R^pointDimension
         int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
@@ -180,6 +182,12 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         }
 
+        // DEBUG -- CLion
+        // int debug = 0;
+        // while(debug == 0) {
+        //     sleep(1);
+        // }
+
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -192,7 +200,7 @@ int main(int argc, char* argv[]) {
         // DEBUG per salvare il tempo che ci si mette ad ogni esecuzione
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
         // cout << commSize << " " << totalNumberPoint << " " << pointDimension << " " << K << " " << endtime-starttime << endl;
-        writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
+        // writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
     }
 
     if(my_rank != 0){
