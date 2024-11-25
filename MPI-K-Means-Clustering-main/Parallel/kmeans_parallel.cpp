@@ -19,7 +19,8 @@ using namespace std;
 int MAXITERATION = 5;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
-const char* path_win = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
+const char* path_win_2 = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
+const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet5000x10.txt";
 const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
@@ -192,7 +193,7 @@ int main(int argc, char* argv[]) {
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         endtime = MPI_Wtime();
-        // printf("That took %f seconds\n", endtime-starttime); // Print execution time
+        printf("That took %f seconds\n", endtime-starttime); // Print execution time
 
         // DEBUG
         // Cluster::printCentroids();
