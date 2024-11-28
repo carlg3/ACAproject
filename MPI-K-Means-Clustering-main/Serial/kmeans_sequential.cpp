@@ -26,7 +26,7 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
 
     if (!dataSet.is_open()){
-        cout << "ERRORE DURANTE L'APERTURA DEL FILE" << endl;
+        cout << "[ERR] CAN'T OPEN DATASET FILE" << endl;
         return;
     }
 
@@ -52,51 +52,41 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
 }
 
 int main() {
-    //time_t start, end;
-    //time(&start);
-
     auto start = high_resolution_clock::now(); // Inizia il timer
 
     vector<Point*> points_temp_;
 
-    //srand(time(0)); // Inizializzazione casuale dei punti
-
-    // LETTURA DEL FILE
+	// Reading dataset..
     readDataSet(points_temp_, path_win);
    
     int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
     int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
-    // INIZIALIZZAZIONE CLUSTERS E CENTROIDI
-    int K = sqrt(totalNumberPoint / 2);
+    // Derive cluster number..
+	int K = sqrt(totalNumberPoint / 2);
     Cluster::createKclusters(K, pointDimension);
 
-    // TMSE INIZIALE
+	// Setting tmse
     double previousTMSE = 0, tmse = 0;
 
     while ((MAX_ITERATION-- && tmse < previousTMSE) || previousTMSE == 0) {
         Cluster::clustersReset();
-
-        // ASSEGNAZIONE DEI PUNTI AI CLUSTERS
+		
+		// Assign points to clusters
         Cluster::pointAssignment();
 
-        // CALCOLO DEI CENTROIDI
+		// Derive centroids for each cluster
         Cluster::centroidsAssignment();
 
         previousTMSE = tmse;
         tmse = Cluster::totalMSE();
     }
 
-    // time(&end);
-    // double time_taken = double(end - start);
-
-    // Usando chrono...
-    auto end = high_resolution_clock::now(); // Termina il timer
+    // Using chrono to get time spent..
+    auto end = high_resolution_clock::now(); 
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
-    cout << "Time taken to run the task: " << duration*1e-6 << " sec" << endl;
-
-    // Cluster::printClusters();
+    cout << "That took: " << duration*1e-6 << " sec" << endl;
 
     return 0;
 }
