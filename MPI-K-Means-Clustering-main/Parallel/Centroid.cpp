@@ -1,5 +1,4 @@
 #include "Centroid.h"
-
 using namespace std;
 
 vector<Centroid*> Centroid::centroids;
@@ -10,7 +9,7 @@ Centroid::Centroid(int dim) : Tupla(dim) {
 
 Centroid* Centroid::getThCentroid(int index){
     auto it = centroids.begin();
-    advance(it,index);
+    advance(it, index);
     return *it;
 }
 

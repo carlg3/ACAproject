@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Test di esecuzione con 1..MAX_NP processi in parallelo
+
 # Controlla che sia stato passato un argomento
 if [ $# -ne 1 ]; then
     echo "Uso: $0 <numero_max_np>"
@@ -19,4 +21,3 @@ do
     echo "Esecuzione con -np $np..."
     mpirun --hostfile $HOSTFILE -np $np $EXECUTABLE
 done
-

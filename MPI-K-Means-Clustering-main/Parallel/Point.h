@@ -13,7 +13,6 @@ public:
     static void deserializePoint(double* buffer);
     static void printPoints();
 private:
-    // static int numberPoints;
     static vector<Point*> points;
 };
 

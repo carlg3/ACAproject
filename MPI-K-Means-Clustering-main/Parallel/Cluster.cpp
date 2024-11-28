@@ -1,10 +1,7 @@
-#include <list>
 #include <iostream>
 #include <fstream>
-
 #include "Tupla.h"
 #include "Cluster.h"
-
 using namespace std;
 
 double Cluster::sumDistance;
@@ -41,7 +38,7 @@ Point* Cluster::getThPoint(int index) {
 
 Point* Cluster::getElementList(int index){
     auto it = points_.begin();
-    advance(it,index);
+    advance(it, index);
     return *it;
 }
 
@@ -118,7 +115,7 @@ void Cluster::addElement(Point *t){
 }
 
 void Cluster::initSumCluster() {
-    for(int i = 0; i < centroid->get_dim(); i++) {
+    for(int i = 0; i < centroid->getDim(); i++) {
         sumCluster[i] = 0;
     }
 }
@@ -126,7 +123,7 @@ void Cluster::initSumCluster() {
 void Cluster::sumPoints(){
     initSumCluster();
 
-    int centroid_dim_ = centroid->get_dim();
+    int centroid_dim_ = centroid->getDim();
     for(int i = 0; i < points_number_; i++){
         for(int j = 0; j < centroid_dim_; j++){
             sumCluster[j] += getThPoint(i)->getThValue(j);
@@ -141,6 +138,10 @@ void Cluster::sumPointsClusters(){
     }
 }
 
+/*
+    Ritorna la MeanSquaredError tra la somma delle distanze dei <punti> \
+    dei <Cluster> con il loro corrispondente <entroide> diviso il numero totale dei punti
+*/
 double Cluster::totalMSE(){
     return Cluster::sumDistance/Point::getTotalNumberPoints();
 }
@@ -165,7 +166,7 @@ void Cluster::pointAssignment(int startIndex, int endIndex) {
 }
 
 void Cluster::centroidParallelCalculator(){
-    int centroid_dim = centroid->get_dim();
+    int centroid_dim = centroid->getDim();
     int number_elements = getNumberElements();
 
     if(number_elements){
@@ -189,7 +190,7 @@ void Cluster::centroidsParallelAssignment(){
 // Invia numero di cluster e la dimensione dei punti, poi i centroidi iniziali per ogni cluster
 void Cluster::serializeCluster(double* buffer){
     int K = Cluster::getNumberCluster();
-    int dim = Cluster::getThCluster(0)->getCentroid()->get_dim();
+    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
 
     buffer[0] = K; // Number of klusters
     buffer[1] = dim; // Centroid dimension
@@ -209,7 +210,7 @@ void Cluster::deserializeCluster(double* buffer) {
 // Invia solo i centroidi per ogni cluster
 void Cluster::serializeCentroids(double* buffer){
     int K = Cluster::getNumberCluster();
-    int dim = Cluster::getThCluster(0)->getCentroid()->get_dim();
+    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
 
     for(int i = 0; i < K; i++){
         for(int j = 0; j < dim; j++){
@@ -220,7 +221,7 @@ void Cluster::serializeCentroids(double* buffer){
 
 void Cluster::deserializeCentroids(double* buffer) {
     int K = Cluster::getNumberCluster();
-    int dim = Cluster::getThCluster(0)->getCentroid()->get_dim();
+    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
 
     for(int i = 0; i < K; i++){
         for(int j = 0; j < dim; j++){
@@ -231,7 +232,7 @@ void Cluster::deserializeCentroids(double* buffer) {
 
 void Cluster::serializeSumClusters(double *buffer){
     int cluster_number_ = Cluster::getNumberCluster();
-    int dim = Cluster::getThCluster(0)->getCentroid()->get_dim();
+    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
     int index;
 
     for(int i = 0; i < cluster_number_; i++){
@@ -247,7 +248,7 @@ void Cluster::serializeSumClusters(double *buffer){
 
 void Cluster::deserializeSumClusters(double *buffer) {
     int cluster_number_ = Cluster::getNumberCluster();
-    int dim = Cluster::getThCluster(0)->getCentroid()->get_dim();
+    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
     int index;
 
     for(int i = 0; i < cluster_number_; i++) {
@@ -263,30 +264,18 @@ void Cluster::deserializeSumClusters(double *buffer) {
 
 // ---- DEBUG ----
 void Cluster::printClusters(int my_rank){
-    // ofstream debug_txt; debug_txt.open("test_kmeans.txt");
-
     int cluster_number_ = clusters.size();
 
-    printf("------------- RANK <%d>\n", my_rank);
-    printf("KMeansAlg w/ %d clusters\n", cluster_number_);
-    /*
-    for(int i = 0; i < cluster_number_; i++) {
-        printf("CLUSTER <%d>\tNumber of elements = %d\n", i, Cluster::getThCluster(i)->getNumberElements());
-    }
-    */
+    printf("------------- RANK <%d>\nKMeansAlg w/ %d clusters\n", my_rank, cluster_number_);
 
     for(int i = 0; i < cluster_number_; i++) {
         printf("Cluster(%d) Centroid @ %s\n", i, Cluster::getThCluster(i)->getCentroid()->toString().c_str());
 
         for(int j = 0; j < Cluster::getThCluster(i)->getPoints().size(); j++){
             printf("%s\n", Cluster::getThCluster(i)->getElementList(j)->toString().c_str());
-
-            // debug_txt << i << ";" << Cluster::getThCluster(i)->getElementList(j)->toString() << endl;
         }
     }
     printf("---------------------\n");
-
-    // debug_txt.close();
 }
 
 void Cluster::printCentroids(){
@@ -294,7 +283,7 @@ void Cluster::printCentroids(){
 
     for(int i = 0; i < cluster_number_; i++) {
         printf("Cluster(%d) Centroid @ %s\t w/ SumCluster = ", i, Cluster::getThCluster(i)->getCentroid()->toString().c_str());
-        Cluster::getThCluster(i)->printSum();
+        Cluster::getThCluster(i)->printSum(); // Stampa somma dei punti di quel cluster
         printf("\nnumberElements = %d\n", Cluster::getThCluster(i)->getNumberElements());
     }
     printf("---------------------\n");
@@ -302,7 +291,7 @@ void Cluster::printCentroids(){
 
 void Cluster::printSum(){
     string s = "[";
-    for(int i = 0; i < centroid->get_dim(); i++){
+    for(int i = 0; i < centroid->getDim(); i++){
         if(i==0){
             s += to_string((int)sumCluster[i]);
         }else{
@@ -311,4 +300,26 @@ void Cluster::printSum(){
     }
     s += "]";
     cout << s;
+}
+
+void Cluster::saveClusters(int my_rank){
+    // Creo path del file
+    string file = "rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+
+    ofstream debug_txt(file);
+
+    int cluster_number_ = clusters.size();
+
+    debug_txt<<"// RANK = "<<my_rank<<"\n";
+
+    for(int i = 0; i < cluster_number_; i++) {
+        // cluster, point, isCentroid
+        debug_txt<<i<<';'<<Cluster::getThCluster(i)->getCentroid()->toString().c_str()<<';'<<'y'<<"\n";
+
+        for(int j = 0; j < Cluster::getThCluster(i)->getPoints().size(); j++){
+            debug_txt<<i<<';'<<Cluster::getThCluster(i)->getElementList(j)->toString().c_str()<<';'<<'n'<<"\n";
+        }
+    }
+
+    debug_txt.close();
 }

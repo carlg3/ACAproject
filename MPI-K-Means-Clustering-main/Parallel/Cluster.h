@@ -1,9 +1,6 @@
 #ifndef PARALLEL_CLUSTER_H
 #define PARALLEL_CLUSTER_H
 
-#include <string>
-#include <list>
-
 #include "Tupla.h"
 #include "Centroid.h"
 #include "Point.h"
@@ -37,7 +34,6 @@ public:
     void initSumCluster();
     void addElement(Point *t); // Add a point to the cluster
 
-    // static void pointAssignment(); // Assign a point to the closest cluster
     static void pointAssignment(int startIndex = 0, int endIndex = Point::getTotalNumberPoints()); // Assign a subset of points to the closest cluster
     void sumPoints(); // Calculate the sum of all points in the cluster
     static void sumPointsClusters(); // Calculate the sum of all points in all clusters
@@ -49,6 +45,7 @@ public:
 	static void printClusters(int my_rank); // Print all the clusters
     static void printCentroids(); // Print all the centroids
     void printSum();
+    static void saveClusters(int my_rank); // Saves the clusters and their point to a .txt
     
     // Serialization functions
     static void serializeCluster(double* buffer);
