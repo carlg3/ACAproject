@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Test di profiling con gprof (-pg flag)
+# -- non sono sicuro funzioni per programmi in parallelo
 
 # Controlla che sia stato passato un argomento
 if [ $# -ne 1 ]; then
