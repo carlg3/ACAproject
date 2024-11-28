@@ -20,7 +20,6 @@ int MAXITERATION = 5;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
-const char* path_win_2 = "/mnt/c/Users/galan/CLionProjects/Serial-proj-test/dataset/dataset_100x2.txt";
 const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
@@ -63,8 +62,6 @@ int main(int argc, char* argv[]) {
     MPI_Init(&argc, &argv);
     MPI_Status status;
 
-    // srand(time(0)); // Randomize initialization point
-
     int my_rank, commSize;
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
@@ -91,7 +88,7 @@ int main(int argc, char* argv[]) {
         double *buffer, *buffer2;
         buffer = new double[bufferSize];
 
-        // Sends derived points to each processor
+        // Sends derived points to each other processor
         for(int i = 1; i < commSize; i++){
             MPI_Send(&bufferSize, 1, MPI_INT, i, LENTAG, MPI_COMM_WORLD);
 
@@ -121,14 +118,10 @@ int main(int argc, char* argv[]) {
         while(true) {
             Cluster::clustersReset();
 
-            // endtime = MPI_Wtime(); // Stop timer
-
             // Master works on the last batch of points <pointsXprocessor>
             int startIndex = (commSize - 1) * pointsXprocessor;
             int endIndex = totalNumberPoint;
             Cluster::pointAssignment(startIndex, endIndex);
-
-            // endtime = MPI_Wtime(); // Stop timer
 
             // Gets the sum of the points of each cluster (of the master's points)
             Cluster::sumPointsClusters();

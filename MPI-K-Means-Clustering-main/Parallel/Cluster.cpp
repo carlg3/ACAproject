@@ -187,26 +187,6 @@ void Cluster::centroidsParallelAssignment(){
 }
 
 // ----- SERIALIZING FUNCTIONS -----
-// Invia numero di cluster e la dimensione dei punti, poi i centroidi iniziali per ogni cluster
-void Cluster::serializeCluster(double* buffer){
-    int K = Cluster::getNumberCluster();
-    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
-
-    buffer[0] = K; // Number of klusters
-    buffer[1] = dim; // Centroid dimension
-
-    Cluster::serializeCentroids(buffer + 2);
-}
-
-void Cluster::deserializeCluster(double* buffer) {
-    int K = buffer[0];
-    int dim = buffer[1]; // Cluster dimension
-
-    Cluster::createKclusters(K,dim);
-
-    Cluster::deserializeCentroids(buffer + 2);
-}
-
 // Invia solo i centroidi per ogni cluster
 void Cluster::serializeCentroids(double* buffer){
     int K = Cluster::getNumberCluster();
@@ -228,6 +208,26 @@ void Cluster::deserializeCentroids(double* buffer) {
             Cluster::getThCluster(i)->getCentroid()->setThValue(j, buffer[i * dim + j]);
         }
     }
+}
+
+// Invia numero di cluster e la dimensione dei punti, poi i centroidi iniziali per ogni cluster
+void Cluster::serializeCluster(double* buffer){
+    int K = Cluster::getNumberCluster();
+    int dim = Cluster::getThCluster(0)->getCentroid()->getDim();
+
+    buffer[0] = K; // Number of klusters
+    buffer[1] = dim; // Centroid dimension
+
+    Cluster::serializeCentroids(buffer + 2);
+}
+
+void Cluster::deserializeCluster(double* buffer) {
+    int K = buffer[0];
+    int dim = buffer[1]; // Cluster dimension
+
+    Cluster::createKclusters(K,dim);
+
+    Cluster::deserializeCentroids(buffer + 2);
 }
 
 void Cluster::serializeSumClusters(double *buffer){
