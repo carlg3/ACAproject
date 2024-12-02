@@ -5,7 +5,7 @@
 #ifndef CENTROID_H
 #define CENTROID_H
 
-#include <list>
+#include <vector>
 #include "Tupla.h"
 using namespace std;
 
@@ -15,7 +15,7 @@ public:
     static Centroid* getThCentroid(int index);
     static int getNumberCentroids();
 private:
-    static list<Centroid*> centroids;
+    static vector<Centroid*> centroids;
 };
 
 #endif //CENTROID_H

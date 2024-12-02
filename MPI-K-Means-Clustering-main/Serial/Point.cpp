@@ -5,7 +5,7 @@
 #include "Point.h"
 using namespace std;
 
-list<Point*> Point::points;
+vector<Point*> Point::points;
 
 Point::Point(int dim) : Tupla(dim) {
     points.push_back(this);

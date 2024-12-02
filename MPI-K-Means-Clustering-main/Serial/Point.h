@@ -15,7 +15,7 @@ public:
     static Point* getThPoint(int index);
     static int getNumberPoints();
 private:
-    static list<Point*> points;
+    static vector<Point*> points;
 };
 
 #endif //POINT_H

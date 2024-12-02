@@ -2,7 +2,7 @@
 // Created by galan on 08/09/2024.
 //
 
-#include <list>
+#include <vector>
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -12,7 +12,7 @@
 
 using namespace std;
 
-list<Cluster*> Cluster::clusters;
+vector<Cluster*> Cluster::clusters;
 
 Cluster::Cluster(const int centroidDimension) {
     clusters.push_back(this);

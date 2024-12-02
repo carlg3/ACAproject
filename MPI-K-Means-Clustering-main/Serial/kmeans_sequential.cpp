@@ -19,7 +19,7 @@ using namespace std;
 
 int MAX_ITERATION = 5;
 
-const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet5000x10.txt";
+const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 const char* path_linux = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void readDataSet(vector<Point*>& points, const string& filePath) {

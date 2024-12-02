@@ -42,10 +42,10 @@ public:
     static void printClusters();
 
 private:
-    static list<Cluster*> clusters;
+    static vector<Cluster*> clusters;
     Centroid *centroid;
 
-    list<Point*> cluster_points_;
+    vector<Point*> cluster_points_;
 
     static double sumDistance;
 };
