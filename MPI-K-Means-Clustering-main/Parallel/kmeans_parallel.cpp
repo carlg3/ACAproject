@@ -3,14 +3,7 @@
 #include <bits/stdc++.h>
 
 #include <mpi.h>
-/*
-#include <boost/archive/binary_iarchive.hpp>
-#include <boost/archive/binary_oarchive.hpp>
-#include <boost/serialization/set.hpp>
-#include <boost/iostreams/stream_buffer.hpp>
-#include <boost/iostreams/stream.hpp>
-#include <boost/iostreams/device/back_inserter.hpp>
-*/
+
 #include "Cluster.h"
 #include "Point.h"
 
@@ -25,7 +18,7 @@ const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/Da
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
     f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/execution_time.txt", ios::app);
-    f << cs << "," << tnp << "," << pd << "," << K << "," << time << endl;
+    f << cs << ";" << tnp << ";" << pd << ";" << K << ";" << time << endl;
     f.close();
 }
 
@@ -76,8 +69,8 @@ int main(int argc, char* argv[]) {
         // After reading the dataset
         starttime = MPI_Wtime();
 
-        int pointDimension = points_temp_[0]->getDim(); // Dimensione del dato R^pointDimension
-        int totalNumberPoint = (int)points_temp_.size();      // Numero di dati nel nostro DataSet
+        int pointDimension = points_temp_[0]->getDim();     // Dimensione del dato R^pointDimension
+        int totalNumberPoint = (int)points_temp_.size();    // Numero di dati nel nostro DataSet
 
         int K = sqrt(totalNumberPoint/2);
         Cluster::createKclusters(K, pointDimension);
@@ -195,9 +188,9 @@ int main(int argc, char* argv[]) {
         // DEBUG
         // Cluster::printCentroids();
         
-        // DEBUG -- per salvare il tempo che ci si mette ad ogni esecuzione
+        // DEBUG -- per salvare il tempo che ci si mette ad ogni esecuzione [MASTER]
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
-        // writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
+        writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime - starttime);
     }
 
     if(my_rank != 0){
