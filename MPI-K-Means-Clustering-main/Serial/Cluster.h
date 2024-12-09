@@ -6,10 +6,10 @@
 #define CLUSTER_H
 
 #include <string>
-#include <list>
 
 #include "Centroid.h"
 #include "Point.h"
+
 using namespace std;
 
 class Cluster{
