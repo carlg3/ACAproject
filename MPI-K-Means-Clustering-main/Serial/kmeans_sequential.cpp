@@ -57,7 +57,7 @@ int main() {
     vector<Point*> points_temp_;
 
 	// Reading dataset..
-    readDataSet(points_temp_, path_win);
+    readDataSet(points_temp_, path_linux);
    
     int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
     int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet

@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 
         // Reading the dataset and derive the infos for running the kmeans
         vector<Point*> points_temp_;
-        readDataSet(points_temp_, path_win);
+        readDataSet(points_temp_, path_gcloud);
 
         // After reading the dataset
         starttime = MPI_Wtime();
