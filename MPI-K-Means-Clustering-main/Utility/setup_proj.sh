@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Script per fare il setup della prima VM 
-
 # Verifica che lo script sia eseguito come root
 if [[ $EUID -ne 0 ]]; then
    echo "Questo script deve essere eseguito come root." 
@@ -32,8 +30,7 @@ cd build
 make all install
 
 # Ritorno all'utente normale
-su - $SUDO_USER
-
+su - $SUDO_USER <<'EOF'
 # Configurazione dell'ambiente
 echo "Configurazione del file .bashrc per OpenMPI..."
 echo 'export PATH=$PATH:/usr/local/openMPI/bin' >> ~/.bashrc
@@ -42,6 +39,6 @@ source ~/.bashrc
 # Clonazione del repository Git
 echo "Clonazione del repository Git ACAproject..."
 git clone https://github.com/carlg3/ACAproject.git
-git checkout copilot-refactor
+EOF
 
 echo "Installazione completata!"
