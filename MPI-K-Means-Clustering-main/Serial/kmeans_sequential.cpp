@@ -19,8 +19,8 @@ using namespace std;
 
 int MAX_ITERATION = 5;
 
-const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet100000x10.txt";
-const char* path_linux = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet100000x10.txt";
+const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
+const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
 
 void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
@@ -57,7 +57,7 @@ int main() {
     vector<Point*> points_temp_;
 
 	// Reading dataset..
-    readDataSet(points_temp_, path_linux);
+    readDataSet(points_temp_, path_gcloud);
    
     int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
     int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
