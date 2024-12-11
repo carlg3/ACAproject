@@ -177,7 +177,7 @@ int main(int argc, char* argv[]) {
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         endtime = MPI_Wtime();
-        printf("That took %f seconds\n", endtime-starttime); // Print execution time
+        printf("That took %f seconds\n", endtime - starttime); // Print execution time
 
         // DEBUG -- CLion
         // int debug = 0;
