@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # File contenente la lista di host (ad esempio, "hostfile")
-HOSTFILE="hostfile"
+HOSTFILE="../hostfile"
 
 # Controlla che il file hostfile esista
 if [[ ! -f "$HOSTFILE" ]]; then
