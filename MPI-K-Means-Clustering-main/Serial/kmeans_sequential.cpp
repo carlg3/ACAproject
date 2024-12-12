@@ -52,12 +52,13 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
 }
 
 int main() {
-    auto start = high_resolution_clock::now(); // Inizia il timer
-
     vector<Point*> points_temp_;
 
 	// Reading dataset..
     readDataSet(points_temp_, path_gcloud);
+
+    // After reading the dataset..
+    auto start = high_resolution_clock::now(); // Inizia il timer
    
     int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
     int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
