@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int MAXITERATION = 5;
+int MAXITERATION = 10;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";

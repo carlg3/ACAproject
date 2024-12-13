@@ -17,7 +17,7 @@
 using namespace chrono;
 using namespace std;
 
-int MAX_ITERATION = 5;
+int MAX_ITERATION = 10;
 
 const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
 const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
