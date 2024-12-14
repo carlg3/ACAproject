@@ -26,7 +26,22 @@ Tasks:
 
 ## Tecniche di profiling 
 
-Con **gprof**
+Con **perf** (in uso)
+
+```Shell
+perf record -g mpirun --hostfile hostfile -np 32 ./kmeans_parallel
+perf report # per visualizzare il risultato
+```
+Altro esempio:
+```Shell
+perf record -F 800 --call-graph dwarf -g mpirun --hostfile ../hostfile -np 8 ./kmeans_parallel --event
+hotspot perf.data # per visualizzarlo
+```
+- `-F 800` per specificare la frequenza di campionamento
+- `--call-graph dwarf` serve ad [hotspot](https://github.com/KDAB/hotspot) per visualizzare il report
+- `--event` ??
+
+Con **gprof** (non usato)
 
 [Info su gprof in parallelo](https://stackoverflow.com/questions/53794093/how-do-i-get-meaningful-results-from-gprof-on-an-mpi-code)
 
@@ -37,33 +52,12 @@ mpirun --hostfile ../hostfile -np $((2*16)) kmeans_parallel
 gprof ./kmeans_parallel gmon.out > profiling_report.txt
 ```
 
-Con **perf**
-
-```Shell
-perf record -g mpirun --hostfile hostfile -np 32 ./kmeans_parallel
-
-perf report # per visualizzare il risultato
-```
-Inoltre
-
-```Shell
-perf record -F 800 --call-graph dwarf -g mpirun --hostfile ../hostfile -np 8 ./kmeans_parallel --event 
-```
-- `-F 800` per specificare la frequenza di campionamento
-- `--call-graph dwarf` serve ad hotspot per visualizzare il report
-- `--event` ??
-
-quindi per visualizzarlo
-```Shell
-hotspot perf.data
-```
-
 ## Per creare un Diagramma UML con `clang`
 
-- Creare cartelle **uml** e **build**
-- Dare ` cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .` per generare `compile_commands.json` (1)
-- Inserire (1) in **build**
-- Scrivere `.clang-uml` così:
+1. Creare cartelle **uml** e **build**
+2. Dare ` cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .` per generare `compile_commands.json` (1)
+3. Inserire (1) in **build**
+4. Scrivere `.clang-uml` così:
 ```yaml
 ---
 compilation_database_dir: build
@@ -75,7 +69,7 @@ diagrams:
       - "*.cpp"
       - "*.h"
 ```
-- Dare `clang-uml` e caricare su https://planttext.com/ per ottenere l'uml in immagine
+5. Dare `clang-uml` e caricare su https://planttext.com/ per ottenere l'uml in immagine
   
 ## Per debuggare il codice parallelo con CLion
 
@@ -90,5 +84,5 @@ while(debug == 0){
 	sleep(1);
 }
 ```
-
-4. **Attatch to process** del tipo ![Pasted image 20241125115132|400](https://github.com/user-attachments/assets/593db1f5-959e-4531-bd8b-5d21762490eb)
+3. **Attatch to process** del tipo ![Pasted image 20241125115132|400](https://github.com/user-attachments/assets/593db1f5-959e-4531-bd8b-5d21762490eb)
+4. Settare in CLion `debug` a 1 per andare avanti nell'esecuzione
