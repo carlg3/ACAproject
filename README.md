@@ -49,7 +49,7 @@ Inoltre
 ```Shell
 perf record -F 800 --call-graph dwarf -g mpirun --hostfile ../hostfile -np 8 ./kmeans_parallel --event 
 ```
--  `-F 800 per specificare la frequenza di campionamento
+- `-F 800` per specificare la frequenza di campionamento
 - `--call-graph dwarf` serve ad hotspot per visualizzare il report
 - `--event` ??
 
