@@ -3,19 +3,19 @@
 # Indice
 
 - [Indice](#indice)
-  - [Task per setup ambiente progetto](#task-per-setup-ambiente-progetto)
+  - [Task per setup ambiente di progetto su g_cloud](#task-per-setup-ambiente-di-progetto-su-g_cloud)
   - [Tecniche di profiling](#tecniche-di-profiling)
   - [Per creare un Diagramma UML con `clang`](#per-creare-un-diagramma-uml-con-clang)
   - [Per debuggare il codice parallelo con CLion](#per-debuggare-il-codice-parallelo-con-clion)
 
-## Task per setup ambiente di progetto g_cloud
+## Task per setup ambiente di progetto su g_cloud
 
 File necessari:
 - **setup_proj.sh** 
 - **test_conn.sh**
 
 Tasks:
- 1. [ ] **setup_proj.sh** -- e nel caso source .bashrc || vm padre delle altre 
+ 1. [ ] **setup_proj.sh** -- e nel caso dare `source .bashrc` sulla vm / padre delle altre 
  2. [ ] dare `git checkout copilot-refactor` sulla repo
 	 1. [ ] nel caso ricompilare **Serial** e **Parallel**
  3. [ ] in host .. `scp -i id_rsa id_rsa* galan@<ip della vm padre>:/home/galan/.ssh`
@@ -77,7 +77,7 @@ diagrams:
 C:\Users\galan\Documents\GitHub\ACAproject\MPI-K-Means-Clustering-main\Parallel\cmake-build-debug
 ```
 1. ![Pasted image 20241125113705|400](https://github.com/user-attachments/assets/8e2e477a-7a10-4e9d-a376-431774d4bb0a)
-2. Inserire dummy loop e un breakpoint su `sleep(1)`
+2. Inserire _dummy loop_ e un breakpoint su `sleep(1)`
 ```C++
 int debug = 0;
 while(debug == 0){
