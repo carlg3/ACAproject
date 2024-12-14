@@ -10,28 +10,12 @@ using namespace std;
 Tupla::Tupla(int dim) : dim(dim), value(dim) {}
 
 double Tupla::distanza(const Tupla& t) const {
-    Tupla differenza = this->differenzaVettoriale(t);
     double result = 0;
     for (int i = 0; i < dim; i++) {
-        result += differenza.getThValue(i) * differenza.getThValue(i);
+        double diff = this->getThValue(i) - t.getThValue(i);
+        result += diff * diff;
     }
     return result;
-}
-
-Tupla Tupla::sommaVettoriale(const Tupla& t) const {
-    Tupla v(dim);
-    for (int i = 0; i < dim; i++) {
-        v.setThValue(i, this->getThValue(i) + t.getThValue(i));
-    }
-    return v;
-}
-
-Tupla Tupla::differenzaVettoriale(const Tupla& t) const {
-    Tupla v(dim);
-    for (int i = 0; i < dim; i++) {
-        v.setThValue(i, this->getThValue(i) - t.getThValue(i));
-    }
-    return v;
 }
 
 double Tupla::getThValue(int i) const {

@@ -3,6 +3,10 @@ project(Parallel_proj_test)
 
 set(CMAKE_CXX_STANDARD 20)
 
+# Profiler settings
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
+
 # Add MPI Package to Project
 find_package(MPI REQUIRED)
 

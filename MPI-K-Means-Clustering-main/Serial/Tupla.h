@@ -12,8 +12,6 @@ using namespace std;
 class Tupla{
 public:
     Tupla(int dim);
-    Tupla sommaVettoriale(const Tupla& t) const;
-    Tupla differenzaVettoriale(const Tupla& t) const;
     double distanza(const Tupla& t) const;
     void setThValue(int i, double d);
     void setValue(const vector<double>& d);
