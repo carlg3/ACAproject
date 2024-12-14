@@ -8,7 +8,7 @@
   - [Per creare un Diagramma UML con `clang`](#per-creare-un-diagramma-uml-con-clang)
   - [Per debuggare il codice parallelo con CLion](#per-debuggare-il-codice-parallelo-con-clion)
 
-## Task per setup ambiente progetto
+## Task per setup ambiente di progetto g_cloud
 
 File necessari:
 - **setup_proj.sh** 
@@ -60,7 +60,7 @@ hotspot perf.data
 
 ## Per creare un Diagramma UML con `clang`
 
-- Creare dir **uml** e **build**
+- Creare cartelle **uml** e **build**
 - Dare ` cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .` per generare `compile_commands.json` (1)
 - Inserire (1) in **build**
 - Scrivere `.clang-uml` così:
