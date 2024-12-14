@@ -66,7 +66,7 @@ diagrams:
 ```
 C:\Users\galan\Documents\GitHub\ACAproject\MPI-K-Means-Clustering-main\Parallel\cmake-build-debug
 ```
-1. ![[Pasted image 20241125113705.png]]
+1. ![Pasted image 20241125113705](https://github.com/user-attachments/assets/8e2e477a-7a10-4e9d-a376-431774d4bb0a)
 2. Inserire dummy loop e un breakpoint su `sleep(1)`
 ```C++
 int debug = 0;
@@ -75,4 +75,4 @@ while(debug == 0){
 }
 ```
 
-4. **Attatch to process** del tipo ![[Pasted image 20241125115132.png]]
+4. **Attatch to process** del tipo ![Pasted image 20241125115132](https://github.com/user-attachments/assets/593db1f5-959e-4531-bd8b-5d21762490eb)
