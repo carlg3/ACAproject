@@ -1,0 +1,9 @@
+---
+compilation_database_dir: build
+output_directory: uml
+diagrams:
+  parallel_class_diagram:
+    type: class
+    glob:
+      - "*.cpp"
+      - "*.h"

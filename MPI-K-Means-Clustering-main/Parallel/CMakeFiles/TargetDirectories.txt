@@ -1,0 +1,3 @@
+/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/CMakeFiles/Parallel_proj_test.dir
+/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/CMakeFiles/edit_cache.dir
+/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/Parallel/CMakeFiles/rebuild_cache.dir

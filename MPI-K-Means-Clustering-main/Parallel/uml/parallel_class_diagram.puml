@@ -1,0 +1,111 @@
+@startuml
+class "std::vector<double>" as C_0011328605021903071752
+class C_0011328605021903071752 {
+__
+}
+class "std::string" as C_0001275076681856179721
+class C_0001275076681856179721 {
+__
+}
+class "std::vector<Point *>" as C_0018171811744379931128
+class C_0018171811744379931128 {
+__
+}
+class "Tupla" as C_0003179394048458820287
+class C_0003179394048458820287 {
++Tupla(int dim) : void
+..
++distanza(const Tupla & t) const : double
++getDim() : int
++getThValue(int i) const : double
++setThValue(int i, double d) : void
++setValue(const std::vector<double> & d) : void
++toString() : std::string
+__
+#dim : int
+#value : vector<double>
+}
+class "Centroid" as C_0005648519437497407262
+class C_0005648519437497407262 {
++Centroid(int dim) : void
+..
+{static} +getNumberCentroids() : int
+{static} +getThCentroid(int index) : Centroid *
+__
+{static} -centroids : std::vector<Centroid *>
+}
+class "Point" as C_0017330203401231275776
+class C_0017330203401231275776 {
++Point(int dim) : void
+..
+{static} +deserializePoint(double * buffer) : void
+{static} +getThPoint(int index) : Point *
+{static} +getTotalNumberPoints() : int
+{static} +printPoints() : void
+{static} +serializePoint(double * buffer, int startIndex, int endIndex, int dim) : void
+__
+{static} -points : std::vector<Point *>
+}
+class "Cluster" as C_0012676223793864118941
+class C_0012676223793864118941 {
++Cluster(int centroidDimension) : void
+..
++addElement(Point * t) : void
++centroidParallelCalculator() : void
+{static} +centroidsParallelAssignment() : void
+{static} +clustersReset() : void
++createCentroid(int centroidDimension) : void
+{static} +createKclusters(int K, int centroidDimension) : void
+{static} +deserializeCentroids(double * buffer) : void
+{static} +deserializeCluster(double * buffer) : void
+{static} +deserializeSumClusters(double * buffer) : void
++getCentroid() : Centroid *
++getElementList(int index) : Point *
+{static} +getNumberCluster() : int
++getNumberElements() : int
++getPoints() : std::vector<Point *>
++getSumCluster(int index) : double
+{static} +getSumDistance() : double
+{static} +getThCluster(int index) : Cluster *
++getThPoint(int index) : Point *
++initSumCluster() : void
+{static} +pointAssignment(int startIndex = 0, int endIndex = Point::getTotalNumberPoints()) : void
+{static} +printCentroids() : void
+{static} +printClusters(int my_rank) : void
++printSum() : void
+{static} +saveClusters(int my_rank) : void
+{static} +serializeCentroids(double * buffer) : void
+{static} +serializeCluster(double * buffer) : void
+{static} +serializeSumClusters(double * buffer) : void
++setEmptyCluster() : void
++setNumberElements(int num) : void
++setSumCluster(int index, double value) : void
+{static} +setSumDistance(double value) : void
++sumPoints() : void
+{static} +sumPointsClusters() : void
+{static} +totalMSE() : double
+__
+-centroid : Centroid *
+{static} -clusters : std::vector<Cluster *>
+-points_ : vector<Point *>
+-points_number_ : int
+-sumCluster : double *
+{static} -sumDistance : double
+}
+C_0018171811744379931128 ..> C_0017330203401231275776
+C_0003179394048458820287 ..> C_0001275076681856179721
+C_0003179394048458820287 o-- C_0011328605021903071752 : #value
+C_0005648519437497407262 --> C_0005648519437497407262 : -centroids
+C_0003179394048458820287 <|-- C_0005648519437497407262
+
+C_0017330203401231275776 --> C_0017330203401231275776 : -points
+C_0003179394048458820287 <|-- C_0017330203401231275776
+
+C_0012676223793864118941 ..> C_0017330203401231275776
+C_0012676223793864118941 o-- C_0018171811744379931128 : -points_
+C_0012676223793864118941 --> C_0005648519437497407262 : -centroid
+C_0012676223793864118941 --> C_0012676223793864118941 : -clusters
+
+'Generated with clang-uml, version 0.5.6
+'LLVM version Ubuntu clang version 15.0.7
+@enduml
