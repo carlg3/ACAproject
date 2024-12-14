@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <bits/stdc++.h>
 
+#include <string>
+#include <fstream>
+
 #include <mpi.h>
 
 #include "Cluster.h"
@@ -12,12 +15,14 @@ using namespace std;
 int MAXITERATION = 10;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
-// const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
-const char* path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
+// string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
+string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
+
+string dataset = path_gcloud + "DataSet/DataSet50000x10.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
-    f.open("/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/execution_time.txt", ios::app);
+    f.open((path_gcloud + "Parallel/execution_time.txt").c_str(), ios::app);
     f << cs << ";" << tnp << ";" << pd << ";" << K << ";" << time << endl;
     f.close();
 }
@@ -60,14 +65,14 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
 
     if(my_rank == 0){
-        double starttime, endtime;
+        double start_time, end_time;
 
         // Reading the dataset and derive the infos for running the kmeans
         vector<Point*> points_temp_;
-        readDataSet(points_temp_, path_gcloud);
+        readDataSet(points_temp_, dataset);
 
         // After reading the dataset
-        starttime = MPI_Wtime();
+        start_time = MPI_Wtime();
 
         int pointDimension = points_temp_[0]->getDim();     // Dimensione del dato R^pointDimension
         int totalNumberPoint = (int)points_temp_.size();    // Numero di dati nel nostro DataSet
@@ -82,9 +87,9 @@ int main(int argc, char* argv[]) {
         buffer = new double[bufferSize];
 
         // Sends derived points to each other processor
+        MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
+        
         for(int i = 1; i < commSize; i++){
-            MPI_Send(&bufferSize, 1, MPI_INT, i, LENTAG, MPI_COMM_WORLD);
-
             int startIndex = (i - 1) * pointsXprocessor;
             int endIndex = startIndex + pointsXprocessor;
             Point::serializePoint(buffer, startIndex, endIndex, pointDimension);
@@ -176,8 +181,8 @@ int main(int argc, char* argv[]) {
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-        endtime = MPI_Wtime();
-        printf("That took %f seconds\n", endtime - starttime); // Print execution time
+        end_time = MPI_Wtime();
+        printf("That took %f seconds\n", end_time - start_time); // Print execution time
 
         // DEBUG -- CLion
         // int debug = 0;
@@ -185,12 +190,9 @@ int main(int argc, char* argv[]) {
         //     sleep(1);
         // }
 
-        // DEBUG
-        // Cluster::printCentroids();
-        
         // DEBUG -- per salvare il tempo che ci si mette ad ogni esecuzione [MASTER]
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
-        writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime - starttime);
+        writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
     }
 
     if(my_rank != 0){
@@ -198,7 +200,7 @@ int main(int argc, char* argv[]) {
         double *buffer, *buffer2;
 
         // Gets <pointsXprocessor>
-        MPI_Recv(&bufferSize, 1, MPI_INT, 0, LENTAG, MPI_COMM_WORLD, &status);
+        MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         buffer = new double[bufferSize];
         MPI_Recv(buffer, bufferSize, MPI_DOUBLE, 0, DATAPOINTTAG, MPI_COMM_WORLD, &status);

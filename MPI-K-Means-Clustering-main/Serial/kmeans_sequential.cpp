@@ -19,8 +19,10 @@ using namespace std;
 
 int MAX_ITERATION = 10;
 
-const char* path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
-// const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet50000x10.txt";
+// string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
+string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
+
+string dataset = path_gcloud + "DataSet/DataSet50000x10.txt";
 
 void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
@@ -55,7 +57,7 @@ int main() {
     vector<Point*> points_temp_;
 
 	// Reading dataset..
-    readDataSet(points_temp_, path_gcloud);
+    readDataSet(points_temp_, dataset);
 
     // After reading the dataset..
     auto start = high_resolution_clock::now(); // Inizia il timer
