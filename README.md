@@ -3,10 +3,26 @@
 # Indice
 
 - [Indice](#indice)
+  - [Task per setup ambiente progetto](#task-per-setup-ambiente-progetto)
   - [Tecniche di profiling](#tecniche-di-profiling)
   - [Per creare un Diagramma UML con `clang`](#per-creare-un-diagramma-uml-con-clang)
   - [Per debuggare il codice parallelo con CLion](#per-debuggare-il-codice-parallelo-con-clion)
 
+## Task per setup ambiente progetto
+
+File necessari:
+- **setup_proj.sh** 
+- **test_conn.sh**
+
+Tasks:
+ 1. [ ] **setup_proj.sh** -- e nel caso source .bashrc || vm padre delle altre 
+ 2. [ ] dare `git checkout copilot-refactor` sulla repo
+	 1. [ ] nel caso ricompilare **Serial** e **Parallel**
+ 3. [ ] in host .. `scp -i id_rsa id_rsa* galan@<ip della vm padre>:/home/galan/.ssh`
+ 4. [ ] `sudo chmod 600 id_rsa`
+ 5. [ ] creo gruppo di instances e compilo l'`hostfile`
+ 6. [ ] **test_conn.sh**
+ 7. [ ] `time ./run_test_kmeans $((<num instances> * <num processes>))`
 
 ## Tecniche di profiling 
 
@@ -45,7 +61,7 @@ hotspot perf.data
 ## Per creare un Diagramma UML con `clang`
 
 - Creare dir **uml** e **build**
-- Dare ` cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .` per geneare `compile_commands.json` (1)
+- Dare ` cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .` per generare `compile_commands.json` (1)
 - Inserire (1) in **build**
 - Scrivere `.clang-uml` così:
 ```yaml
@@ -66,7 +82,7 @@ diagrams:
 ```
 C:\Users\galan\Documents\GitHub\ACAproject\MPI-K-Means-Clustering-main\Parallel\cmake-build-debug
 ```
-1. ![Pasted image 20241125113705](https://github.com/user-attachments/assets/8e2e477a-7a10-4e9d-a376-431774d4bb0a)
+1. ![Pasted image 20241125113705|400](https://github.com/user-attachments/assets/8e2e477a-7a10-4e9d-a376-431774d4bb0a)
 2. Inserire dummy loop e un breakpoint su `sleep(1)`
 ```C++
 int debug = 0;
@@ -75,4 +91,4 @@ while(debug == 0){
 }
 ```
 
-4. **Attatch to process** del tipo ![Pasted image 20241125115132](https://github.com/user-attachments/assets/593db1f5-959e-4531-bd8b-5d21762490eb)
+4. **Attatch to process** del tipo ![Pasted image 20241125115132|400](https://github.com/user-attachments/assets/593db1f5-959e-4531-bd8b-5d21762490eb)
