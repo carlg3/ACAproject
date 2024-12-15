@@ -5,25 +5,10 @@
 - [Indice](#indice)
   - [Task per setup ambiente di progetto su g\_cloud](#task-per-setup-ambiente-di-progetto-su-g_cloud)
   - [Tecniche di profiling](#tecniche-di-profiling)
+  - [Visualizzare perf.data](#visualizzare-perf-data)
   - [Per creare un Diagramma UML con `clang`](#per-creare-un-diagramma-uml-con-clang)
   - [Per debuggare il codice parallelo con CLion](#per-debuggare-il-codice-parallelo-con-clion)
-
-## Task per setup ambiente di progetto su g_cloud
-
-File necessari:
-- **setup_proj.sh** 
-- **test_conn.sh**
-
-Tasks:
- 1. [ ] **setup_proj.sh** -- e nel caso dare `source .bashrc` sulla vm / padre delle altre 
- 2. [ ] dare `git checkout copilot-refactor` sulla repo
-	 1. [ ] nel caso ricompilare **Serial** e **Parallel**
- 3. [ ] in host .. `scp -i id_rsa id_rsa* galan@<ip della vm padre>:/home/galan/.ssh`
- 4. [ ] `sudo chmod 600 id_rsa`
- 5. [ ] creo gruppo di instances e compilo l'`hostfile`
- 6. [ ] **test_conn.sh**
- 7. [ ] `time ./run_test_kmeans $((<num instances> * <num processes>))`
-
+  
 ## Tecniche di profiling 
 
 Con **perf** (in uso)
@@ -51,6 +36,25 @@ mpirun --hostfile ../hostfile -np $((2*16)) kmeans_parallel
 
 gprof ./kmeans_parallel gmon.out > profiling_report.txt
 ```
+
+## Visualizzare perf data
+
+Profiler di esecuzione su due macchine e2-standard-8 con un dataset di 50k10 e 10 iter.
+
+[cpuflamegraphs.html](https://profiler.firefox.com/from-file/calltree/?globalTrackOrder=0w9&hiddenGlobalTracks=01&hiddenLocalTracksByPid=1561-0~1565-0&thread=2&timelineType=category&v=10)
+
+Questo per copiare file da VM a pc
+```Shell
+gcloud compute scp --recurse ^
+	instance0-fat-intra:"/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/test.perf" ^
+	"C:\Users\galan\Desktop"
+```
+
+```Shell
+perf script -F +pid > /tmp/test.perf
+```
+
+[Firefox profiler](https://profiler.firefox.com/from-file/calltree/?globalTrackOrder=0w9&hiddenGlobalTracks=01&hiddenLocalTracksByPid=1561-0~1565-0&thread=2&timelineType=category&v=10)
 
 ## Per creare un Diagramma UML con `clang`
 
@@ -86,3 +90,19 @@ while(debug == 0){
 ```
 3. **Attatch to process** del tipo ![Pasted image 20241125115132|400](https://github.com/user-attachments/assets/593db1f5-959e-4531-bd8b-5d21762490eb)
 4. Settare in CLion `debug` a 1 per andare avanti nell'esecuzione
+
+## Task per setup ambiente di progetto su g_cloud
+
+File necessari:
+- **setup_proj.sh** 
+- **test_conn.sh**
+
+Tasks:
+ 1. [ ] **setup_proj.sh** -- e nel caso dare `source .bashrc` sulla vm / padre delle altre 
+ 2. [ ] dare `git checkout copilot-refactor` sulla repo
+	 1. [ ] nel caso ricompilare **Serial** e **Parallel**
+ 3. [ ] in host .. `scp -i id_rsa id_rsa* galan@<ip della vm padre>:/home/galan/.ssh`
+ 4. [ ] `sudo chmod 600 id_rsa`
+ 5. [ ] creo gruppo di instances e compilo l'`hostfile`
+ 6. [ ] **test_conn.sh**
+ 7. [ ] `time ./run_test_kmeans $((<num instances> * <num processes>))`
