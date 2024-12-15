@@ -41,15 +41,15 @@ gprof ./kmeans_parallel gmon.out > profiling_report.txt
 
 Profiler di esecuzione su due macchine e2-standard-8 con un dataset di 50k10 e 10 iter.
 
-[cpuflamegraphs.html](https://profiler.firefox.com/from-file/calltree/?globalTrackOrder=0w9&hiddenGlobalTracks=01&hiddenLocalTracksByPid=1561-0~1565-0&thread=2&timelineType=category&v=10)
+[cpuflamegraphs.html](https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)
 
-Questo per copiare file da VM a pc
+Questo per copiare file da VMgcloud a pc
 ```Shell
 gcloud compute scp --recurse ^
 	instance0-fat-intra:"/home/galan/ACAproject/MPI-K-Means-Clustering-main/Parallel/test.perf" ^
 	"C:\Users\galan\Desktop"
 ```
-
+E invece questo nella stessa dir di `perf.data`, per visualizzarlo su **Firefox profiler**
 ```Shell
 perf script -F +pid > /tmp/test.perf
 ```
