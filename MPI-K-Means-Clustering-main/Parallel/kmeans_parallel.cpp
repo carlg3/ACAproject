@@ -1,9 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <stdlib.h>
 #include <bits/stdc++.h>
-
 #include <string>
-#include <fstream>
 
 #include <mpi.h>
 
@@ -15,10 +14,10 @@ using namespace std;
 int MAXITERATION = 10;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
-// string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
-string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
+string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
+// string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
 
-string dataset = path_gcloud + "DataSet/DataSet50000x10.txt";
+string dataset = path_gcloud + "DataSet/DataSet10000x10.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
