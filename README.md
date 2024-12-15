@@ -3,7 +3,7 @@
 # Indice
 
 - [Indice](#indice)
-  - [Task per setup ambiente di progetto su g_cloud](#task-per-setup-ambiente-di-progetto-su-g_cloud)
+  - [Task per setup ambiente di progetto su g\_cloud](#task-per-setup-ambiente-di-progetto-su-g_cloud)
   - [Tecniche di profiling](#tecniche-di-profiling)
   - [Per creare un Diagramma UML con `clang`](#per-creare-un-diagramma-uml-con-clang)
   - [Per debuggare il codice parallelo con CLion](#per-debuggare-il-codice-parallelo-con-clion)
@@ -34,7 +34,7 @@ perf report # per visualizzare il risultato
 ```
 Altro esempio:
 ```Shell
-perf record -F 800 --call-graph dwarf -g mpirun --hostfile ../hostfile -np 8 ./kmeans_parallel --event
+perf record -F 800 --call-graph dwarf -g mpirun --hostfile ../hostfile -np $((2*8)) ./kmeans_parallel --event
 hotspot perf.data # per visualizzarlo
 ```
 - `-F 800` per specificare la frequenza di campionamento
