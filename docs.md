@@ -3,23 +3,22 @@
 1. [Video esplicativo K-means](#video-esplicativo-k-means)  
 2. [Perche' clustersReset](#perché-clustersreset)  
 3. [Differenza tra sumDistance e sumClusters](#differenza-tra-sumdistance-e-sumclusters)  
-4. [Differenza uso di list o vector](#differenza-uso-di-list-o-vector)  
-    - [Dataset `1000x10`](#dataset-1000x10)  
-    - [Dataset `10000x10`](#dataset-10000x10)  
+4. [Differenza uso di list o vector](#differenza-uso-di-list-o-vector-seriale)  
 5. [Assignment](#assignment)  
     - [PointAssignment](#pointassignment)  
     - [centroidParallelCalculator](#centroidparallelcalculator)  
-    - [centroidsParallelAssignment](#centroidsparallelassignment)  
 6. [Serialization and deserialization](#serialization-and-deserialization)  
-    - [serializeCentroids](#serializecentroids)  
-    - [deserializeCentroids](#deserializecentroids)  
-    - [serializeCluster](#serializecluster)  
-    - [deserializeCluster](#deserializecluster)  
-    - [serializeSumClusters](#serializesumclusters)  
-    - [deserializeSumClusters](#deserializesumclusters)  
+    - [serializeCentroids](#1-serializecentroids)  
+    - [deserializeCentroids](#2-deserializecentroids)  
+    - [serializeCluster](#3-serializecluster)  
+    - [deserializeCluster](#4-deserializecluster)  
+    - [serializeSumClusters](#5-serializesumclusters)  
+    - [deserializeSumClusters](#6-deserializesumclusters)  
 ---
+## Video esplicativo K-means
 
-[Qui](https://youtu.be/4b5d3muPQmA?feature=shared) video ~8min di spiegazione sull'algoritmo **kmeans** 
+[Qui](https://youtu.be/4b5d3muPQmA?feature=shared) video ~8min di spiegazione sull'algoritmo **kmeans**
+
 ## Perché clustersReset
 
 Nel codice, il metodo `Cluster::clustersReset()` viene chiamato all'inizio di ogni iterazione per assicurarsi che i cluster siano resettati e pronti per la nuova assegnazione di punti. Questo è necessario perché ogni iterazione del k-means deve ricalcolare l'assegnazione dei punti ai cluster, e quindi i cluster devono essere svuotati prima di aggiungere i nuovi punti.
@@ -40,7 +39,8 @@ La differenza tra `sumDistance` e `sumClusters` nel contesto del k-means cluster
 In sintesi:
 - `sumDistance` misura la qualità del clustering.
 - `sumClusters` viene utilizzato per aggiornare i centroidi dei cluster.
-## Differenza uso di list o vector (Seriale)
+- 
+## Differenza uso di `list` o `vector` (Seriale)
 
 |       | Dataset    | Usando vettori (s) | Usando liste (s) |
 | ----- | ---------- | ------------------ | ---------------- |
@@ -49,7 +49,7 @@ In sintesi:
 
 ## Assignment
 
->**PointAssignment**
+### **PointAssignment**
 ```C++
 void Cluster::pointAssignment(int startIndex, int endIndex) {  
     for (int i = startIndex; i < endIndex; i++) {
@@ -74,7 +74,7 @@ void Cluster::pointAssignment(int startIndex, int endIndex) {
 
 Nel `for (auto cluster : clusters)` calcola la distanza del punto $i$-esimo per ogni cluster, quindi trova quello più vicino al punto. Trovato il cluster più vicino, gli assegna il punto e aggiunge a `sumDistance` la distanza di quel punto dal centroide di quel cluster.
 
-> **centroidParallelCalculator**
+### **centroidParallelCalculator**
 ```C++
 void Cluster::centroidParallelCalculator(){  
     int centroid_dim = centroid->getDim();  
@@ -113,6 +113,7 @@ Assegna un nuovo centroide per ogni cluster.
 1.  Centroids
 2.  Clusters
 3.  SumCluster
+
 ### Risposta ChatGPT
 
 Ecco una spiegazione sintetica di ciascuna funzione:
