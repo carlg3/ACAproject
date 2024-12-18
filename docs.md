@@ -8,12 +8,12 @@
     - [PointAssignment](#pointassignment)  
     - [centroidParallelCalculator](#centroidparallelcalculator)  
 6. [Serialization and deserialization](#serialization-and-deserialization)  
-    - [serializeCentroids](#1-serializecentroids)  
-    - [deserializeCentroids](#2-deserializecentroids)  
-    - [serializeCluster](#3-serializecluster)  
-    - [deserializeCluster](#4-deserializecluster)  
-    - [serializeSumClusters](#5-serializesumclusters)  
-    - [deserializeSumClusters](#6-deserializesumclusters)  
+    - [serializeCentroids](#1-serializecentroidsdouble-buffer)  
+    - [deserializeCentroids](#2-deserializecentroidsdouble-buffer)  
+    - [serializeCluster](#3-serializeclusterdouble-buffer)  
+    - [deserializeCluster](#4-deserializeclusterdouble-buffer)  
+    - [serializeSumClusters](#5-serializesumclustersdouble-buffer)  
+    - [deserializeSumClusters](#6-deserializesumclustersdouble-buffer)  
 ---
 ## Video esplicativo K-means
 
