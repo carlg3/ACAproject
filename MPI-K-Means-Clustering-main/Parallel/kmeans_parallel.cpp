@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int MAXITERATION = 5;
+int MAXITERATION = 10;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
