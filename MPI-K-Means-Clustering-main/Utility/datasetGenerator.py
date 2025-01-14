@@ -2,12 +2,19 @@
 import numpy as np
 
 def write_matrix(M, N):
-    fpath = f".\\DataSet{M}x{N}.txt"
+#    fpath = f".\\DataSet{M}x{N}.txt"
+
+    fpath = f"DataSet{M}x{N}.txt"
 
     matrix = np.random.randint(0, 10, (M, N))
     np.savetxt(fpath, matrix, fmt = "%d", delimiter = ",")
 
 write_matrix(1000, 10)
+write_matrix(600, 10)
+write_matrix(1500, 10)
+write_matrix(5000, 10)
+write_matrix(10000, 10)
+
 
 # snippet for plotting a 2D dataset 
 # ---------------------------------

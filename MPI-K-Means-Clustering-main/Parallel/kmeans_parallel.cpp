@@ -11,11 +11,11 @@
 
 using namespace std;
 
-int MAXITERATION = 10;
+int MAXITERATION = 5;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
-string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
-// string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
+// string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
+string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
 
 string dataset = path_gcloud + "DataSet/DataSet50000x10.txt";
 
@@ -68,6 +68,10 @@ int main(int argc, char* argv[]) {
 
         // Reading the dataset and derive the infos for running the kmeans
         vector<Point*> points_temp_;
+		if(argc == 2){
+			// Se ho passato un argomento
+			dataset = path_gcloud + "DataSet/" + argv[1];
+		}
         readDataSet(points_temp_, dataset);
 
         // After reading the dataset
