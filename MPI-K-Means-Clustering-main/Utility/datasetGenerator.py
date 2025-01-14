@@ -8,11 +8,11 @@ def write_matrix(M, N):
     matrix = np.random.randint(0, 10, (M, N))
     np.savetxt(fpath, matrix, fmt = "%d", delimiter = ",")
 
-write_matrix(1000, 10)
-write_matrix(600, 10)
-write_matrix(1500, 10)
-write_matrix(5000, 10)
-write_matrix(10000, 10)
+# write_matrix(600, 10)
+# write_matrix(1500, 10)
+# write_matrix(5000, 10)
+# write_matrix(10000, 10)
+write_matrix(25000, 10)
 
 
 # snippet for plotting a 2D dataset 

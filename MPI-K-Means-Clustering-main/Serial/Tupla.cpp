@@ -7,7 +7,7 @@
 #include <vector>
 using namespace std;
 
-Tupla::Tupla(int dim) : dim(dim), value(dim) {}
+Tupla::Tupla(int dim) : value(dim), dim(dim) {}
 
 double Tupla::distanza(const Tupla& t) const {
     double result = 0;

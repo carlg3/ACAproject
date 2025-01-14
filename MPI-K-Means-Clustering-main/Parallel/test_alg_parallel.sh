@@ -20,6 +20,7 @@ for FILE in "$DATASET_DIR"/*; do
 
     # Esegui il comando sull'input e cattura l'output
     OUTPUT=$(mpirun -np 8 --oversubscribe "$ESEGUIBILE" "$FILE")
+	echo "$FILENAME done."
 
     # Salva il risultato nel file di output
     echo "$FILENAME; $OUTPUT" >> "$OUTPUT_FILE"
