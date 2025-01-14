@@ -70,19 +70,19 @@ int main(int argc, char* argv[]) {
 
     // Derive cluster number..
 	int K = sqrt(totalNumberPoint / 2);
-    Cluster::createKclusters(K, pointDimension);
+    Cluster::create_clusters(K, pointDimension);
 
 	// Setting tmse
     double previousTMSE = 0, tmse = 0;
 
     while ((MAX_ITERATION-- && tmse < previousTMSE) || previousTMSE == 0) {
-        Cluster::clustersReset();
+        Cluster::reset_clusters();
 		
 		// Assign points to clusters
-        Cluster::pointAssignment();
+        Cluster::map_point_to_cluster();
 
 		// Derive centroids for each cluster
-        Cluster::centroidsAssignment();
+        Cluster::find_centroid_clusters();
 
         previousTMSE = tmse;
         tmse = Cluster::totalMSE();

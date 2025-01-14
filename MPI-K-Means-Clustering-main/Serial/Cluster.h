@@ -15,18 +15,17 @@ using namespace std;
 class Cluster{
 public:
     Cluster(int centroidDimension);
-    static void createKclusters(int K,int centroidDimension);
-    void createCentroid(int centroidDimension);
+    static void create_clusters(int K,int centroidDimension);
+    void create_centroid(int centroidDimension);
 
-    void setEmptyCluster();
-    static void clustersReset();
-    void addElement(Point *t);
+    void empty_cluster();
+    static void reset_clusters();
+    void add_point(Point *t);
 
-    static void pointAssignment();
-    static void centroidsAssignment();
-    void centroidCalculator();
-    double meanCalculator(int index);
-    double MSECluster();
+    static void map_point_to_cluster();
+    static void find_centroid_clusters();
+    void find_centroid_();
+    double mean(int index);
     static double totalMSE();
 
     // Getters and Setters
@@ -44,9 +43,7 @@ public:
 private:
     static vector<Cluster*> clusters;
     Centroid *centroid;
-
     vector<Point*> cluster_points_;
-
     static double sumDistance;
 };
 

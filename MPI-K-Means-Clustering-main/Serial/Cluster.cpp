@@ -16,26 +16,26 @@ vector<Cluster*> Cluster::clusters;
 
 Cluster::Cluster(const int centroidDimension) {
     clusters.push_back(this);
-    createCentroid(centroidDimension);
+    create_centroid(centroidDimension);
 }
 
-void Cluster::setEmptyCluster() {
+void Cluster::empty_cluster() {
     cluster_points_.clear();
 }
 
-void Cluster::clustersReset() {
+void Cluster::reset_clusters() {
     for (auto cluster : clusters) {
-        cluster->setEmptyCluster();
+        cluster->empty_cluster();
     }
 }
 
-void Cluster::createKclusters(int K, int centroidDimension) {
+void Cluster::create_clusters(int K, int centroidDimension) {
     for (int i = 0; i < K; i++) {
         new Cluster(centroidDimension);
     }
 }
 
-void Cluster::createCentroid(int centroidDimension) {
+void Cluster::create_centroid(int centroidDimension) {
     centroid = new Centroid(centroidDimension);
     int centroidIndex = rand() % (Point::get_spoints_() - 1); // Choose the value of the centroid among the points in the dataset
 
@@ -58,11 +58,11 @@ int Cluster::get_spoints_() {
     return cluster_points_.size();
 }
 
-void Cluster::addElement(Point* t) {
+void Cluster::add_point(Point* t) {
     cluster_points_.push_back(t);
 }
 
-void Cluster::pointAssignment() {
+void Cluster::map_point_to_cluster() {
     for (int i = 0; i < Point::get_spoints_(); i++) {
         double minDistance = Point::get_point(i)->distanza(*clusters.front()->get_centroid());
         Cluster* closestCluster = clusters.front();
@@ -75,20 +75,20 @@ void Cluster::pointAssignment() {
             }
         }
 
-        closestCluster->addElement(Point::get_point(i));
+        closestCluster->add_point(Point::get_point(i));
     }
 }
 
-void Cluster::centroidsAssignment() {
+void Cluster::find_centroid_clusters() {
     for (auto cluster : clusters) {
-        cluster->centroidCalculator();
+        cluster->find_centroid_();
     }
 }
 
-void Cluster::centroidCalculator() {
+void Cluster::find_centroid_() {
     if (cluster_points_.size()) {
         for (int i = 0; i < centroid->get_dim(); i++) {
-            centroid->set_value(i, meanCalculator(i));
+            centroid->set_value(i, mean(i));
         }
     }
     else {
@@ -98,7 +98,7 @@ void Cluster::centroidCalculator() {
     }
 }
 
-double Cluster::meanCalculator(int index) {
+double Cluster::mean(int index) {
     double sum = 0;
     for (auto point : cluster_points_) {
         sum += point->get_value(index);
