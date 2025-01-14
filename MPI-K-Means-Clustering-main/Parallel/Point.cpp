@@ -9,17 +9,17 @@ Point::Point(int dim) : Tupla(dim) {
     points.push_back(this);
 }
 
-Point* Point::getThPoint(int index){
+Point* Point::get_point(int index){
     auto it = points.begin();
     advance(it, index);
     return *it;
 }
 
-int Point::getTotalNumberPoints(){
+int Point::get_spoints_(){
     return points.size();
 }
 
-void Point::printPoints(){
+void Point::print_points_(){
     for(auto point : points){
         cout << point->toString() << endl;
     }
@@ -31,7 +31,7 @@ void Point::serializePoint(double* buffer, int startIndex, int endIndex, int dim
 
     for(int i = 0; i < buffer[0]; i++){
         for(int j = 0; j < dim; j++){
-            buffer[i * dim + j + 2] = Point::getThPoint(i + startIndex)->getThValue(j);
+            buffer[i * dim + j + 2] = Point::get_point(i + startIndex)->get_value(j);
         }
     }
 }
@@ -44,7 +44,7 @@ void Point::deserializePoint(double* buffer){
         Point *p = new Point(dim);
 
         for(int j = 0; j < dim; j++){
-            p->setThValue(j, buffer[i * dim + j + 2]);
+            p->set_value(j, buffer[i * dim + j + 2]);
         }
     }
 }

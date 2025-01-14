@@ -8,43 +8,43 @@ using namespace std;
 
 class Cluster{
 public:
-    Cluster(int centroidDimension);
+    Cluster(int centroid_dim);
 
     // Getters and Setters
-    static Cluster* getThCluster(int index);
-    static int getNumberCluster();
-	Point* getElementList(int index);
-	int getNumberElements();	
-    Centroid* getCentroid();
-    Point* getThPoint(int index);
-    vector<Point*> getPoints();
+    static Cluster* get_cluster(int index);
+    static int get_sclusters_();
+	Point* get_lelements_(int index);
+	int get_selements_();
+    Centroid* get_centroid();
+    Point* get_point(int index);
+    vector<Point*> get_lpoints_();
 
     double getSumCluster(int index);
-    void setNumberElements(int num);
+    void set_selements_(int num);
     void setSumCluster(int index, double value);
     static double getSumDistance();
     static void setSumDistance(double value);
 
     // Methods
-    static void createKclusters(int K,int centroidDimension);
-    void createCentroid(int centroidDimension);
+    static void create_clusters(int K,int centroid_dim);
+    void create_centroid(int centroid_dim);
 
-    void setEmptyCluster(); // Reset of the cluster
-    static void clustersReset(); // Reset of all the clusters
+    void empty_cluster(); // Reset of the cluster
+    static void reset_clusters(); // Reset of all the clusters
     void initSumCluster();
     void addElement(Point *t); // Add a point to the cluster
 
-    static void pointAssignment(int startIndex = 0, int endIndex = Point::getTotalNumberPoints()); // Assign a subset of points to the closest cluster
-    void sumPoints(); // Calculate the sum of all points in the cluster
-    static void sumPointsClusters(); // Calculate the sum of all points in all clusters
-    void centroidParallelCalculator(); // Calculate the new centroid of the cluster
-    static void centroidsParallelAssignment(); // Calculate the new centroid of all clusters
+    static void map_point_to_cluster(int startIndex = 0, int endIndex = Point::get_spoints_()); // Assign a subset of points to the closest cluster
+    void sum_points_(); // Calculate the sum of all points in the cluster
+    static void sum_points_clusters(); // Calculate the sum of all points in all clusters
+    void find_centroid_(); // Calculate the new centroid of the cluster
+    static void find_centroid_clusters(); // Calculate the new centroid of all clusters
     static double totalMSE();
 
     // Debug functions
-	static void printClusters(int my_rank); // Print all the clusters
-    static void printCentroids(); // Print all the centroids
     void printSum();
+    static void printCentroids(); // Print all the centroids
+    static void printClusters(int my_rank); // Print all the clusters
     static void saveClusters(int my_rank); // Saves the clusters and their point to a .txt
     
     // Serialization functions

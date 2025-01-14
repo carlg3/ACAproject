@@ -12,8 +12,8 @@ using namespace std;
 class Point: public Tupla{
 public:
     Point(int dim);
-    static Point* getThPoint(int index);
-    static int getNumberPoints();
+    static Point* get_point(int index);
+    static int get_spoints_();
 private:
     static vector<Point*> points;
 };

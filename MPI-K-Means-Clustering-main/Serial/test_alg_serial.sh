@@ -22,7 +22,7 @@ for FILE in "$DATASET_DIR"/*; do
     OUTPUT=$(./"$ESEGUIBILE" "$FILE")
 
     # Salva il risultato nel file di output
-    echo "$FILENAME $OUTPUT" >> "$OUTPUT_FILE"
+    echo "$FILENAME; $OUTPUT" >> "$OUTPUT_FILE"
   fi
 done
 

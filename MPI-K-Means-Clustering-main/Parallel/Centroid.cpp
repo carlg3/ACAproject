@@ -7,12 +7,12 @@ Centroid::Centroid(int dim) : Tupla(dim) {
     centroids.push_back(this);
 }
 
-Centroid* Centroid::getThCentroid(int index){
+Centroid* Centroid::get_centroid(int index){
     auto it = centroids.begin();
     advance(it, index);
     return *it;
 }
 
-int Centroid::getNumberCentroids(){
+int Centroid::get_scentroids_(){
     return centroids.size();
 }

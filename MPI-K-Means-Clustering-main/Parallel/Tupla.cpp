@@ -8,25 +8,25 @@ Tupla::Tupla(int dim) : dim(dim), value(dim) {}
 double Tupla::distanza(const Tupla& t) const {
     double result = 0;
     for (int i = 0; i < dim; i++) {
-        double diff = this->getThValue(i) - t.getThValue(i);
+        double diff = this->get_value(i) - t.get_value(i);
         result += diff * diff;
     }
     return result;
 }
 
-double Tupla::getThValue(int i) const {
+double Tupla::get_value(int i) const {
     return value.at(i);
 }
 
-void Tupla::setThValue(int i, double d) {
+void Tupla::set_value(int i, double d) {
     value.at(i) = d;
 }
 
-void Tupla::setValue(const vector<double>& d) {
+void Tupla::set_tupla(const vector<double>& d) {
     value = d;
 }
 
-int Tupla::getDim() {
+int Tupla::get_dim() {
     return dim;
 }
 

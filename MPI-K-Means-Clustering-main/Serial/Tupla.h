@@ -13,14 +13,14 @@ class Tupla{
 public:
     Tupla(int dim);
     double distanza(const Tupla& t) const;
-    void setThValue(int i, double d);
-    void setValue(const vector<double>& d);
-    double getThValue(int i) const;
-    int getDim();
+    void set_value(int i, double d);
+    void set_tupla(const vector<double>& d);
+    double get_value(int i) const;
+    int get_dim();
     string toString();
 protected:
-    int dim;
     vector<double> value;
+    int dim;
 };
 
 #endif //TUPLA_H

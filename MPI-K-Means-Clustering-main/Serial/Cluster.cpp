@@ -37,24 +37,24 @@ void Cluster::createKclusters(int K, int centroidDimension) {
 
 void Cluster::createCentroid(int centroidDimension) {
     centroid = new Centroid(centroidDimension);
-    int centroidIndex = rand() % (Point::getNumberPoints() - 1); // Choose the value of the centroid among the points in the dataset
+    int centroidIndex = rand() % (Point::get_spoints_() - 1); // Choose the value of the centroid among the points in the dataset
 
     for (int j = 0; j < centroidDimension; j++) {
-        centroid->setThValue(j, Point::getThPoint(centroidIndex)->getThValue(j));
+        centroid->set_value(j, Point::get_point(centroidIndex)->get_value(j));
     }
 }
 
-Cluster* Cluster::getThCluster(const int index) {
+Cluster* Cluster::get_cluster(const int index) {
     auto it = clusters.begin();
     advance(it, index);
     return *it;
 }
 
-int Cluster::getNumberCluster() {
+int Cluster::get_sclusters_() {
     return clusters.size();
 }
 
-int Cluster::getNumberPoints() {
+int Cluster::get_spoints_() {
     return cluster_points_.size();
 }
 
@@ -63,19 +63,19 @@ void Cluster::addElement(Point* t) {
 }
 
 void Cluster::pointAssignment() {
-    for (int i = 0; i < Point::getNumberPoints(); i++) {
-        double minDistance = Point::getThPoint(i)->distanza(*clusters.front()->getCentroid());
+    for (int i = 0; i < Point::get_spoints_(); i++) {
+        double minDistance = Point::get_point(i)->distanza(*clusters.front()->get_centroid());
         Cluster* closestCluster = clusters.front();
 
         for (auto cluster : clusters) {
-            double distance = Point::getThPoint(i)->distanza(*cluster->getCentroid());
+            double distance = Point::get_point(i)->distanza(*cluster->get_centroid());
             if (distance < minDistance) {
                 minDistance = distance;
                 closestCluster = cluster;
             }
         }
 
-        closestCluster->addElement(Point::getThPoint(i));
+        closestCluster->addElement(Point::get_point(i));
     }
 }
 
@@ -87,13 +87,13 @@ void Cluster::centroidsAssignment() {
 
 void Cluster::centroidCalculator() {
     if (cluster_points_.size()) {
-        for (int i = 0; i < centroid->getDim(); i++) {
-            centroid->setThValue(i, meanCalculator(i));
+        for (int i = 0; i < centroid->get_dim(); i++) {
+            centroid->set_value(i, meanCalculator(i));
         }
     }
     else {
-        for (int i = 0; i < centroid->getDim(); i++) {
-            centroid->setThValue(i, 0);
+        for (int i = 0; i < centroid->get_dim(); i++) {
+            centroid->set_value(i, 0);
         }
     }
 }
@@ -101,22 +101,22 @@ void Cluster::centroidCalculator() {
 double Cluster::meanCalculator(int index) {
     double sum = 0;
     for (auto point : cluster_points_) {
-        sum += point->getThValue(index);
+        sum += point->get_value(index);
     }
     return sum / cluster_points_.size();
 }
 
-Centroid* Cluster::getCentroid() {
+Centroid* Cluster::get_centroid() {
     return centroid;
 }
 
-Point* Cluster::getThPoint(int index) {
+Point* Cluster::get_point(int index) {
     auto it = cluster_points_.begin();
     advance(it, index);
     return *it;
 }
 
-Point* Cluster::getPointsList(int index) {
+Point* Cluster::get_lpoints_(int index) {
     auto it = cluster_points_.begin();
     advance(it, index);
     return *it;
@@ -126,26 +126,26 @@ double Cluster::totalMSE() {
     double sumDistance = 0;
     for (auto cluster : clusters) {
         for (auto point : cluster->cluster_points_) {
-            sumDistance += point->distanza(*cluster->getCentroid());
+            sumDistance += point->distanza(*cluster->get_centroid());
         }
     }
-    return sumDistance / Point::getNumberPoints();
+    return sumDistance / Point::get_spoints_();
 }
 
-void Cluster::setThCentroid(int index, double value) {
-    centroid->setThValue(index, value);
+void Cluster::set_centroid(int index, double value) {
+    centroid->set_value(index, value);
 }
 
 void Cluster::printClusters() {
     ofstream f("test_kmeans.txt");
 
-    for (int i = 0; i < getNumberCluster(); i++) {
-        cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << getThCluster(i)->getNumberPoints() << endl;
-        cout << "CENTROID @ " << getThCluster(i)->getCentroid()->toString() << endl;
+    for (int i = 0; i < get_sclusters_(); i++) {
+        cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
+        cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
 
-        for (int j = 0; j < getThCluster(i)->getNumberPoints(); j++) {
-            cout << getThCluster(i)->getPointsList(j)->toString() << endl;
-            f << i << ";" << getThCluster(i)->getPointsList(j)->toString() << endl;
+        for (int j = 0; j < get_cluster(i)->get_spoints_(); j++) {
+            cout << get_cluster(i)->get_lpoints_(j)->toString() << endl;
+            f << i << ";" << get_cluster(i)->get_lpoints_(j)->toString() << endl;
         }
     }
     cout << "---------------------" << endl;

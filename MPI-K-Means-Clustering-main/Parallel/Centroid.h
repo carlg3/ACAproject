@@ -7,8 +7,8 @@ using namespace std;
 class Centroid: public Tupla{
 public:
     Centroid(int dim);
-    static Centroid* getThCentroid(int index);
-    static int getNumberCentroids();
+    static Centroid* get_centroid(int index);
+    static int get_scentroids_();
 private:
     static vector<Centroid*> centroids;
 };

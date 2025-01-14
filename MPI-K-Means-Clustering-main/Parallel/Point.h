@@ -7,11 +7,11 @@ using namespace std;
 class Point: public Tupla{
 public:
     Point(int dim);
-    static Point* getThPoint(int index);
-    static int getTotalNumberPoints();
+    static Point* get_point(int index);
+    static int get_spoints_();
     static void serializePoint(double* buffer,int startIndex, int endIndex, int dim);
     static void deserializePoint(double* buffer);
-    static void printPoints();
+    static void print_points_();
 private:
     static vector<Point*> points;
 };

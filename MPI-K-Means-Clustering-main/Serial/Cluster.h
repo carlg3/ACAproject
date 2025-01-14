@@ -30,15 +30,15 @@ public:
     static double totalMSE();
 
     // Getters and Setters
-    static Cluster* getThCluster(int index);
-    static int getNumberCluster();
-    Point* getPointsList(int index);
-    int getNumberPoints();
-    Centroid* getCentroid();
-    Point* getThPoint(int index);
+    static Cluster* get_cluster(int index);
+    static int get_sclusters_();
+    Point* get_lpoints_(int index);
+    int get_spoints_();
+    Centroid* get_centroid();
+    Point* get_point(int index);
 
     // Debug functions
-    void setThCentroid(int index, double value);
+    void set_centroid(int index, double value);
     static void printClusters();
 
 private:

@@ -11,12 +11,12 @@ Point::Point(int dim) : Tupla(dim) {
     points.push_back(this);
 }
 
-Point* Point::getThPoint(int index){
+Point* Point::get_point(int index){
     auto it = points.begin();
     advance(it, index);
     return *it;
 }
 
-int Point::getNumberPoints(){
+int Point::get_spoints_(){
     return points.size();
 }

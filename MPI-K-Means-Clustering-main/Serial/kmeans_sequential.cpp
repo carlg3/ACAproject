@@ -44,7 +44,7 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
 
         Point *point = new Point(tokens.size());
         for (int i = 0; i < (int)tokens.size(); i++) {
-            point->setThValue(i, stod(tokens[i]));
+            point->set_value(i, stod(tokens[i]));
         }
 
         points.push_back(point);
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
     // After reading the dataset..
     auto start = high_resolution_clock::now(); // Inizia il timer
    
-    int pointDimension = points_temp_[0]->getDim();  // Dimensione del dato R^pointDimension
+    int pointDimension = points_temp_[0]->get_dim();  // Dimensione del dato R^pointDimension
     int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
 
     // Derive cluster number..

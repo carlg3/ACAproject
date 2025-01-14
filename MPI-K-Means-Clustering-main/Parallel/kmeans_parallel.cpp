@@ -46,7 +46,7 @@ void readDataSet(vector<Point*>& points, const string& filePath) {
 
         Point *point = new Point(tokens.size());
         for (int i = 0; i < tokens.size(); i++) {
-            point->setThValue(i, stod(tokens[i]));
+            point->set_value(i, stod(tokens[i]));
         }
 
         points.push_back(point);
@@ -77,11 +77,11 @@ int main(int argc, char* argv[]) {
         // After reading the dataset
         start_time = MPI_Wtime();
 
-        int pointDimension = points_temp_[0]->getDim();     // Dimensione del dato R^pointDimension
+        int pointDimension = points_temp_[0]->get_dim();     // Dimensione del dato R^pointDimension
         int totalNumberPoint = (int)points_temp_.size();    // Numero di dati nel nostro DataSet
 
         int K = sqrt(totalNumberPoint/2);
-        Cluster::createKclusters(K, pointDimension);
+        Cluster::create_clusters(K, pointDimension);
 
         int pointsXprocessor = totalNumberPoint / commSize;
         int bufferSize = 2 + pointsXprocessor * pointDimension;
@@ -100,8 +100,7 @@ int main(int argc, char* argv[]) {
             MPI_Send(buffer, bufferSize, MPI_DOUBLE, i, DATAPOINTTAG, MPI_COMM_WORLD);
         }
 
-        delete[] buffer;
-        buffer = nullptr;
+        delete[] buffer; buffer = nullptr;
 
         bufferSize = 2 + K * pointDimension;
         buffer = new double[bufferSize];
@@ -117,15 +116,15 @@ int main(int argc, char* argv[]) {
         int finish = 0;
 
         while(true) {
-            Cluster::clustersReset();
+            Cluster::reset_clusters();
 
-            // Master works on the last batch of points <pointsXprocessor>
+            // Master works on the last batch of points <processors_point>
             int startIndex = (commSize - 1) * pointsXprocessor;
             int endIndex = totalNumberPoint;
-            Cluster::pointAssignment(startIndex, endIndex);
+            Cluster::map_point_to_cluster(startIndex, endIndex);
 
             // Gets the sum of the points of each cluster (of the master's points)
-            Cluster::sumPointsClusters();
+            Cluster::sum_points_clusters();
 
             // ..redundant..
             int cluster_number_ = K;
@@ -144,7 +143,7 @@ int main(int argc, char* argv[]) {
             Cluster::deserializeSumClusters(buffer);
 
             // Gets new centroids
-            Cluster::centroidsParallelAssignment();
+            Cluster::find_centroid_clusters();
 
             // new TMSE used by the stopping criterion
             previousTMSE = tmse;
@@ -202,7 +201,7 @@ int main(int argc, char* argv[]) {
         int bufferSize;
         double *buffer, *buffer2;
 
-        // Gets <pointsXprocessor>
+        // Gets <processors_points>
         MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         buffer = new double[bufferSize];
@@ -213,8 +212,7 @@ int main(int argc, char* argv[]) {
         // Gets number of clusters and centroids
         MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-        delete[] buffer;
-        buffer = nullptr;
+        delete[] buffer; buffer = nullptr;
 
         buffer = new double[bufferSize];
 
@@ -228,16 +226,16 @@ int main(int argc, char* argv[]) {
         buffer = nullptr;
 
         while(true) {
-            Cluster::clustersReset();
+            Cluster::reset_clusters();
 
             // Assign points to clusters with the nearest centroid
-            Cluster::pointAssignment();
+            Cluster::map_point_to_cluster();
 
             // Calculates the sumPoints of the points that the slave is working with
-            Cluster::sumPointsClusters();
+            Cluster::sum_points_clusters();
 
-            int cluster_number_ = Cluster::getNumberCluster();
-            int centroid_dim_ = Cluster::getThCluster(0)->getCentroid()->getDim();
+            int cluster_number_ = Cluster::get_sclusters_();
+            int centroid_dim_ = Cluster::get_cluster(0)->get_centroid()->get_dim();
 
             bufferSize = cluster_number_ + cluster_number_ * centroid_dim_;
 
@@ -249,10 +247,8 @@ int main(int argc, char* argv[]) {
             MPI_Reduce(buffer, buffer2, bufferSize, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
             // CALCULATE MSE
-            delete[] buffer;
-            delete[] buffer2;
-            buffer = nullptr;
-            buffer2 = nullptr;
+            delete[] buffer; buffer = nullptr;
+            delete[] buffer2; buffer2 = nullptr;
 
             buffer = new double[1];
             buffer2 = new double[1];
