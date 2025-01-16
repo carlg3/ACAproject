@@ -1,5 +1,6 @@
 #include <list>
 #include <iostream>
+#include <fstream>
 
 #include "Tupla.h"
 #include "Cluster.h"
@@ -30,6 +31,10 @@ void Cluster::createKclusters(int K,int centroidDimension){
 
 void Cluster::createCentroid(int centroidDimension){
     centroid = new Centroid(centroidDimension);
+    
+    // Per avere un seed fisso
+    srand(42);
+
     int n = rand() % (Point::getNumberPoints()-1); // Choose the value of the centroid among the points in the dataset
     for(int j=0; j < centroidDimension; j++){
         centroid->setThValue(j,Point::getThPoint(n)->getThValue(j));
@@ -119,6 +124,9 @@ void Cluster::sumPointsClusters(){
 }
 
 void Cluster::centroidParallelCalculator(){
+    // [DEBUG]
+    cout << numberElements << "\n\n";
+
     if(numberElements){
         for(int i=0;i<centroid->getDim();i++){
             centroid->setThValue(i, sumCluster[i]/numberElements);
@@ -269,3 +277,22 @@ void Cluster::setThCentroid(int index, double value){
     centroid->setThValue(index,value);
 }
 
+void Cluster::saveClusters(int my_rank){
+    // Creo path del file
+    string file = "rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream debug_txt(file);
+
+    int cluster_number_ = clusters.size();
+
+    cout << "get_sclusters_():\t"<< cluster_number_ << "  oppure  "<< Cluster::getNumberCluster  << '\n';
+
+    debug_txt<<"// RANK = "<<my_rank<<"\n";
+    for(int i = 0; i < cluster_number_; i++) {
+        // cluster, point, isCentroid
+        debug_txt<<i<<';'<<Cluster::getThCluster(i)->getCentroid()->toString().c_str()<<';'<<'y'<<"\n";
+        for(int j = 0; j < Cluster::getThCluster(i)->getNumberElements(); j++){
+            debug_txt<<i<<';'<<Cluster::getThCluster(i)->getThPoint(j)->toString().c_str()<<';'<<'n'<<"\n";
+        }
+    }
+    debug_txt.close();
+}

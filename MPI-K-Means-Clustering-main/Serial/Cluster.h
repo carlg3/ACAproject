@@ -30,6 +30,9 @@ class Cluster{
     static double totalMSE();
     static void printClusters();
     void setThCentroid(int index, double value);
+
+    static void saveClusters();
+
     private:
     static int numberCluster;
     static std::list<Cluster*> clusters;

@@ -1,5 +1,6 @@
 #include <list>
 #include <iostream>
+#include <fstream>
 
 #include "Tupla.h"
 #include "Cluster.h"
@@ -145,4 +146,24 @@ void Cluster::printClusters(){
 
 void Cluster::setThCentroid(int index, double value){
     centroid->setThValue(index,value);
+}
+
+
+void Cluster::saveClusters(){
+    ofstream f("output_cluster.txt");
+
+    cout << "get_sclusters_():\t"<< Cluster::getNumberCluster << '\n';
+
+    for (int i = 0; i < Cluster::getNumberCluster(); i++) {
+        // cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
+        // cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
+
+        for (int j = 0; j < getThCluster(i)->getNumberElements(); j++) {
+            // cout << get_cluster(i)->get_lpoints_(j)->toString() << endl;
+            f << i << ";" << getThCluster(i)->getElementList(j)->toString() << endl;
+        }
+    }
+    cout << "---------------------" << endl;
+
+    f.close();
 }

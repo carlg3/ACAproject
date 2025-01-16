@@ -14,7 +14,7 @@ using namespace chrono;
 int K = 0; // Number of Clusters
 int MAXITERATION = 5;
 
-const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet5000x10.txt";
+const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet1000x2.txt";
 const char* path_linux = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void readDataSet(int *pointDimension,int *totalNumberPoint){
@@ -80,6 +80,9 @@ int main(){
 	// Usando chrono...
 	auto end = high_resolution_clock::now(); // Termina il timer
 	auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
+
+	// Per salvare i Cluster su file
+    Cluster::saveClusters();
 	
 	cout << "Time taken to run the task: " << duration*1e-6 << " sec" << endl;
 	return 0;
