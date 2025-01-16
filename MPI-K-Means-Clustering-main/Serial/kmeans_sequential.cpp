@@ -70,6 +70,9 @@ int main(int argc, char* argv[]) {
 
     // Derive cluster number..
 	int K = sqrt(totalNumberPoint / 2);
+
+    printf("K:%d\npointDimension:%d\ntotalNumberPoint:%d\n-----", K, pointDimension, totalNumberPoint);
+
     Cluster::create_clusters(K, pointDimension);
 
 	// Setting tmse
@@ -91,6 +94,9 @@ int main(int argc, char* argv[]) {
     // Using chrono to get time spent..
     auto end = high_resolution_clock::now(); 
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
+
+    // Per salvare i Cluster su file
+    Cluster::saveClusters();
 
     cout << "That took: " << duration*1e-6 << " sec" << endl;
 

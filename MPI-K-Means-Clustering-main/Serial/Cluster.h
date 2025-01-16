@@ -38,7 +38,7 @@ public:
 
     // Debug functions
     void set_centroid(int index, double value);
-    static void printClusters();
+    static void saveClusters();
 
 private:
     static vector<Cluster*> clusters;

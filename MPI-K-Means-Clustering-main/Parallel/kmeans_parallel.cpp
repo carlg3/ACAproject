@@ -81,6 +81,9 @@ int main(int argc, char* argv[]) {
         int totalNumberPoint = (int)points_temp_.size();    // Numero di dati nel nostro DataSet
 
         int K = sqrt(totalNumberPoint/2);
+
+        // printf("K:%d\npointDimension:%d\ntotalNumberPoint:%d\n-----", K, pointDimension, totalNumberPoint);
+
         Cluster::create_clusters(K, pointDimension);
 
         int pointsXprocessor = totalNumberPoint / commSize;

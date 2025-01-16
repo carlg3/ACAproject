@@ -37,6 +37,10 @@ void Cluster::create_clusters(int K, int centroidDimension) {
 
 void Cluster::create_centroid(int centroidDimension) {
     centroid = new Centroid(centroidDimension);
+
+    // Per settare un seed fisso
+    srand(42);
+
     int centroidIndex = rand() % (Point::get_spoints_() - 1); // Choose the value of the centroid among the points in the dataset
 
     for (int j = 0; j < centroidDimension; j++) {
@@ -136,15 +140,17 @@ void Cluster::set_centroid(int index, double value) {
     centroid->set_value(index, value);
 }
 
-void Cluster::printClusters() {
-    ofstream f("test_kmeans.txt");
+void Cluster::saveClusters() {
+    ofstream f("output_cluster.txt");
+
+    cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
 
     for (int i = 0; i < get_sclusters_(); i++) {
-        cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
-        cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
+        // cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
+        // cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
 
         for (int j = 0; j < get_cluster(i)->get_spoints_(); j++) {
-            cout << get_cluster(i)->get_lpoints_(j)->toString() << endl;
+            // cout << get_cluster(i)->get_lpoints_(j)->toString() << endl;
             f << i << ";" << get_cluster(i)->get_lpoints_(j)->toString() << endl;
         }
     }
