@@ -100,6 +100,10 @@ void Cluster::create_clusters(int K, int centroidDimension){
 
 void Cluster::create_centroid(int centroidDimension){
     centroid = new Centroid(centroidDimension);
+
+    // Per generare con lo stesso <seed>
+    srand(42);
+
     int index = rand() % (Point::get_spoints_() - 1);
 
     // Setta quindi il centroide con le coordinate del punto scelto random

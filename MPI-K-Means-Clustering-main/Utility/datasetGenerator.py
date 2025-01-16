@@ -12,8 +12,9 @@ def write_matrix(M, N):
 # write_matrix(1500, 10)
 # write_matrix(5000, 10)
 # write_matrix(10000, 10)
-write_matrix(25000, 10)
+# write_matrix(25000, 10)
 
+write_matrix(1000,2)
 
 # snippet for plotting a 2D dataset 
 # ---------------------------------

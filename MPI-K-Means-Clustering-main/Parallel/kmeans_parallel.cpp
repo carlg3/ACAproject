@@ -148,8 +148,7 @@ int main(int argc, char* argv[]) {
             // new TMSE used by the stopping criterion
             previousTMSE = tmse;
 
-            delete[] buffer;
-            buffer = nullptr;
+            delete[] buffer; buffer = nullptr;
 
             buffer = new double[1];     // recv
             buffer2 = new double[1];    // send
@@ -195,6 +194,9 @@ int main(int argc, char* argv[]) {
         // DEBUG -- per salvare il tempo che ci si mette ad ogni esecuzione [MASTER]
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
         writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
+
+        // [DEBUG] Salvare Cluster figli
+        Cluster::saveClusters(my_rank);
     }
 
     if(my_rank != 0){
@@ -222,8 +224,7 @@ int main(int argc, char* argv[]) {
 
         int finish;
 
-        delete[] buffer;
-        buffer = nullptr;
+        delete[] buffer; buffer = nullptr;
 
         while(true) {
             Cluster::reset_clusters();
@@ -274,6 +275,9 @@ int main(int argc, char* argv[]) {
 
             Cluster::deserializeCentroids(buffer);
         }
+
+        // [DEBUG] Salvare Cluster figli
+        Cluster::saveClusters(my_rank);
     }
 
     MPI_Finalize();
