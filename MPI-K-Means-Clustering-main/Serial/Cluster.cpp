@@ -79,7 +79,13 @@ void Cluster::map_point_to_cluster() {
         double minDistance = Point::get_point(i)->distanza(*clusters.front()->get_centroid());
         Cluster* closestCluster = clusters.front();
 
-        for (auto cluster : clusters) {
+        bool isFirst = true;
+
+        for (auto cluster : clusters){
+            if (isFirst) {
+                isFirst = false;
+                continue; // Salta il primo elemento
+            }
             double distance = Point::get_point(i)->distanza(*cluster->get_centroid());
             if (distance < minDistance) {
                 minDistance = distance;
