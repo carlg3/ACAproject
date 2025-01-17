@@ -51,6 +51,7 @@ void Cluster::create_centroid(int centroidDimension) {
 
     for (int j = 0; j < centroidDimension; j++) {
         centroid->set_value(j, Point::get_point(centroidIndex)->get_value(j));
+        // avrei potuto mettere set_tupla direttamente?
     }
 }
 
@@ -190,6 +191,19 @@ void Cluster::saveClusters() {
         for (int j = 0; j < get_cluster(i)->get_spoints_(); j++) {
             f << i << ";" << get_cluster(i)->get_lpoints_(j)->toString() << endl;
         }
+    }
+    cout << "---------------------" << endl;
+
+    f.close();
+}
+
+void Cluster::saveCentroids() {
+    ofstream f("output_centroids.txt");
+
+    cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
+
+    for (int i = 0; i < get_sclusters_(); i++) {
+        f << i << ";" << get_cluster(i)->get_centroid()->toString() << endl;
     }
     cout << "---------------------" << endl;
 

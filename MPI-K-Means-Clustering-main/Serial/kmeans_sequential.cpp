@@ -22,7 +22,7 @@ int MAX_ITERATION = 1;
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
 
-string dataset = path_gcloud + "DataSet/DataSet50000x10.txt";
+string dataset = path_gcloud + "DataSet/DataSet1000x2.txt";
 
 void readDataSet(vector<Point*>& points, const string& filePath) {
     ifstream dataSet(filePath);
@@ -62,6 +62,16 @@ int main(int argc, char* argv[]) {
 	}
     readDataSet(points_temp_, dataset);
 
+    // [DEBUG]
+
+    ofstream f("dataset_usato.txt");
+    for (int i = 0; i < Point::get_spoints_(); i++) {
+        f << Point::get_point(i)->toString() << endl;
+    }
+
+    f.close();
+
+
     // After reading the dataset..
     auto start = high_resolution_clock::now(); // Inizia il timer
    
@@ -95,8 +105,10 @@ int main(int argc, char* argv[]) {
     auto end = high_resolution_clock::now(); 
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
-    // Per salvare i Cluster su file
+    // [DEBUG] Per salvare i Cluster su file
     Cluster::saveClusters();
+    // e i centroidi
+    Cluster::saveCentroids();
 
     cout << "That took: " << duration*1e-6 << " sec" << endl;
 
