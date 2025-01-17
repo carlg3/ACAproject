@@ -56,22 +56,25 @@ int main(){
 	readDataSet(&pointDimension,&totalNumberPoint);
 
 	// [DEBUG]
-
+    /*
     ofstream f("dataset_usato.txt");
     for (int i = 0; i < Point::getNumberPoints(); i++) {
         f << Point::getThPoint(i)->toString() << endl;
     }
 
     f.close();
-
+    */
 
 	// INIZIALIZE CLUSTERS AND CENTROIDS
 	K = sqrt(totalNumberPoint/2);
 	Cluster::createKclusters(K,pointDimension);
+
 	// INITIAL TMSE
 	double previousTMSE = 0;
 	double tmse = 0;
-	//Cluster::printClusters();
+
+    // DEBUG
+	// Cluster::saveCentroids();
 
 	while((MAXITERATION-- && tmse<previousTMSE) || previousTMSE==0) {
 		Cluster::clustersReset();
@@ -93,7 +96,9 @@ int main(){
 
 	// [DEBUG] Per salvare i Cluster su file
     Cluster::saveClusters();
-	
+    // Per salvare i centroids
+    Cluster::saveCentroids();
+
 	cout << "Time taken to run the task: " << duration*1e-6 << " sec" << endl;
 	return 0;
 }

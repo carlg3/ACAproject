@@ -152,7 +152,7 @@ void Cluster::setThCentroid(int index, double value){
 void Cluster::saveClusters(){
     ofstream f("output_cluster.txt");
 
-    cout << "get_sclusters_():\t"<< Cluster::getNumberCluster << '\n';
+    cout << "get_sclusters_():\t"<< Cluster::getNumberCluster() << '\n';
 
     for (int i = 0; i < Cluster::getNumberCluster(); i++) {
         // cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
@@ -163,6 +163,19 @@ void Cluster::saveClusters(){
         for (int j = 0; j < getThCluster(i)->getNumberElements(); j++) {
             f << i << ";" << getThCluster(i)->getElementList(j)->toString() << endl;
         }
+    }
+    cout << "---------------------" << endl;
+
+    f.close();
+}
+
+void Cluster::saveCentroids() {
+    ofstream f("output_centroids.txt");
+
+    cout << "get_sclusters_():\t"<< getNumberCluster() << '\n';
+
+    for (int i = 0; i < getNumberCluster(); i++) {
+        f << i << ";" << getThCluster(i)->getCentroid()->toString() << endl;
     }
     cout << "---------------------" << endl;
 

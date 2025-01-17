@@ -32,6 +32,8 @@ class Cluster{
     void setThCentroid(int index, double value);
 
     static void saveClusters();
+    // DEBUG
+    static void saveCentroids();
 
     private:
     static int numberCluster;
