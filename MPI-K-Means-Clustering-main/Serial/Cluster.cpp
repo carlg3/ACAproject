@@ -33,6 +33,9 @@ void Cluster::createKclusters(int K,int centroidDimension){
 
 void Cluster::createCentroid(int centroidDimension){
     centroid = new Centroid(centroidDimension);
+
+    srand(42); // DEBUG
+
     int n = rand() % (Point::getNumberPoints()-1); // Scegliere il punto a cui assegnare il centroide tra i punti del dataset
     for(int j=0; j < centroidDimension; j++){
         centroid->setThValue(j,Point::getThPoint(n)->getThValue(j));

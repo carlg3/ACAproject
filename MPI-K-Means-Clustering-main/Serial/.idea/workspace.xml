@@ -33,13 +33,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Centroid.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.h" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cluster.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Point.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Tupla.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/kmeans_sequential" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kmeans_sequential.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kmeans_sequential.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kmeans_sequential.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output_centroids.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output_centroids.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output_cluster.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output_cluster.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +118,7 @@
       <workItem from="1732539901959" duration="687000" />
       <workItem from="1737110692468" duration="814000" />
       <workItem from="1737113349365" duration="680000" />
+      <workItem from="1737115360909" duration="538000" />
     </task>
     <servers />
   </component>
