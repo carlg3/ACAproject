@@ -14,6 +14,9 @@ using namespace std;
 
 vector<Cluster*> Cluster::clusters;
 
+// [main-cristian]
+// double Cluster::sumDistance;
+
 Cluster::Cluster(const int centroidDimension) {
     clusters.push_back(this);
     create_centroid(centroidDimension);
@@ -21,6 +24,9 @@ Cluster::Cluster(const int centroidDimension) {
 
 void Cluster::empty_cluster() {
     cluster_points_.clear();
+
+    // [main-cristian] reset sumDistance
+    // sumDistance = 0;
 }
 
 void Cluster::reset_clusters() {
@@ -66,6 +72,7 @@ void Cluster::add_point(Point* t) {
     cluster_points_.push_back(t);
 }
 
+// [copilot-refactor]
 void Cluster::map_point_to_cluster() {
     for (int i = 0; i < Point::get_spoints_(); i++) {
         double minDistance = Point::get_point(i)->distanza(*clusters.front()->get_centroid());
@@ -83,6 +90,33 @@ void Cluster::map_point_to_cluster() {
     }
 }
 
+/*
+// [main-cristian]
+void Cluster::map_point_to_cluster(){
+    int distanzaMinimaIndex;
+    double distanzaMinima, next;
+    double d[clusters.size()]; // Buffer to store the distance between the point and the centroid
+
+    for(int i=0; i<Point::get_spoints_(); i++){
+        distanzaMinimaIndex = 0;
+        distanzaMinima = Point::get_point(i)->distanza(*Cluster::get_cluster(0)->get_centroid());
+        d[0] = distanzaMinima; // Store the distance between the point and the centroid
+
+        for(int j=1;j<(int)clusters.size();j++){
+            next = Point::get_point(i)->distanza(*Cluster::get_cluster(j)->get_centroid());
+
+            d[j] = next; // Store the distance between the point and the centroid
+            if(next<distanzaMinima){
+                distanzaMinima = next;
+                distanzaMinimaIndex = j;
+            }
+        }
+        Cluster::get_cluster(distanzaMinimaIndex)->add_point(Point::get_point(i));
+        Cluster::sumDistance += d[distanzaMinimaIndex];
+    }
+}
+*/
+
 void Cluster::find_centroid_clusters() {
     for (auto cluster : clusters) {
         cluster->find_centroid_();
@@ -90,6 +124,7 @@ void Cluster::find_centroid_clusters() {
 }
 
 void Cluster::find_centroid_() {
+    // printf("tot_points: %d\n", cluster_points_.size());
     if (cluster_points_.size()) {
         for (int i = 0; i < centroid->get_dim(); i++) {
             centroid->set_value(i, mean(i));
@@ -146,11 +181,13 @@ void Cluster::saveClusters() {
     cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
 
     for (int i = 0; i < get_sclusters_(); i++) {
-        // cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
-        // cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
+        /*
+         *  cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
+         *  cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
+        */
+        cout << i << ':'<< '\t' << get_cluster(i)->get_spoints_() << endl;
 
         for (int j = 0; j < get_cluster(i)->get_spoints_(); j++) {
-            // cout << get_cluster(i)->get_lpoints_(j)->toString() << endl;
             f << i << ";" << get_cluster(i)->get_lpoints_(j)->toString() << endl;
         }
     }

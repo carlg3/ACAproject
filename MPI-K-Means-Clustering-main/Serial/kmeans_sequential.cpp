@@ -17,7 +17,7 @@
 using namespace chrono;
 using namespace std;
 
-int MAX_ITERATION = 10;
+int MAX_ITERATION = 1;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
     // Derive cluster number..
 	int K = sqrt(totalNumberPoint / 2);
 
-    printf("K:%d\npointDimension:%d\ntotalNumberPoint:%d\n-----", K, pointDimension, totalNumberPoint);
+    // printf("K:%d\npointDimension:%d\ntotalNumberPoint:%d\n-----", K, pointDimension, totalNumberPoint);
 
     Cluster::create_clusters(K, pointDimension);
 

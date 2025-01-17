@@ -171,11 +171,13 @@ void Cluster::map_point_to_cluster(int startIndex, int endIndex) {
 
 void Cluster::find_centroid_(){
     int centroid_dim = centroid->get_dim();
-    int number_elements = get_selements_();
+    int tot_points = points_.size();
 
-    if(number_elements){
+    printf("tot_points: %d\n", points_.size());
+
+    if(tot_points){
         for(int i = 0; i < centroid_dim; i++){
-            centroid->set_value(i, sumCluster[i]/number_elements);
+            centroid->set_value(i, sumCluster[i]/tot_points);
         }
     }else{
         for(int i = 0; i < centroid_dim; i++) {

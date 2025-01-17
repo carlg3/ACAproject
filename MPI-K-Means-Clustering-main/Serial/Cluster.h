@@ -44,7 +44,7 @@ private:
     static vector<Cluster*> clusters;
     Centroid *centroid;
     vector<Point*> cluster_points_;
-    static double sumDistance;
+    // static double sumDistance;
 };
 
 #endif //CLUSTER_H
