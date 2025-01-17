@@ -85,6 +85,8 @@ int main(int argc, char* argv[]) {
 
     Cluster::create_clusters(K, pointDimension);
 
+    Cluster::saveCentroids();
+
 	// Setting tmse
     double previousTMSE = 0, tmse = 0;
 
@@ -108,7 +110,7 @@ int main(int argc, char* argv[]) {
     // [DEBUG] Per salvare i Cluster su file
     Cluster::saveClusters();
     // e i centroidi
-    Cluster::saveCentroids();
+    // Cluster::saveCentroids();
 
     cout << "That took: " << duration*1e-6 << " sec" << endl;
 
