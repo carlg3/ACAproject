@@ -12,7 +12,7 @@ using namespace std;
 using namespace chrono;
 
 int K = 0; // Number of Clusters
-int MAXITERATION = 1;
+int MAXITERATION = 3;
 
 const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet1000x2.txt";
 const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
