@@ -158,8 +158,9 @@ void Cluster::saveClusters(){
         // cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
         // cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
 
+        cout << i << ':'<< '\t' << getThCluster(i)->getNumberElements() << endl;
+
         for (int j = 0; j < getThCluster(i)->getNumberElements(); j++) {
-            // cout << get_cluster(i)->get_lpoints_(j)->toString() << endl;
             f << i << ";" << getThCluster(i)->getElementList(j)->toString() << endl;
         }
     }

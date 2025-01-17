@@ -12,10 +12,10 @@ using namespace std;
 using namespace chrono;
 
 int K = 0; // Number of Clusters
-int MAXITERATION = 5;
+int MAXITERATION = 1;
 
 const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet1000x2.txt";
-const char* path_linux = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
+const char* path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet10000x10.txt";
 
 void readDataSet(int *pointDimension,int *totalNumberPoint){
 	string buffer;
@@ -55,6 +55,16 @@ int main(){
 	// READING FILE
 	readDataSet(&pointDimension,&totalNumberPoint);
 
+	// [DEBUG]
+
+    ofstream f("dataset_usato.txt");
+    for (int i = 0; i < Point::getNumberPoints(); i++) {
+        f << Point::getThPoint(i)->toString() << endl;
+    }
+
+    f.close();
+
+
 	// INIZIALIZE CLUSTERS AND CENTROIDS
 	K = sqrt(totalNumberPoint/2);
 	Cluster::createKclusters(K,pointDimension);
@@ -81,7 +91,7 @@ int main(){
 	auto end = high_resolution_clock::now(); // Termina il timer
 	auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
-	// Per salvare i Cluster su file
+	// [DEBUG] Per salvare i Cluster su file
     Cluster::saveClusters();
 	
 	cout << "Time taken to run the task: " << duration*1e-6 << " sec" << endl;

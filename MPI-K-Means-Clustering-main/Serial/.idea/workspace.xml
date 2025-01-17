@@ -24,7 +24,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21d2198-e6be-42d8-ba2c-c30aa2e0debe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Parallel/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.57671/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Parallel/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.58200/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Parallel/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.65880/hwloc.sm" beforeDir="false" />
@@ -32,13 +31,11 @@
       <change beforePath="$PROJECT_DIR$/../Parallel/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.80310/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Parallel/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.88742/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Centroid.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Point.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tupla.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kmeans_sequential" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Point.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Point.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Point.h" beforeDir="false" afterPath="$PROJECT_DIR$/Point.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tupla.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tupla.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kmeans_sequential.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kmeans_sequential.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kmeans_sequential.o" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,23 +77,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Serial_proj_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Serial_proj_test" TARGET_NAME="Serial_proj_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Serial_proj_test" RUN_TARGET_NAME="Serial_proj_test">
       <method v="2">
@@ -115,6 +112,7 @@
       <workItem from="1726565581863" duration="817000" />
       <workItem from="1726568536182" duration="60000" />
       <workItem from="1732539901959" duration="687000" />
+      <workItem from="1737110692468" duration="814000" />
     </task>
     <servers />
   </component>
