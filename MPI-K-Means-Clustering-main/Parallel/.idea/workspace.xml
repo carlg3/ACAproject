@@ -25,17 +25,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f626ed87-c878-4c3c-b667-3b29cfe774c5" name="Changes" comment="main ver con righe di debug CLion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cluster.h" beforeDir="false" afterPath="$PROJECT_DIR$/Cluster.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tupla.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tupla.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.57671/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.58200/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.65880/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.72452/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.80310/hwloc.sm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C:/Users/galan/AppData/Local/Temp/ompi.carlo-laptop.1000/pid.88742/hwloc.sm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kmeans_parallel" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/kmeans_parallel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kmeans_parallel.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +127,7 @@
       <workItem from="1726513697761" duration="158000" />
       <workItem from="1726557309624" duration="599000" />
       <workItem from="1732536479412" duration="765000" />
-      <workItem from="1737196930827" duration="4789000" />
+      <workItem from="1737196930827" duration="5870000" />
     </task>
     <task id="LOCAL-00001" summary="main ver con righe di debug CLion">
       <option name="closed" value="true" />

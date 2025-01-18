@@ -117,7 +117,7 @@ int main(int argc, char* argv[]) {
         // INITIAL TMSE
         double previousTMSE = 0, tmse = 0;
 
-        Cluster::saveCentroids(my_rank, 102);
+        Cluster::saveCentroids(my_rank, 120);
 
         while(true) {
             Cluster::clustersReset();
@@ -182,7 +182,7 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-            Cluster::saveCentroids(my_rank, 176);
+            Cluster::saveCentroids(my_rank, 185);
         }
 
         finish = 1;
@@ -200,8 +200,8 @@ int main(int argc, char* argv[]) {
         */
 
         // [DEBUG] Salvare i cluster
-        Cluster::saveCentroids(my_rank, 161);
-        Cluster::saveClusters(my_rank, 162);
+        Cluster::saveCentroids(my_rank, 203);
+        Cluster::saveClusters(my_rank, 204);
 	    // writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
     }
 
@@ -268,10 +268,12 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
             Cluster::deSerializeCentroids(buffer);
+
+            Cluster::saveCentroids(my_rank, 272);
         }
         
         // [DEBUG] Salvare i cluster
-        Cluster::saveClusters(my_rank, 217);
+        Cluster::saveClusters(my_rank, 276);
     }
 
     MPI_Finalize();
