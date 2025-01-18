@@ -104,11 +104,11 @@ void Cluster::create_centroid(int centroidDimension){
     // Per generare con lo stesso <seed>
     srand(42);
 
-    int index = rand() % (Point::get_spoints_() - 1);
+    int centroid_index_ = rand() % (Point::get_spoints_() - 1);
 
     // Setta quindi il centroide con le coordinate del punto scelto random
-    for(int j=0; j < centroidDimension; j++){
-        centroid->set_value(j, Point::get_point(index)->get_value(j));
+    for(int j = 0; j < centroidDimension; j++){
+        centroid->set_value(j, Point::get_point(centroid_index_)->get_value(j));
     }
 }
 
@@ -173,7 +173,7 @@ void Cluster::find_centroid_(){
     int centroid_dim = centroid->get_dim();
     int tot_points = points_.size();
 
-    printf("tot_points: %d\n", points_.size());
+    printf("tot_points: %d\n", tot_points);
 
     if(tot_points){
         for(int i = 0; i < centroid_dim; i++){
@@ -308,24 +308,35 @@ void Cluster::printSum(){
     cout << s;
 }
 
-void Cluster::saveClusters(int my_rank){
+void Cluster::saveClusters(int my_rank, int bp){
     // Creo path del file
-    string file = "rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    string file = to_string(bp) + "_clusters_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream f(file);
 
-    ofstream debug_txt(file);
+    f<<"// RANK = "<<my_rank<<'\n';
 
-    int cluster_number_ = clusters.size();
-
-    debug_txt<<"// RANK = "<<my_rank<<"\n";
-
-    for(int i = 0; i < cluster_number_; i++) {
+    for(int i = 0; i < get_sclusters_(); i++) {
         // cluster, point, isCentroid
-        debug_txt<<i<<';'<<Cluster::get_cluster(i)->get_centroid()->toString().c_str()<<';'<<'y'<<"\n";
-
-        for(int j = 0; j < Cluster::get_cluster(i)->get_lpoints_().size(); j++){
-            debug_txt<<i<<';'<<Cluster::get_cluster(i)->get_lelements_(j)->toString().c_str()<<';'<<'n'<<"\n";
+        // f << i << ';' <<  get_cluster(i)->get_centroid()->toString().c_str() << ';' << 'y' << "\n";
+        for(int j = 0; j < get_cluster(i)->get_lpoints_().size(); j++){
+            f << i << ';' <<  get_cluster(i)->get_lelements_(j)->toString().c_str() << "\n";
         }
     }
 
-    debug_txt.close();
+    f.close();
+}
+
+void Cluster::saveCentroids(int my_rank, int bp){
+    // Creo path del file a quel BreakPoint fittizio
+    string file = to_string(bp) + "_centroids_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream f(file);
+
+    cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
+
+    for (int i = 0; i < get_sclusters_(); i++) {
+        f << i << ";" << get_cluster(i)->get_centroid()->toString() << endl;
+    }
+    cout << "---------------------" << endl;
+
+    f.close();
 }

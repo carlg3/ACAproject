@@ -11,13 +11,13 @@
 
 using namespace std;
 
-int MAXITERATION = 10;
+int MAXITERATION = 1;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
 
-string dataset = path_gcloud + "DataSet/DataSet50000x10.txt";
+string dataset = path_gcloud + "DataSet/DataSet1000x2.txt";
 
 void writeExTime(int cs, int tnp, int pd, int K, double time){
     ofstream f;
@@ -86,6 +86,9 @@ int main(int argc, char* argv[]) {
 
         Cluster::create_clusters(K, pointDimension);
 
+        // DEBUG
+        Cluster::saveCentroids(my_rank, 90);
+
         int pointsXprocessor = totalNumberPoint / commSize;
         int bufferSize = 2 + pointsXprocessor * pointDimension;
 
@@ -93,8 +96,14 @@ int main(int argc, char* argv[]) {
         buffer = new double[bufferSize];
 
         // Sends derived points to each other processor
+
         MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
-        
+
+        /*
+         * Parto da 1 perché il padre ha già la sua parte di punti
+         * ed invia ad ogni figlio la sua parte
+        */
+
         for(int i = 1; i < commSize; i++){
             int startIndex = (i - 1) * pointsXprocessor;
             int endIndex = startIndex + pointsXprocessor;
@@ -167,12 +176,12 @@ int main(int argc, char* argv[]) {
 
             tmse = Cluster::totalMSE();
 
-            // Check finish condition and send it
+            // Check finish conditions
             if(!((MAXITERATION-- && tmse < previousTMSE) || previousTMSE == 0)){ break;}
 
             MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-            // If not finished, calculates new centroids
+            // If not finished, calculates new centroids and sends them
             bufferSize = cluster_number_ * centroid_dim_;
             buffer = new double[bufferSize];
 
@@ -182,24 +191,30 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         }
 
+        // [DEBUG] Salvare centroids calcolati
+        Cluster::saveCentroids(my_rank, 195);
+
+        // End condition
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         end_time = MPI_Wtime();
         printf("That took %f seconds\n", end_time - start_time); // Print execution time
 
+        /*
         // DEBUG -- CLion
-        // int debug = 0;
-        // while(debug == 0) {
-        //     sleep(1);
-        // }
+        int debug = 0;
+        while(debug == 0) {
+            sleep(1);
+        }
+        */
 
         // DEBUG -- per salvare il tempo che ci si mette ad ogni esecuzione [MASTER]
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
-        writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
+        // writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
 
         // [DEBUG] Salvare Cluster figli
-        Cluster::saveClusters(my_rank);
+        Cluster::saveClusters(my_rank, 213);
     }
 
     if(my_rank != 0){
@@ -228,6 +243,9 @@ int main(int argc, char* argv[]) {
         int finish;
 
         delete[] buffer; buffer = nullptr;
+
+        // DEBUG
+        Cluster::saveCentroids(my_rank, 248);
 
         while(true) {
             Cluster::reset_clusters();
@@ -279,8 +297,11 @@ int main(int argc, char* argv[]) {
             Cluster::deserializeCentroids(buffer);
         }
 
+        // DEBUG
+        Cluster::saveCentroids(my_rank, 301);
+
         // [DEBUG] Salvare Cluster figli
-        Cluster::saveClusters(my_rank);
+        Cluster::saveClusters(my_rank, 304);
     }
 
     MPI_Finalize();

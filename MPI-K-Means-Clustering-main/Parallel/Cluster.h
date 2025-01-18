@@ -45,7 +45,8 @@ public:
     void printSum();
     static void printCentroids(); // Print all the centroids
     static void printClusters(int my_rank); // Print all the clusters
-    static void saveClusters(int my_rank); // Saves the clusters and their point to a .txt
+    static void saveClusters(int my_rank, int bp); // Saves the clusters and their points in a .txt
+    static void saveCentroids(int my_rank, int bp); // Saves the centroids in a .txt
     
     // Serialization functions
     static void serializeCluster(double* buffer);

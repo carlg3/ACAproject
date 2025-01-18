@@ -17,7 +17,7 @@
 using namespace chrono;
 using namespace std;
 
-int MAX_ITERATION = 2;
+int MAX_ITERATION = 3;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
