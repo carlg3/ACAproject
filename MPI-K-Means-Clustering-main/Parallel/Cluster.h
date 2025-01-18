@@ -49,7 +49,8 @@ public:
 
     // Debug functions
     void setThCentroid(int index, double value);
-    static void saveClusters(int my_rank);
+    static void saveClusters(int my_rank, int bp);
+    static void saveCentroids(int my_rank, int bp);
 
 private:
     static int numberCluster;

@@ -89,6 +89,7 @@ void Cluster::pointAssignment(int startIndex, int endIndex){
     double distanzaMinima;
     double next;
     double d[Cluster::getNumberCluster()]; // Buffer to store the distance between the point and the centroid
+
     for(int i=startIndex;i<endIndex;i++){
         distanzaMinimaIndex = 0;
         distanzaMinima = Point::getThPoint(i)->distanza(*Cluster::getThCluster(0)->getCentroid());
@@ -277,22 +278,57 @@ void Cluster::setThCentroid(int index, double value){
     centroid->setThValue(index,value);
 }
 
-void Cluster::saveClusters(int my_rank){
+/*
+    void Cluster::saveClusters(int my_rank){
+        // Creo path del file
+        string file = "rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+        ofstream debug_txt(file);
+
+        int cluster_number_ = clusters.size();
+
+        cout << "get_sclusters_():\t"<< cluster_number_ << "  oppure  "<< Cluster::getNumberCluster  << '\n';
+
+        debug_txt<<"// RANK = "<<my_rank<<"\n";
+        for(int i = 0; i < cluster_number_; i++) {
+            // cluster, point, isCentroid
+            debug_txt<<i<<';'<<Cluster::getThCluster(i)->getCentroid()->toString().c_str()<<';'<<'y'<<"\n";
+            for(int j = 0; j < Cluster::getThCluster(i)->getNumberElements(); j++){
+                debug_txt<<i<<';'<<Cluster::getThCluster(i)->getThPoint(j)->toString().c_str()<<';'<<'n'<<"\n";
+            }
+        }
+        debug_txt.close();
+    }
+*/
+
+void Cluster::saveClusters(int my_rank, int bp){
     // Creo path del file
-    string file = "rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
-    ofstream debug_txt(file);
+    string file = to_string(bp) + "_clusters_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream f(file);
 
-    int cluster_number_ = clusters.size();
+    f<<"// RANK = "<<my_rank<<'\n';
 
-    cout << "get_sclusters_():\t"<< cluster_number_ << "  oppure  "<< Cluster::getNumberCluster  << '\n';
-
-    debug_txt<<"// RANK = "<<my_rank<<"\n";
-    for(int i = 0; i < cluster_number_; i++) {
+    for(int i = 0; i < getNumberCluster(); i++) {
         // cluster, point, isCentroid
-        debug_txt<<i<<';'<<Cluster::getThCluster(i)->getCentroid()->toString().c_str()<<';'<<'y'<<"\n";
-        for(int j = 0; j < Cluster::getThCluster(i)->getNumberElements(); j++){
-            debug_txt<<i<<';'<<Cluster::getThCluster(i)->getThPoint(j)->toString().c_str()<<';'<<'n'<<"\n";
+        // f << i << ';' <<  get_cluster(i)->get_centroid()->toString().c_str() << ';' << 'y' << "\n";
+        for(int j = 0; j < getThCluster(i)->getNumberElements(); j++){
+            f << i << ';' <<  getThCluster(i)->getThPoint(j)->toString().c_str() << "\n";
         }
     }
-    debug_txt.close();
+
+    f.close();
+}
+
+void Cluster::saveCentroids(int my_rank, int bp){
+    // Creo path del file a quel BreakPoint fittizio
+    string file = to_string(bp) + "_centroids_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream f(file);
+
+    cout << "get_sclusters_():\t"<< getNumberCluster() << '\n';
+
+    for (int i = 0; i < getNumberCluster(); i++) {
+        f << i << ";" << getThCluster(i)->getCentroid()->toString() << endl;
+    }
+    cout << "---------------------" << endl;
+
+    f.close();
 }

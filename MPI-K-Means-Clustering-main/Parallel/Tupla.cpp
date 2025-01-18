@@ -38,6 +38,7 @@ int Tupla::getDim(){
     return dim;
 }
 
+/*
 string Tupla::toString(){
     string s = "<";
     for(int i=0;i<dim;i++){
@@ -49,4 +50,16 @@ string Tupla::toString(){
     }
     return s + ">";
 }
+*/
 
+string Tupla::toString() {
+    string s = "(";
+    for (int i = 0; i < dim; i++) {
+        if (i == 0) {
+            s += to_string(static_cast<int>(value[i]));
+        } else {
+            s += "," + to_string(static_cast<int>(value[i]));
+        }
+    }
+    return s + ")";
+}
