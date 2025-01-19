@@ -17,7 +17,7 @@
 using namespace chrono;
 using namespace std;
 
-int MAX_ITERATION = 3;
+int MAX_ITERATION = 1;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
@@ -63,20 +63,20 @@ int main(int argc, char* argv[]) {
     readDataSet(points_temp_, dataset);
 
     // [DEBUG]
-/*
+    /*
     ofstream f("dataset_usato.txt");
     for (int i = 0; i < Point::get_spoints_(); i++) {
         f << Point::get_point(i)->toString() << endl;
     }
 
     f.close();
-*/
+    */
 
     // After reading the dataset..
     auto start = high_resolution_clock::now(); // Inizia il timer
    
     int pointDimension = points_temp_[0]->get_dim();  // Dimensione del dato R^pointDimension
-    int totalNumberPoint = points_temp_.size();      // Numero di dati nel nostro DataSet
+    int totalNumberPoint = (int)points_temp_.size();      // Numero di dati nel nostro DataSet
 
     // Derive cluster number..
 	int K = sqrt(totalNumberPoint / 2);
@@ -85,19 +85,24 @@ int main(int argc, char* argv[]) {
 
     Cluster::create_clusters(K, pointDimension);
 
-    // Cluster::saveCentroids();
+    Cluster::saveCentroids(0, 88);
+    Cluster::saveClusters(0, 89);
 
 	// Setting tmse
     double previousTMSE = 0, tmse = 0;
 
     while ((MAX_ITERATION-- && tmse < previousTMSE) || previousTMSE == 0) {
         Cluster::reset_clusters();
-		
+
+        Cluster::saveCentroids(0, 97);
+
 		// Assign points to clusters
         Cluster::map_point_to_cluster();
 
 		// Derive centroids for each cluster
         Cluster::find_centroid_clusters();
+
+        Cluster::saveCentroids(0, 105);
 
         previousTMSE = tmse;
         tmse = Cluster::totalMSE();
@@ -108,9 +113,8 @@ int main(int argc, char* argv[]) {
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
     // [DEBUG] Per salvare i Cluster su file
-    Cluster::saveClusters();
-    // e i centroidi
-    Cluster::saveCentroids();
+    Cluster::saveCentroids(0, 109);
+    Cluster::saveClusters(0, 110);
 
     cout << "That took: " << duration*1e-6 << " sec" << endl;
 

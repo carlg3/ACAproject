@@ -38,14 +38,15 @@ public:
 
     // Debug functions
     void set_centroid(int index, double value);
-    static void saveClusters();
-    static void saveCentroids();
+    static void saveClusters(int my_rank, int bp);
+    static void saveCentroids(int my_rank, int bp);
 
 private:
     static vector<Cluster*> clusters;
     Centroid *centroid;
+
     vector<Point*> cluster_points_;
-    // static double sumDistance;
+    static double sumDistance;
 };
 
 #endif //CLUSTER_H

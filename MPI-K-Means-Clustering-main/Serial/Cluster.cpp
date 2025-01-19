@@ -12,6 +12,7 @@
 
 using namespace std;
 
+double Cluster::sumDistance;
 vector<Cluster*> Cluster::clusters;
 
 // [main-cristian]
@@ -25,8 +26,7 @@ Cluster::Cluster(const int centroidDimension) {
 void Cluster::empty_cluster() {
     cluster_points_.clear();
 
-    // [main-cristian] reset sumDistance
-    // sumDistance = 0;
+    sumDistance = 0;
 }
 
 void Cluster::reset_clusters() {
@@ -80,7 +80,6 @@ void Cluster::map_point_to_cluster() {
         Cluster* closestCluster = clusters.front();
 
         bool isFirst = true;
-
         for (auto cluster : clusters){
             if (isFirst) {
                 isFirst = false;
@@ -94,6 +93,7 @@ void Cluster::map_point_to_cluster() {
         }
 
         closestCluster->add_point(Point::get_point(i));
+        Cluster::sumDistance += minDistance;
     }
 }
 
@@ -131,10 +131,11 @@ void Cluster::find_centroid_clusters() {
 }
 
 void Cluster::find_centroid_() {
-    // printf("tot_points: %d\n", cluster_points_.size());
+    printf("points_number_: %d\n", (int) cluster_points_.size());
+
     if (cluster_points_.size()) {
         for (int i = 0; i < centroid->get_dim(); i++) {
-            centroid->set_value(i, mean(i));
+            centroid->set_value(i, (int) mean(i));
         }
     }
     else {
@@ -169,12 +170,13 @@ Point* Cluster::get_lpoints_(int index) {
 }
 
 double Cluster::totalMSE() {
+    /*
     double sumDistance = 0;
     for (auto cluster : clusters) {
         for (auto point : cluster->cluster_points_) {
             sumDistance += point->distanza(*cluster->get_centroid());
         }
-    }
+    }*/
     return sumDistance / Point::get_spoints_();
 }
 
@@ -182,20 +184,22 @@ void Cluster::set_centroid(int index, double value) {
     centroid->set_value(index, value);
 }
 
-void Cluster::saveClusters() {
-    ofstream f("output_cluster.txt");
+void Cluster::saveClusters(int my_rank, int bp) {
+    // Creo path del file
+    string file = to_string(bp) + "_clusters_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream f(file);
 
     cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
 
-    for (int i = 0; i < get_sclusters_(); i++) {
+    for (int i = 0; i < Cluster::get_sclusters_(); i++) {
         /*
          *  cout << "CLUSTER <" << i << "> ELEMENTS NUMBER = " << get_cluster(i)->get_spoints_() << endl;
          *  cout << "CENTROID @ " << get_cluster(i)->get_centroid()->toString() << endl;
         */
-        cout << i << ':'<< '\t' << get_cluster(i)->get_spoints_() << endl;
+        cout << i << ':'<< '\t' << Cluster::get_cluster(i)->get_spoints_() << endl;
 
-        for (int j = 0; j < get_cluster(i)->get_spoints_(); j++) {
-            f << i << ";" << get_cluster(i)->get_lpoints_(j)->toString() << endl;
+        for (int j = 0; j < Cluster::get_cluster(i)->get_spoints_(); j++) {
+            f << i << ";" << Cluster::get_cluster(i)->get_lpoints_(j)->toString() << endl;
         }
     }
     cout << "---------------------" << endl;
@@ -203,13 +207,13 @@ void Cluster::saveClusters() {
     f.close();
 }
 
-void Cluster::saveCentroids() {
-    ofstream f("output_centroids.txt");
+void Cluster::saveCentroids(int my_rank, int bp) {
+    // Creo path del file a quel BreakPoint fittizio
+    string file = to_string(bp) + "_centroids_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
+    ofstream f(file);
 
-    cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
-
-    for (int i = 0; i < get_sclusters_(); i++) {
-        f << i << ";" << get_cluster(i)->get_centroid()->toString() << endl;
+    for (int i = 0; i < Cluster::get_sclusters_(); i++) {
+        f << i << ";" << Cluster::get_cluster(i)->get_centroid()->toString() << endl;
     }
     cout << "---------------------" << endl;
 

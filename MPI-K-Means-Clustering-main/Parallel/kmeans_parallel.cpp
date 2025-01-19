@@ -133,12 +133,10 @@ int main(int argc, char* argv[]) {
             Cluster::reset_clusters();
 
             // DEBUG -- CLion
-            /*
             int debug = 0;
             while(debug == 0) {
                 sleep(1);
             }
-            */
 
             // Master works on the last batch of points <processors_point>
             int startIndex = (commSize - 1) * pointsXprocessor;
