@@ -78,11 +78,10 @@ void Cluster::setSumDistance(double value){
 
 void Cluster::empty_cluster(){
     points_.clear();
+    points_number_ = 0;
 
     initSumCluster();
     Cluster::sumDistance = 0;
-
-    points_number_ = 0;
 }
 
 // ------ METHODS ------
@@ -119,7 +118,10 @@ void Cluster::addElement(Point *t){
 }
 
 void Cluster::initSumCluster() {
-    for(int i = 0; i < centroid->get_dim(); i++) {
+    int centroid_dim_ = centroid->get_dim();
+    cout<<centroid_dim_<<endl;
+
+    for(int i = 0; i < centroid_dim_; i++){
         sumCluster[i] = 0;
     }
 }
@@ -156,7 +158,12 @@ void Cluster::map_point_to_cluster(int startIndex, int endIndex) {
         double minDistance = Point::get_point(i)->distanza(*clusters.front()->get_centroid());
         Cluster* closestCluster = clusters.front();
 
+        bool isFirst = true;
         for (auto cluster : clusters) {
+            if (isFirst) {
+                isFirst = false;
+                continue; // Salta il primo elemento
+            }
             double distance = Point::get_point(i)->distanza(*cluster->get_centroid());
             if (distance < minDistance) {
                 minDistance = distance;

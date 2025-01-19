@@ -130,10 +130,14 @@ int main(int argc, char* argv[]) {
         while(true) {
             Cluster::reset_clusters();
 
+            Cluster::saveCentroids(my_rank, 133);
+
             // Master works on the last batch of points <processors_point>
             int startIndex = (commSize - 1) * pointsXprocessor;
             int endIndex = totalNumberPoint;
             Cluster::map_point_to_cluster(startIndex, endIndex);
+
+            Cluster::saveCentroids(my_rank, 138);
 
             // Gets the sum of the points of each cluster (of the master's points)
             Cluster::sum_points_clusters();
