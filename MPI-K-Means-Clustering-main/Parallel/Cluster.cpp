@@ -119,7 +119,6 @@ void Cluster::addElement(Point *t){
 
 void Cluster::initSumCluster() {
     int centroid_dim_ = centroid->get_dim();
-    cout<<centroid_dim_<<endl;
 
     for(int i = 0; i < centroid_dim_; i++){
         sumCluster[i] = 0;
@@ -178,13 +177,12 @@ void Cluster::map_point_to_cluster(int startIndex, int endIndex) {
 
 void Cluster::find_centroid_(){
     int centroid_dim = centroid->get_dim();
-    int tot_points = points_.size();
 
-    printf("tot_points: %d\n", tot_points);
+    printf("points_number_: %d\n", points_number_);
 
-    if(tot_points){
+    if(points_number_){
         for(int i = 0; i < centroid_dim; i++){
-            centroid->set_value(i, sumCluster[i]/tot_points);
+            centroid->set_value(i, sumCluster[i]/points_number_);
         }
     }else{
         for(int i = 0; i < centroid_dim; i++) {
@@ -338,12 +336,12 @@ void Cluster::saveCentroids(int my_rank, int bp){
     string file = to_string(bp) + "_centroids_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
     ofstream f(file);
 
-    cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
+    // cout << "get_sclusters_():\t"<< get_sclusters_() << '\n';
 
     for (int i = 0; i < get_sclusters_(); i++) {
         f << i << ";" << get_cluster(i)->get_centroid()->toString() << endl;
     }
-    cout << "---------------------" << endl;
+    // cout << "---------------------" << endl;
 
     f.close();
 }

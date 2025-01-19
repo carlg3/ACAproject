@@ -87,7 +87,7 @@ int main(int argc, char* argv[]) {
         Cluster::create_clusters(K, pointDimension);
 
         // DEBUG
-        Cluster::saveCentroids(my_rank, 90);
+        // Cluster::saveCentroids(my_rank, 90);
 
         int pointsXprocessor = totalNumberPoint / commSize;
         int bufferSize = 2 + pointsXprocessor * pointDimension;
@@ -127,17 +127,23 @@ int main(int argc, char* argv[]) {
         double previousTMSE, tmse = 0;
         int finish = 0;
 
+        // Cluster::saveCentroids(my_rank, 130);
+
         while(true) {
             Cluster::reset_clusters();
 
-            Cluster::saveCentroids(my_rank, 133);
+            // DEBUG -- CLion
+            /*
+            int debug = 0;
+            while(debug == 0) {
+                sleep(1);
+            }
+            */
 
             // Master works on the last batch of points <processors_point>
             int startIndex = (commSize - 1) * pointsXprocessor;
             int endIndex = totalNumberPoint;
             Cluster::map_point_to_cluster(startIndex, endIndex);
-
-            Cluster::saveCentroids(my_rank, 138);
 
             // Gets the sum of the points of each cluster (of the master's points)
             Cluster::sum_points_clusters();
@@ -195,9 +201,6 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
         }
 
-        // [DEBUG] Salvare centroids calcolati
-        Cluster::saveCentroids(my_rank, 195);
-
         // End condition
         finish = 1;
         MPI_Bcast(&finish, 1, MPI_INT, 0, MPI_COMM_WORLD);
@@ -217,8 +220,10 @@ int main(int argc, char* argv[]) {
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
         // writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
 
-        // [DEBUG] Salvare Cluster figli
-        Cluster::saveClusters(my_rank, 213);
+        // [DEBUG] Salvare centroids calcolati
+        Cluster::saveCentroids(my_rank, 228);
+        // [DEBUG] Salvare Cluster
+        Cluster::saveClusters(my_rank, 230);
     }
 
     if(my_rank != 0){
@@ -247,9 +252,6 @@ int main(int argc, char* argv[]) {
         int finish;
 
         delete[] buffer; buffer = nullptr;
-
-        // DEBUG
-        Cluster::saveCentroids(my_rank, 248);
 
         while(true) {
             Cluster::reset_clusters();
@@ -292,8 +294,7 @@ int main(int argc, char* argv[]) {
             // If not finished, waits for new cluster centroids
             MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-            delete[] buffer;
-            buffer = nullptr;
+            delete[] buffer; buffer = nullptr;
 
             buffer = new double[bufferSize];
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
@@ -301,11 +302,9 @@ int main(int argc, char* argv[]) {
             Cluster::deserializeCentroids(buffer);
         }
 
-        // DEBUG
-        Cluster::saveCentroids(my_rank, 301);
-
-        // [DEBUG] Salvare Cluster figli
-        Cluster::saveClusters(my_rank, 304);
+        // [DEBUG] Salvare Cluster e centroids dei figli
+        Cluster::saveClusters(my_rank, 311);
+        Cluster::saveCentroids(my_rank, 312);
     }
 
     MPI_Finalize();
