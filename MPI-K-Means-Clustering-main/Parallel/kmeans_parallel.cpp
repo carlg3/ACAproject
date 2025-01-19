@@ -15,7 +15,7 @@
 
 using namespace std;
 
-int K = 0, MAXITERATION = 1;
+int K = 0, MAXITERATION = 2;
 const int lentag = 0, stat = 1, datapointtag = 2, dataclustertag = 3, datasumclustertag = 4;
 
 const char* path_win = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/DataSet/DataSet1000x2.txt";
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &commSize);
 
-    if(my_rank == 0) {
+    if(my_rank == 0){
         double starttime, endtime; // Time variables
         starttime = MPI_Wtime(); // Start timer
 
@@ -73,18 +73,18 @@ int main(int argc, char* argv[]) {
         readDataSet(&pointDimension,&totalNumberPoint);
 
         // [DEBUG]
-        /*
         ofstream f("dataset_usato.txt");
         for (int i = 0; i < Point::getNumberPoints(); i++) {
             f << Point::getThPoint(i)->toString() << endl;
         }
         f.close();
-        */
 
         // INIZIALIZE CLUSTERS AND CENTROIDS
         K = sqrt(totalNumberPoint/2);
         Cluster::createKclusters(K, pointDimension);
         //-------------------------------------------------------------------
+
+        Cluster::saveCentroids(my_rank, 87);
 
         int pointsXprocessor = totalNumberPoint / commSize;
 
@@ -110,7 +110,7 @@ int main(int argc, char* argv[]) {
         Cluster::serializeCluster(buffer, K, pointDimension);
         MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-        list<Point*> points;
+        // list<Point*> points;
 
         int finish = 0;
 
@@ -121,6 +121,14 @@ int main(int argc, char* argv[]) {
 
         while(true) {
             Cluster::clustersReset();
+
+            Cluster::saveCentroids(my_rank, 125);
+
+            // DEBUG
+            /*int debug = 0;
+            while(debug == 0) {
+                sleep(1);
+            }*/
 
             // ASSIGN POINTS TO CLUSTERS WITH NEAREST CENTROID
             // endtime   = MPI_Wtime(); // Stop timer
@@ -156,6 +164,8 @@ int main(int argc, char* argv[]) {
             // CALCULATE NEW CENTROIDS
             Cluster::centroidsParallelAssignment();
 
+            Cluster::saveCentroids(my_rank, 167);
+
             // CALCULATE TMSE
             // Recv SumDistance
             previousTMSE = tmse;
@@ -182,7 +192,7 @@ int main(int argc, char* argv[]) {
             MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
             MPI_Bcast(buffer, bufferSize, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-            Cluster::saveCentroids(my_rank, 185);
+            // Cluster::saveCentroids(my_rank, 195);
         }
 
         finish = 1;
@@ -191,17 +201,9 @@ int main(int argc, char* argv[]) {
         endtime   = MPI_Wtime(); // Stop timer
         printf("That took %f seconds\n",endtime-starttime); // Print execution time
 
-        /*
-            // DEBUG
-            int debug = 0;
-            while(debug == 0) {
-                sleep(1);
-            }
-        */
-
         // [DEBUG] Salvare i cluster
         Cluster::saveCentroids(my_rank, 203);
-        Cluster::saveClusters(my_rank, 204);
+        // Cluster::saveClusters(my_rank, 204);
 	    // writeExTime(commSize, totalNumberPoint, pointDimension, K, endtime-starttime);
     }
 

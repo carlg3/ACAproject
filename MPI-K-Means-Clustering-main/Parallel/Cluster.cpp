@@ -36,7 +36,8 @@ void Cluster::createCentroid(int centroidDimension){
     srand(42);
 
     int n = rand() % (Point::getNumberPoints()-1); // Choose the value of the centroid among the points in the dataset
-    for(int j=0; j < centroidDimension; j++){
+
+    for(int j = 0; j < centroidDimension; j++){
         centroid->setThValue(j,Point::getThPoint(n)->getThValue(j));
         //centroid->setThValue(j,rand() % 10);
     }
@@ -323,11 +324,12 @@ void Cluster::saveCentroids(int my_rank, int bp){
     string file = to_string(bp) + "_centroids_rank_"; file.append(std::to_string(my_rank)); file.append(".txt");
     ofstream f(file);
 
-    cout << "get_sclusters_():\t"<< getNumberCluster() << '\n';
+    cout << "get_sclusters_():\t"<< Cluster::getNumberCluster() << '\n';
 
-    for (int i = 0; i < getNumberCluster(); i++) {
-        f << i << ";" << getThCluster(i)->getCentroid()->toString() << endl;
+    for (int i = 0; i < Cluster::getNumberCluster(); i++) {
+        f << i << ";" << Cluster::getThCluster(i)->getCentroid()->toString() << endl;
     }
+
     cout << "---------------------" << endl;
 
     f.close();
