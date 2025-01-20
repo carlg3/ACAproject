@@ -1,7 +1,7 @@
-DataSet10000x10.txt; That took: 0.094256 sec
-DataSet1000x10.txt; That took: 0.004348 sec
-DataSet1500x10.txt; That took: 0.006565 sec
-DataSet25000x10.txt; That took: 0.373103 sec
-DataSet50000x10.txt; That took: 1.03817 sec
-DataSet5000x10.txt; That took: 0.030054 sec
-DataSet600x10.txt; That took: 0.002236 sec
+DataSet600x10.txt; 0,003469
+DataSet1000x10.txt; 0,008191
+DataSet1500x10.txt; 0,013527
+DataSet5000x10.txt; 0,075832
+DataSet10000x10.txt; 0,181282
+DataSet25000x10.txt; 0,728638
+DataSet50000x10.txt; 1,9536

@@ -17,7 +17,7 @@
 using namespace chrono;
 using namespace std;
 
-int MAX_ITERATION = 5;
+int MAX_ITERATION = 10;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
@@ -85,8 +85,8 @@ int main(int argc, char* argv[]) {
 
     Cluster::create_clusters(K, pointDimension);
 
-    Cluster::saveCentroids(0, 88);
-    Cluster::saveClusters(0, 89);
+    // Cluster::saveCentroids(0, 88);
+    // Cluster::saveClusters(0, 89);
 
 	// Setting tmse
     double previousTMSE = 0, tmse = 0;
@@ -94,7 +94,7 @@ int main(int argc, char* argv[]) {
     while ((MAX_ITERATION-- && tmse < previousTMSE) || previousTMSE == 0) {
         Cluster::reset_clusters();
 
-        Cluster::saveCentroids(0, 97);
+        // Cluster::saveCentroids(0, 97);
 
 		// Assign points to clusters
         Cluster::map_point_to_cluster();
@@ -102,19 +102,19 @@ int main(int argc, char* argv[]) {
 		// Derive centroids for each cluster
         Cluster::find_centroid_clusters();
 
-        Cluster::saveCentroids(0, 105);
+        // Cluster::saveCentroids(0, 105);
 
         previousTMSE = tmse;
         tmse = Cluster::totalMSE();
     }
 
-    // Using chrono to get time spent..
+    // Using chrono to get time spent
     auto end = high_resolution_clock::now(); 
     auto duration = duration_cast<microseconds>(end - start).count(); // Tempo in microsecondi
 
     // [DEBUG] Per salvare i Cluster su file
-    Cluster::saveCentroids(0, 109);
-    Cluster::saveClusters(0, 110);
+    // Cluster::saveCentroids(0, 116);
+    // Cluster::saveClusters(0, 110);
 
     cout << "That took: " << duration*1e-6 << " sec" << endl;
 

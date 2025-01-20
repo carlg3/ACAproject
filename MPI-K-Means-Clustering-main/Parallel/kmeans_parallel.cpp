@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int MAXITERATION = 5;
+int MAXITERATION = 10;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
@@ -128,7 +128,7 @@ int main(int argc, char* argv[]) {
         while(true) {
             Cluster::reset_clusters();
 
-            Cluster::saveCentroids(my_rank, 131);
+            // Cluster::saveCentroids(my_rank, 131);
 
             // Master works on the last batch of points <processors_point>
             int startIndex = (commSize - 1) * pointsXprocessor;
@@ -219,11 +219,12 @@ int main(int argc, char* argv[]) {
         */
 
         // DEBUG -- per salvare il tempo che ci si mette ad ogni esecuzione [MASTER]
+
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
         // writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
 
-        Cluster::saveCentroids(my_rank, 210);
-        Cluster::saveClusters(my_rank, 220);
+        // Cluster::saveCentroids(my_rank, 226);
+        // Cluster::saveClusters(my_rank, 220);
     }
 
     if(my_rank != 0){
@@ -302,8 +303,8 @@ int main(int argc, char* argv[]) {
             Cluster::deserializeCentroids(buffer);
         }
 
-        Cluster::saveClusters(my_rank, 311);
-        Cluster::saveCentroids(my_rank, 312);
+        // Cluster::saveClusters(my_rank, 311);
+        // Cluster::saveCentroids(my_rank, 312);
     }
 
     MPI_Finalize();
