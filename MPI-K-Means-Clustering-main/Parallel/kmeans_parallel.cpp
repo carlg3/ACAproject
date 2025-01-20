@@ -171,6 +171,12 @@ int main(int argc, char* argv[]) {
             // 2--- REDUCE
             MPI_Reduce(buffer2, buffer, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
+            // DEBUG -- CLion
+            /*int debug = 0;
+            while(debug == 0) {
+                sleep(1);
+            }*/
+
             // Sets the sumDistance (in the master) derived by the sums of each slave's sumDistance
             Cluster::setSumDistance(buffer[0]);
 

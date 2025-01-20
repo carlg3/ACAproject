@@ -15,9 +15,6 @@ using namespace std;
 double Cluster::sumDistance;
 vector<Cluster*> Cluster::clusters;
 
-// [main-cristian]
-// double Cluster::sumDistance;
-
 Cluster::Cluster(const int centroid_dim) {
     clusters.push_back(this);
     create_centroid(centroid_dim);
