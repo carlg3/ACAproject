@@ -17,14 +17,14 @@
 using namespace chrono;
 using namespace std;
 
-int MAX_ITERATION = 1;
+int MAX_ITERATION = 5;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
 string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
 
 string dataset = path_gcloud + "DataSet/DataSet1000x2.txt";
 
-void readDataSet(vector<Point*>& points, const string& filePath) {
+void readDataSet(vector<Point*>& points, const string& filePath){
     ifstream dataSet(filePath);
 
     if (!dataSet.is_open()){

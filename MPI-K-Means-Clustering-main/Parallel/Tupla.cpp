@@ -31,12 +31,15 @@ int Tupla::get_dim() {
 }
 
 string Tupla::toString() {
+    // TEST
     string s = "(";
     for (int i = 0; i < dim; i++) {
         if (i == 0) {
-            s += to_string(static_cast<int>(value.at(i)));
+            // s += to_string(static_cast<int>(value.at(i)));
+            s += to_string(value.at(i));
         } else {
-            s += "," + to_string(static_cast<int>(value.at(i)));
+            // s += "," + to_string(static_cast<int>(value.at(i)));
+            s += "," + to_string(value.at(i));
         }
     }
     return s + ")";

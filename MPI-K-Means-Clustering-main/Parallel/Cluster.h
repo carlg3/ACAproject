@@ -32,7 +32,7 @@ public:
     void empty_cluster(); // Reset of the cluster
     static void reset_clusters(); // Reset of all the clusters
     void initSumCluster();
-    void addElement(Point *t); // Add a point to the cluster
+    void add_point(Point *t); // Add a point to the cluster
 
     static void map_point_to_cluster(int startIndex = 0, int endIndex = Point::get_spoints_()); // Assign a subset of points to the closest cluster
     void sum_points_(); // Calculate the sum of all points in the cluster
@@ -63,7 +63,7 @@ private:
     int points_number_;
     vector<Point*> points_; // di _questo_ cluster
     Centroid *centroid;
-    double *sumCluster;
+    double *sumCluster; // di _questo_ cluster rispetto la dim
 };
 
 #endif //PARALLEL_CLUSTER_H

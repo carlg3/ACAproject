@@ -9,9 +9,11 @@ public:
     Point(int dim);
     static Point* get_point(int index);
     static int get_spoints_();
-    // Serializing functions
+
+    // Serialization functions
     static void serializePoint(double* buffer,int startIndex, int endIndex, int dim);
     static void deserializePoint(double* buffer);
+
     // Debug
     static void print_points_();
 private:

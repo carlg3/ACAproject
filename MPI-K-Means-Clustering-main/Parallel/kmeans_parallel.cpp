@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int MAXITERATION = 1;
+int MAXITERATION = 5;
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
 // string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
     if(my_rank == 0){
         double start_time, end_time;
 
-        // Reading the dataset and derive the infos for running the kmeans
+        // Reading the dataset...
         vector<Point*> points_temp_;
 		if(argc == 2){
 			// Se ho passato un argomento
@@ -82,11 +82,8 @@ int main(int argc, char* argv[]) {
 
         int K = sqrt(totalNumberPoint/2);
 
-        // printf("K:%d\npointDimension:%d\ntotalNumberPoint:%d\n-----", K, pointDimension, totalNumberPoint);
-
         Cluster::create_clusters(K, pointDimension);
 
-        // DEBUG
         // Cluster::saveCentroids(my_rank, 90);
 
         int pointsXprocessor = totalNumberPoint / commSize;
@@ -96,7 +93,6 @@ int main(int argc, char* argv[]) {
         buffer = new double[bufferSize];
 
         // Sends derived points to each other processor
-
         MPI_Bcast(&bufferSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
         /*
@@ -132,11 +128,7 @@ int main(int argc, char* argv[]) {
         while(true) {
             Cluster::reset_clusters();
 
-            // DEBUG -- CLion
-            int debug = 0;
-            while(debug == 0) {
-                sleep(1);
-            }
+            Cluster::saveCentroids(my_rank, 131);
 
             // Master works on the last batch of points <processors_point>
             int startIndex = (commSize - 1) * pointsXprocessor;
@@ -184,6 +176,12 @@ int main(int argc, char* argv[]) {
 
             tmse = Cluster::totalMSE();
 
+            // DEBUG -- CLion
+            /*int debug = 0;
+            while(debug == 0) {
+                sleep(1);
+            }*/
+
             // Check finish conditions
             if(!((MAXITERATION-- && tmse < previousTMSE) || previousTMSE == 0)){ break;}
 
@@ -218,10 +216,8 @@ int main(int argc, char* argv[]) {
         // <processi-- commSize> <numero di punti-- totalNumberPoint> <dimensione punti-- pointDimension> <numero di cluster> <tempo di esecuzione>
         // writeExTime(commSize, totalNumberPoint, pointDimension, K, end_time - start_time);
 
-        // [DEBUG] Salvare centroids calcolati
-        Cluster::saveCentroids(my_rank, 228);
-        // [DEBUG] Salvare Cluster
-        Cluster::saveClusters(my_rank, 230);
+        Cluster::saveCentroids(my_rank, 210);
+        Cluster::saveClusters(my_rank, 220);
     }
 
     if(my_rank != 0){
@@ -279,7 +275,7 @@ int main(int argc, char* argv[]) {
             buffer = new double[1];
             buffer2 = new double[1];
 
-            // Get the sumDistance - calculated after the pointAssignment - of the clusters
+            // Get the sumDistance of the clusters
             buffer[0] = Cluster::getSumDistance();
 
             // 2--- REDUCE | Sends the master its sumDistance
@@ -300,7 +296,6 @@ int main(int argc, char* argv[]) {
             Cluster::deserializeCentroids(buffer);
         }
 
-        // [DEBUG] Salvare Cluster e centroids dei figli
         Cluster::saveClusters(my_rank, 311);
         Cluster::saveCentroids(my_rank, 312);
     }

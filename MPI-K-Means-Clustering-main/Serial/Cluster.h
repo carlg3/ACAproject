@@ -15,8 +15,8 @@ using namespace std;
 class Cluster{
 public:
     Cluster(int centroidDimension);
-    static void create_clusters(int K,int centroidDimension);
-    void create_centroid(int centroidDimension);
+    static void create_clusters(int K, int centroid_dim);
+    void create_centroid(int centroid_dim);
 
     void empty_cluster();
     static void reset_clusters();

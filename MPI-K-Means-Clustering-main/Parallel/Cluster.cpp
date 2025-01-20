@@ -111,7 +111,7 @@ void Cluster::create_centroid(int centroidDimension){
     }
 }
 
-void Cluster::addElement(Point *t){
+void Cluster::add_point(Point *t){
     points_.push_back(t);
 
     points_number_++;
@@ -129,6 +129,7 @@ void Cluster::sum_points_(){
     initSumCluster();
 
     int centroid_dim_ = centroid->get_dim();
+
     for(int i = 0; i < points_number_; i++){
         for(int j = 0; j < centroid_dim_; j++){
             sumCluster[j] += get_point(i)->get_value(j);
@@ -138,6 +139,7 @@ void Cluster::sum_points_(){
 
 void Cluster::sum_points_clusters(){
     int cluster_number_ = Cluster::get_sclusters_();
+
     for(int i = 0; i < cluster_number_; i++){
         Cluster::get_cluster(i)->sum_points_();
     }
@@ -163,26 +165,31 @@ void Cluster::map_point_to_cluster(int startIndex, int endIndex) {
                 isFirst = false;
                 continue; // Salta il primo elemento
             }
+
             double distance = Point::get_point(i)->distanza(*cluster->get_centroid());
+
             if (distance < minDistance) {
                 minDistance = distance;
                 closestCluster = cluster;
             }
         }
 
-        closestCluster->addElement(Point::get_point(i));
+        closestCluster->add_point(Point::get_point(i));
         Cluster::sumDistance += minDistance;
     }
 }
 
 void Cluster::find_centroid_(){
+    double mean;
     int centroid_dim = centroid->get_dim();
 
-    printf("points_number_: %d\n", points_number_);
+    // printf("points_number_: %d\n", points_number_);
 
     if(points_number_){
         for(int i = 0; i < centroid_dim; i++){
-            centroid->set_value(i, sumCluster[i]/points_number_);
+            // TEST
+            mean = sumCluster[i]/points_number_;
+            centroid->set_value(i, mean);
         }
     }else{
         for(int i = 0; i < centroid_dim; i++) {
